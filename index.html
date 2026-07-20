@@ -2,7 +2,7 @@
 <!--
   BWL Kurse · OMIK · Mikroökonomik 1 · KURS-APP (v3, Firestarter-Struktur, Ring statt Flamme)
   Gebaut 2026-07-18 aus dem Referenz-Template v01 (Optik/Logo/K3 1:1) + 9 weiteren Kapiteln.
-  Inhalte und 16-Fragen-Selbsttests 1:1 aus quellpakete/osta-komplett (Gedankenstrich-Einschuebe
+  Inhalte und 16-Fragen-Selbsttests 1:1 aus quellpakete/omik-komplett (Gedankenstrich-Einschuebe
   normalisiert, Log: dash-log.txt). Zugang: ZUGANG='probe' (nur Kapitel 2 frei) oder 'komplett'
   (alle frei, Auslieferung unter /k/{{LIZENZ_TOKEN}}/). QA-Override: ?zugang=komplett&theme=dark
   TRANSFER-TOKENS: {{CHECKOUT_URL}} {{VORMERK_URL}} {{IMPRESSUM_URL}} {{DATENSCHUTZ_URL}}
@@ -489,7 +489,100 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
 .lsegs button.cur{background:rgba(232,118,10,.16);border:1.5px solid var(--accent)}
 .lsegs button:disabled{cursor:default;opacity:.6}
 .lcount{font-size:12px;font-weight:600;color:var(--text-3);white-space:nowrap;flex:none}
+/* ===== Freischalt-Store ===== */
+.sheet-store{max-height:92vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+#storeBody .sec-lbl{margin:18px 0 8px}
+#storeBody .sec-lbl:first-child{margin-top:6px}
+.store-status{background:var(--surface-2);border:1px solid var(--line-2);border-radius:13px;padding:12px 14px;font-size:14px;color:var(--text-2);line-height:1.5}
+.store-status b{color:var(--accent-deep)}
+[data-theme="dark"] .store-status b{color:var(--accent-2)}
+.store-anrech{background:var(--surface-2);border-radius:13px;padding:11px 13px;font-size:13.5px;color:var(--text-2);line-height:1.5;margin-bottom:8px}
+.store-anrech b{color:var(--accent-deep)}
+[data-theme="dark"] .store-anrech b{color:var(--accent-2)}
+.store-pkg{background:var(--surface);border:1px solid var(--line-2);border-radius:13px;box-shadow:var(--sh-1);padding:14px 15px;margin-bottom:10px}
+.store-pkg.feat{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),var(--sh-1)}
+.store-pkg-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.store-pkg-h b{font-size:16px}
+.store-pkg-p{font-size:20px;font-weight:700;white-space:nowrap;display:flex;flex-direction:column;align-items:flex-end;line-height:1.1}
+.store-pkg-p small{font-size:11px;font-weight:500;color:var(--text-3);text-decoration:line-through}
+.store-pkg-d{font-size:13.5px;color:var(--text-2);margin:6px 0 2px;line-height:1.45}
+.store-pkg-n{font-size:12px;color:var(--accent-deep);font-weight:600;margin:2px 0 0}
+[data-theme="dark"] .store-pkg-n{color:var(--accent-2)}
+.store-pkg-btn{margin-top:12px}
+.store-list{display:flex;flex-direction:column}
+.store-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line-2)}
+.store-row:last-child{border-bottom:0}
+.store-row-t{flex:1;min-width:0;font-size:14px;color:var(--text);line-height:1.35}
+.store-row-t b{color:var(--text)}
+.store-row-r{flex:none;margin-left:auto}
+.store-mini{min-height:38px;padding:7px 14px;font-size:14px;border-radius:11px;min-width:78px}
+.store-badge{display:inline-flex;align-items:center;font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px;white-space:nowrap}
+.store-badge.free{background:var(--done-bg);color:var(--done)}
+.store-badge.owned{background:var(--done-bg);color:var(--done)}
+.store-det{width:100%}
+.store-det>summary{cursor:pointer;list-style:none;font-size:14px;color:var(--text);display:block}
+.store-det>summary::-webkit-details-marker{display:none}
+.store-det>summary::before{content:"+";display:inline-block;width:16px;color:var(--accent-deep);font-weight:800}
+[data-theme="dark"] .store-det>summary::before{color:var(--accent-2)}
+.store-det[open]>summary::before{content:"\2013"}
+.store-topics{margin:6px 0 2px 20px;padding:0}
+.store-topics li{font-size:12.5px;color:var(--text-3);margin:2px 0;list-style:disc}
+.store-link{background:none;border:0;color:var(--accent-deep);font-weight:600;font-size:13px;cursor:pointer;padding:2px 0;text-decoration:underline}
+[data-theme="dark"] .store-link{color:var(--accent-2)}
+.app-toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);z-index:120;max-width:min(440px,92vw);
+  background:var(--premium);color:var(--premium-ink);border:1px solid var(--premium-line);border-radius:14px;
+  box-shadow:var(--sh-3);padding:13px 16px;font-size:13.5px;line-height:1.5;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
+.app-toast.on{opacity:1;transform:translate(-50%,0)}
+.app-toast.big{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),var(--sh-3)}
+.store-rabatt{background:linear-gradient(180deg,var(--accent-2),var(--accent));color:#2A1500;border-radius:13px;padding:14px 16px;font-size:14px;line-height:1.55;font-weight:600;box-shadow:var(--sh-2);margin-bottom:10px}
+.store-rabatt b{display:block;font-family:var(--serif);font-size:15px;margin-bottom:5px;color:#2A1500}
+/* Kompakte Pakete */
+.store-pkgrow{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line-2);border-radius:13px;box-shadow:var(--sh-1);padding:11px 13px;margin-bottom:8px}
+[data-theme="dark"] .store-pkgrow{border-color:var(--line)}
+.store-pkgrow.feat{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),var(--sh-1)}
+.pkgr-t{flex:1;min-width:0}
+.pkgr-t b{font-size:14.5px}
+.pkgr-t small{display:block;color:var(--text-2);font-size:12px;line-height:1.35}
+.pkgr-p{flex:none;font-weight:800;font-size:16px;white-space:nowrap;text-align:right}
+.pkgr-p s{display:block;font-weight:500;font-size:11px;color:var(--text-3)}
+.pkgr-go{flex:none;background:linear-gradient(180deg,var(--accent-2),var(--accent));color:#2A1500;border:0;border-radius:11px;font-weight:700;font-size:13px;padding:9px 12px;cursor:pointer;box-shadow:var(--sh-1);min-height:44px}
+/* Legende */
+.store-legend{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:0 0 10px;font-size:12.5px;color:var(--text-2)}
+.store-legend span{display:inline-flex;align-items:center;gap:7px}
+.store-dot{width:12px;height:12px;border-radius:4px;flex:none}
+.store-dot.l{background:var(--accent)}
+.store-dot.h{background:linear-gradient(180deg,var(--premium-2),var(--premium));box-shadow:inset 0 0 0 1px var(--premium-line)}
+/* Eine Kapitelliste mit zwei Preisen */
+.store-clist{display:flex;flex-direction:column}
+.store-crow{border-bottom:1px solid var(--line-2);padding:11px 0}
+[data-theme="dark"] .store-crow{border-color:var(--line)}
+.store-crow:last-child{border-bottom:0}
+.store-crow-top{display:flex;align-items:center;gap:10px}
+.store-cdet{flex:1;min-width:0}
+.store-cdet>summary{list-style:none;cursor:pointer;font-size:14px;color:var(--text);display:flex;align-items:center;gap:7px;line-height:1.3;min-height:36px}
+.store-cdet>summary::-webkit-details-marker{display:none}
+.store-cdet>summary .kap{font-weight:700;flex:none}
+.store-cdet>summary::after{content:"+";margin-left:4px;color:var(--accent-deep);font-weight:800;flex:none}
+[data-theme="dark"] .store-cdet>summary::after{color:var(--accent-2)}
+.store-cdet[open]>summary::after{content:"\2013"}
+.store-cdet .store-topics{margin:8px 0 2px 2px;font-size:12.5px;color:var(--text-2)}
+.store-cdet .store-topics b{color:var(--text);font-weight:600}
+.store-cdet .store-topics ul{margin:5px 0 0 16px;padding:0}
+.store-cdet .store-topics li{margin:2px 0;list-style:disc}
+.store-chips{flex:none;display:flex;gap:7px}
+.store-chip{border:0;border-radius:11px;cursor:pointer;font-family:inherit;font-weight:700;font-size:12px;padding:6px 9px;min-width:72px;min-height:44px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.15;box-shadow:var(--sh-1)}
+.store-chip small{font-weight:600;font-size:9px;letter-spacing:.04em;opacity:.85;text-transform:uppercase;margin-bottom:1px}
+.store-chip.lchip{background:linear-gradient(180deg,var(--accent-2),var(--accent));color:#2A1500}
+.store-chip.hchip{background:linear-gradient(180deg,var(--premium-2),var(--premium));color:var(--premium-ink);box-shadow:inset 0 0 0 1px var(--premium-line),var(--sh-1)}
+.store-chip.free{background:var(--done-bg);color:var(--done);box-shadow:inset 0 0 0 1px var(--done)}
+.store-chip.owned{background:var(--surface-2);color:var(--text-3);box-shadow:inset 0 0 0 1px var(--hair);cursor:default}
 
+/* --- Feinschliff v2 (2026-07-19): weniger KI-Look, editorialere Marker --- */
+.fahrplan .num{width:auto;min-width:24px;margin:0;padding:0 2px 0 0;background:none;border:none;border-radius:0;font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.35;color:var(--accent);text-align:left}
+.rep-last{display:inline-block;margin-top:3px;font-size:12.5px;color:var(--text-3);font-family:var(--sans)}
+
+/* Simon 19.07.: dekorative Symbol-Icons in Lektionen komplett raus (Eyebrows, Kern, Aha, Neugier, Merke) */
+.lstep .eyebrow svg.i,.kern .ic,.aha .ah-lbl svg.i,.curio svg.i,.qq svg.i{display:none!important}
 /* ===== OMIK-Zusatz: Regelkarten, Tabellen-Scroll, Calc-Formeln, Aha-Balken ===== */
 .rulegrid{display:grid;grid-template-columns:1fr;gap:10px;margin:14px 0}
 .rulecard{background:var(--surface);border:1px solid var(--line-2);border-radius:13px;padding:13px 15px;font-size:13.5px;color:var(--text-2);box-shadow:var(--sh-1)}
@@ -504,7 +597,151 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
 .ah-bars i{display:block;height:12px;border-radius:7px;background:var(--accent);min-width:6px;transition:width .12s ease}
 .ah-bars .bar:first-child i{background:var(--silver)}
 .chartbox svg text{font-family:var(--sans)}
+
 </style>
+<style id="bkbc-css">
+/* ===== BKBC · Faecher-Paket-Konfigurator · identisch in App + Landing ===== */
+.bkbc-card{border:2px solid var(--accent);border-radius:14px;padding:14px;background:var(--surface-2);box-shadow:var(--sh-1)}
+.bkbc-h{font-weight:600;font-size:16px;margin:0 0 2px}
+.bkbc-sub{font-size:12px;color:var(--text-2);margin:0 0 10px;line-height:1.45}
+.bkbc-save{color:var(--done);font-size:12px;font-weight:600;margin-top:3px}
+.bkbc-row{display:flex;align-items:center;gap:12px;padding:11px 12px;border:1px solid var(--hair);border-radius:10px;margin:0 0 8px;cursor:pointer;background:var(--surface)}
+.bkbc-row:hover{border-color:var(--accent)}
+.bkbc-row.sel{border-color:var(--accent);background:var(--glow)}
+.bkbc-row input{width:20px;height:20px;accent-color:var(--accent);flex:none;margin:0}
+.bkbc-rt{flex:1;min-width:0}
+.bkbc-rt b{display:block;font-weight:600;font-size:14px}
+.bkbc-rt small{display:block;color:var(--text-3);font-size:12px;line-height:1.4}
+.bkbc-ho-row{margin-top:12px;border-style:dashed}
+.bkbc-sum{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin:14px 2px 10px}
+.bkbc-total{font-size:26px;font-weight:600;white-space:nowrap;line-height:1.1}
+.bkbc-cta{display:flex;width:100%;align-items:center;justify-content:center;min-height:48px;cursor:pointer;border:0;border-radius:10px;font-size:15px;font-weight:600;text-align:center;background:linear-gradient(180deg,var(--accent-2),var(--accent));color:#2A1500;box-shadow:var(--sh-1)}
+.bkbc-cta:disabled{background:var(--surface);color:var(--text-3);cursor:not-allowed;box-shadow:inset 0 0 0 1px var(--hair)}
+.bkbc-note{font-size:11.5px;color:var(--text-3);line-height:1.45;margin:10px 2px 0;text-align:center}
+</style>
+<script id="bkbc-core">
+/* =====================================================================
+   BKBC · Faecher-Paket-Konfigurator (Mehrfachauswahl + Auto-Summe)
+   ---------------------------------------------------------------------
+   ⛔ DIESER BLOCK IST IN ALLEN DATEIEN IDENTISCH:
+      App    : omik-app-vorschau/index.html (+ omik-/ofin-app-vorschau)
+      Landing: bwlkurse-lp/index.html, osta.html, omik.html, ofin.html
+   Preise NUR hier aendern - danach in alle Dateien kopieren.
+   Checkout-Hook: window.bkbcOnCheckout(payload)
+      payload = {faecher:["OMIK",...], handouts:true|false, anzahl:N, total:Zahl}
+   ===================================================================== */
+window.BKBC = (function(){
+  "use strict";
+
+  /* ================= CONFIG (einzige Preisquelle) ================= */
+  var CFG = {
+    FAECHER: [
+      {code:"OMIK", sub:"Mikro\u00f6konomik 1"},
+      {code:"OSTA", sub:"Statistik"},
+      {code:"OFIN", sub:"Finanzen 1"}
+    ],
+    /* Staffel Klausur-Check (ohne Handouts) */
+    KLAUSURCHECK: {0:0, 1:39.90, 2:69.90, 3:89.90},
+    /* Staffel mit allen Handouts */
+    MIT_HANDOUTS: {0:0, 1:79.90, 2:99.80, 3:129.70},
+    /* "vormerken" = unverbindliche Vormerkung (kein Zahlungsanbieter aktiv)
+       "bestellen" = echter Kaufabschluss, Button-Beschriftung nach \u00a7312j BGB
+       -> auf "bestellen" umstellen, SOBALD der Checkout wirklich zahlungspflichtig ist. */
+    CTA_MODUS: "vormerken"
+  };
+  /* ================================================================ */
+
+  function fmt(n){ return n.toFixed(2).replace(".", ",") + " \u20ac"; }
+  function esc(s){
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+    });
+  }
+  function preis(anzahl, handouts){
+    var tab = handouts ? CFG.MIT_HANDOUTS : CFG.KLAUSURCHECK;
+    return (tab[anzahl] != null) ? tab[anzahl] : 0;
+  }
+
+  function markup(){
+    var rows = CFG.FAECHER.map(function(f){
+      return '<label class="bkbc-row"><input type="checkbox" class="bkbc-f" data-code="' + esc(f.code) + '">' +
+             '<span class="bkbc-rt"><b>' + esc(f.code) + '</b><small>' + esc(f.sub) + '</small></span></label>';
+    }).join("");
+    return '<div class="bkbc-card">' +
+      '<div class="bkbc-h">F\u00e4cher-Paket zusammenstellen</div>' +
+      '<p class="bkbc-sub">F\u00e4cher antippen \u2013 der Preis rechnet sich automatisch zusammen.</p>' +
+      rows +
+      '<label class="bkbc-row bkbc-ho-row"><input type="checkbox" class="bkbc-ho">' +
+        '<span class="bkbc-rt"><b>mit allen Handouts</b><small>Aufgaben-PDFs + Musterl\u00f6sungen zu jedem Kapitel</small></span></label>' +
+      '<div class="bkbc-sum">' +
+        '<div><div class="bkbc-cnt bkbc-sub" style="margin:0">Noch keine F\u00e4cher gew\u00e4hlt</div>' +
+        '<div class="bkbc-save"></div></div>' +
+        '<div class="bkbc-total">' + fmt(0) + '</div>' +
+      '</div>' +
+      '<button type="button" class="bkbc-cta" disabled>F\u00e4cher w\u00e4hlen</button>' +
+      '<div class="bkbc-msg bkbc-note"></div>' +
+    '</div>';
+  }
+
+  function bind(root){
+    var r = root || document;
+    var fs = Array.prototype.slice.call(r.querySelectorAll(".bkbc-f"));
+    if(!fs.length) return null;
+    var ho   = r.querySelector(".bkbc-ho"),
+        elT  = r.querySelector(".bkbc-total"),
+        elC  = r.querySelector(".bkbc-cnt"),
+        elS  = r.querySelector(".bkbc-save"),
+        cta  = r.querySelector(".bkbc-cta"),
+        msg  = r.querySelector(".bkbc-msg");
+    if(!ho || !elT || !cta) return null;
+
+    function upd(){
+      var picked = fs.filter(function(x){ return x.checked; });
+      var n = picked.length, h = !!ho.checked;
+      var total = preis(n, h), einzel = preis(1, h);
+      var save  = (n >= 2) ? (n * einzel - total) : 0;
+
+      fs.forEach(function(x){
+        var row = x.closest ? x.closest(".bkbc-row") : x.parentNode;
+        if(row) row.classList.toggle("sel", x.checked);
+      });
+      var hoRow = ho.closest ? ho.closest(".bkbc-row") : ho.parentNode;
+      if(hoRow) hoRow.classList.toggle("sel", h);
+
+      elT.textContent = fmt(total);
+      if(elC) elC.textContent = (n === 0)
+        ? "Noch keine F\u00e4cher gew\u00e4hlt"
+        : (n + (n === 1 ? " Fach" : " F\u00e4cher") + (h ? " \u00b7 mit allen Handouts" : " \u00b7 Klausur-Check"));
+      if(elS) elS.textContent = (save > 0) ? ("Du sparst " + fmt(save)) : "";
+
+      cta.disabled = (n === 0);
+      cta.textContent = (n === 0)
+        ? "F\u00e4cher w\u00e4hlen"
+        : ((CFG.CTA_MODUS === "bestellen" ? "Zahlungspflichtig bestellen \u00b7 " : "Paket vormerken \u00b7 ") + fmt(total));
+
+      cta._payload = {
+        faecher: picked.map(function(x){ return x.getAttribute("data-code"); }),
+        handouts: h, anzahl: n, total: total
+      };
+    }
+
+    fs.forEach(function(x){ x.addEventListener("change", upd); });
+    ho.addEventListener("change", upd);
+    cta.addEventListener("click", function(e){
+      e.preventDefault();
+      if(cta.disabled) return;
+      var p = cta._payload;
+      if(typeof window.bkbcOnCheckout === "function"){ window.bkbcOnCheckout(p); return; }
+      if(msg) msg.textContent = "Auswahl: " + p.anzahl + (p.anzahl === 1 ? " Fach" : " F\u00e4cher") +
+        (p.handouts ? " mit allen Handouts" : "") + " = " + fmt(p.total) + " (Checkout noch nicht angebunden)";
+    });
+    upd();
+    return {update: upd};
+  }
+
+  return {cfg: CFG, fmt: fmt, preis: preis, markup: markup, bind: bind};
+})();
+</script>
 </head>
 <body data-screen="hub">
 
@@ -596,14 +833,14 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
   </div>
 
   <div class="sec-lbl">Leitsatz zum Tag</div>
-  <div class="leitkarte"><div class="q" id="hubQuote">Standardisieren macht aus unendlich vielen Glocken eine einzige.</div><div class="ln"></div></div>
+  <div class="leitkarte"><div class="q" id="hubQuote">Standardisieren macht aus unendlich vielen Glockenkurven eine einzige.</div><div class="ln"></div></div>
 
   <div id="hubNextWrap">
     <div class="sec-lbl">Dein nächster Schritt</div>
     <button class="nextcard" id="hubNext">
       <span class="n" id="hubNextN"><svg class="i" style="width:22px"><use href="#k-3"/></svg></span>
       <span style="flex:1">
-        <b id="hubNextT">Wahrscheinlichkeitsrechnung</b>
+        <b id="hubNextT">Unsicherheit &amp; Erwartungsnutzen</b>
         <span id="hubNextS">Laplace, bedingte Wahrscheinlichkeit, Satz von Bayes</span>
       </span>
       <span class="pill gratis" id="hubNextPill"><span class="dot"></span> gratis</span>
@@ -684,7 +921,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
     <span class="pill gratis"><span class="dot"></span> aktiv</span>
   </div>
   <div id="accBuyWrap">
-    <button class="btn btn-primary btn-block" style="margin:4px 0 6px" id="accBuy">OMIK komplett freischalten · 39,90&nbsp;€</button>
+    <button class="btn btn-primary btn-block" style="margin:4px 0 6px" id="accBuy">OMIK Klausur-App freischalten · 39,90&nbsp;€</button>
     <p style="font-size:12px;color:var(--text-3);text-align:center;margin-bottom:8px" class="num">Frühbucher noch <b id="cd4" style="color:var(--text-2)">&hellip;</b>, statt 69,00&nbsp;€ im Einzelkauf (10&nbsp;&times;&nbsp;6,90&nbsp;€).</p>
   </div>
 
@@ -709,7 +946,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
     <h3>Kontakt</h3>
     <p>E-Mail: {{KONTAKT_MAIL}}<br>Telefon: {{TELEFON}}</p>
     <h3>Umsatzsteuer</h3>
-    <p>USt-IdNr. nach § 27a UStG: {{UST_ID}}</p>
+    <p>Die Bildungsleistungen von BWLKURSE sind nach § 4 Nr. 21 Buchstabe b UStG umsatzsteuerbefreit. Eine Umsatzsteuer-Identifikationsnummer wird daher in der Regel nicht ausgewiesen.</p>
     <h3>Verantwortlich für den Inhalt</h3>
     <p>{{VERANTWORTLICH}} (§ 18 Abs. 2 MStV)</p>
     <p>BWL Kurse ist ein unabhängiges Vorbereitungsangebot und wird nicht von der Goethe-Universität Frankfurt herausgegeben.</p>
@@ -787,24 +1024,14 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
   <button class="tab" data-tab="mehr"><svg class="i"><use href="#i-gear"/></svg><span>Einstellungen</span></button>
 </nav>
 
-<!-- Vormerk-/Freischalt-Sheet (Probe-Zugang) -->
+<!-- Freischalt-Store (Kapitel, Pakete, Handouts, Q&A) -->
 <div class="sheet-ov" id="sheetOv" role="presentation">
-  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheet sheet-store" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
     <div class="grab" aria-hidden="true"></div>
-    <h3 id="sheetTitle">OMIK komplett freischalten</h3>
-    <p class="sub" id="sheetSub">Alle 10 Kapitel als interaktive Lektionen mit Selbsttests, dazu Live&#8209;Q&amp;A in kleiner Gruppe.</p>
-    <div class="price-line num"><span class="now">39,90&nbsp;€</span><span class="old">69,00&nbsp;€ im Einzelkauf (10&nbsp;&times;&nbsp;6,90&nbsp;€)</span></div>
-    <p class="sub num" style="margin-top:-6px">Frühbucherpreis bis 21.07.2026. Preis umsatzsteuerfrei.</p>
-    <form id="sheetForm">
-      <div class="field"><label for="vmName">Vorname</label><input type="text" id="vmName" autocomplete="given-name" placeholder="Dein Vorname" required></div>
-      <div class="field"><label for="vmMail">E&#8209;Mail&#8209;Adresse</label><input type="email" id="vmMail" autocomplete="email" placeholder="name@beispiel.de" required></div>
-      <label class="chk"><input type="checkbox" id="vmDs" required><span>Ich bin einverstanden, dass meine Angaben zur Vormerkung verarbeitet werden. Details in der <a href="#" data-tab="datenschutz" onclick="return false" style="color:var(--accent-deep)">Datenschutzerklärung</a>.</span></label>
-      <div class="err" id="sheetErr">Bitte Vorname, E&#8209;Mail und Einverständnis ausfüllen.</div>
-      <button type="submit" class="btn btn-primary btn-block">Unverbindlich vormerken</button>
-      <button type="button" class="btn btn-ghost btn-block" style="margin-top:8px" id="sheetClose">Später</button>
-    </form>
-    <div class="ok" id="sheetOk"></div>
-    <p class="placeholder-note" style="margin-top:12px">Kostenlos und unverbindlich, es entsteht keine Zahlungspflicht. Die Übermittlung und der Checkout laufen über euer Backend ({{VORMERK_URL}}, {{CHECKOUT_URL}}), hier wird nur lokal bestätigt.</p>
+    <h3 id="sheetTitle">Freischalten</h3>
+    <div id="storeBody"></div>
+    <button type="button" class="btn btn-ghost btn-block" style="margin-top:10px" id="sheetClose">Schließen</button>
+    <p class="placeholder-note" style="margin-top:10px">Vormerkungen sind kostenlos und unverbindlich. Preise umsatzsteuerfrei.</p>
   </div>
 </div>
 
@@ -824,7 +1051,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
       <h2>So fühlt sich das an.</h2>
       <p class="sub">Eine Frage, ein Klick, sofort Klarheit. Genau so arbeitest du hier in jedem Kapitel.</p>
       <div class="ob-q">
-        <div class="stem">Was gilt bei einer linearen Nutzenfunktion (Risikoneutralität)?</div>
+        <div class="stem">Was gilt für das sichere Ereignis, also den gesamten Ergebnisraum &Omega;?</div>
         <div id="obQOpts"></div>
         <div class="fb" id="obQFb"></div>
       </div>
@@ -833,7 +1060,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
 
     <div class="ob-pane" data-pane="3">
       <h2>Kapitel 2 ist frei.</h2>
-      <p class="sub">Wahrscheinlichkeitsrechnung ist deine Gratis&#8209;Lektion: Einstieg, Rechenweg, Beispiel und der Selbsttest mit 16 Fragen. Danach entscheidest du selbst.</p>
+      <p class="sub">Unsicherheit &amp; Erwartungsnutzen ist deine Gratis&#8209;Lektion: Einstieg, Rechenweg, Beispiel und der Selbsttest mit 16 Fragen. Danach entscheidest du selbst.</p>
       <div class="ob-cta">
         <button class="btn btn-primary btn-block" id="obStart">Kapitel 2 starten <svg class="i arrow"><use href="#i-arrow"/></svg></button>
         <button class="btn btn-silver btn-block" id="obLook">Erst umsehen</button>
@@ -913,7 +1140,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
   <div class="formelbox"><div class="f">ε = (∂x/∂p) · (p/x)</div></div>
   <p>Beispiel: Reagiert die Nachfrage mit ε = −0,5, so senkt eine Preiserhöhung von 1 % die Menge um 0,5 % (dem Betrag nach <b>unelastisch</b>). Entlang einer linearen Nachfragekurve ist die Elastizität übrigens nicht konstant, oben groß, in der Mitte −1, unten null.</p>
   <div class="callout" style="border-left-color:var(--ok)">
-<b>Kern-Erkenntnis:</b> Das ganze Kapitel steht auf zwei Beinen: der <b>Budgetgerade</b> (was ist erschwinglich?) und den <b>Präferenzen</b> (was ist gewünscht?). Ihr Zusammentreffen im Punkt <b>GRS = Preisverhältnis</b> liefert das Optimum, die individuelle Nachfrage. Auf genau dieser Nutzen- und Präferenzlogik baut Kapitel 2 (<b>Unsicherheit &amp; Erwartungsnutzen</b>) auf, und später führt derselbe Optimierungsgedanke zur <b>Unternehmens- und Produktionstheorie</b> (ab Kapitel 3). Wer Budgetgerade, GRS und Optimumbedingung sicher trennt, hat den Klausur-Einstieg schon gelöst.
+<b>Kern-Erkenntnis:</b> Das ganze Kapitel steht auf zwei Beinen: der <b>Budgetgerade</b> (was ist erschwinglich?) und den <b>Präferenzen</b> (was ist gewünscht?). Ihr Zusammentreffen im Punkt <b>GRS = Preisverhältnis</b> liefert das Optimum, die individuelle Nachfrage. Auf genau dieser Nutzen- und Präferenzlogik baut Kapitel 2 (<b>Unsicherheit &amp; Erwartungsnutzen</b>) auf, und später führt derselbe Optimierungsgedanke zur <b>Unternehmens- und Produktionstheorie</b> (ab Kapitel 2). Wer Budgetgerade, GRS und Optimumbedingung sicher trennt, hat den Klausur-Einstieg schon gelöst.
   </div>
 </div>
 
@@ -953,7 +1180,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
     <span class="ic"><svg class="i" style="width:17px"><use href="#i-diamond"/></svg></span>
     <div>
       <div class="kl">Kern</div>
-      <p>Das ganze Kapitel steht auf zwei Beinen: der <b>Budgetgerade</b> (was ist erschwinglich?) und den <b>Präferenzen</b> (was ist gewünscht?). Ihr Zusammentreffen im Punkt <b>GRS = Preisverhältnis</b> liefert das Optimum, die individuelle Nachfrage. Auf genau dieser Nutzen- und Präferenzlogik baut Kapitel 2 (<b>Unsicherheit &amp; Erwartungsnutzen</b>) auf, und später führt derselbe Optimierungsgedanke zur <b>Unternehmens- und Produktionstheorie</b> (ab Kapitel 3). Wer Budgetgerade, GRS und Optimumbedingung sicher trennt, hat den Klausur-Einstieg schon gelöst.</p>
+      <p>Das ganze Kapitel steht auf zwei Beinen: der <b>Budgetgerade</b> (was ist erschwinglich?) und den <b>Präferenzen</b> (was ist gewünscht?). Ihr Zusammentreffen im Punkt <b>GRS = Preisverhältnis</b> liefert das Optimum, die individuelle Nachfrage. Auf genau dieser Nutzen- und Präferenzlogik baut Kapitel 2 (<b>Unsicherheit &amp; Erwartungsnutzen</b>) auf, und später führt derselbe Optimierungsgedanke zur <b>Unternehmens- und Produktionstheorie</b> (ab Kapitel 2). Wer Budgetgerade, GRS und Optimumbedingung sicher trennt, hat den Klausur-Einstieg schon gelöst.</p>
     </div>
   </div>
   <h3>Häufige Fragen</h3>
@@ -1117,7 +1344,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
     <span class="ic"><svg class="i" style="width:17px"><use href="#i-diamond"/></svg></span>
     <div>
       <div class="kl">Kern</div>
-      <p>Die <b>Krümmung der Nutzenfunktion</b> ist der Schlüssel: konkav → risikoavers → RP &gt; 0. Das baut direkt auf der <b>Haushaltstheorie</b> (Kapitel 1: Nutzen &amp; Präferenzen) auf und liefert die Denkweise, mit der später auch <b>Unternehmensentscheidungen unter Risiko</b> (ab Kapitel 3) bewertet werden. Wer E(X), E(U), SÄ und RP sicher trennt, hat den halben Aufgabentyp schon gelöst.</p>
+      <p>Die <b>Krümmung der Nutzenfunktion</b> ist der Schlüssel: konkav → risikoavers → RP &gt; 0. Das baut direkt auf der <b>Haushaltstheorie</b> (Kapitel 1: Nutzen &amp; Präferenzen) auf und liefert die Denkweise, mit der später auch <b>Unternehmensentscheidungen unter Risiko</b> (ab Kapitel 2) bewertet werden. Wer E(X), E(U), SÄ und RP sicher trennt, hat den halben Aufgabentyp schon gelöst.</p>
     </div>
   </div>
   <h3>Häufige Fragen</h3>
@@ -1153,7 +1380,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
 </template>
 <template id="lesson-3">
 <div class="lstep" data-name="Einstieg">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Kapitel 3 · Einstieg</span>
+  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Kapitel 2 · Einstieg</span>
   <h2>Unternehmens- &amp; Produktionstheorie</h2>
   <div class="storybox">
     <p>Stell dir vor, du betreibst eine kleine <b>Backstube</b> und willst jeden Tag eine feste Menge Brot backen. Dafür brauchst du zwei Zutaten der besonderen Art: <b>Arbeit</b> (Bäckerinnen und Bäcker) und <b>Kapital</b> (Öfen, Knetmaschinen). Dieselbe Menge Brot kannst du auf verschiedenen Wegen herstellen, viel Handarbeit und wenige Maschinen, oder wenig Personal und dafür moderne Öfen. Beide Wege führen zum gleichen Output, kosten dich aber <i>unterschiedlich viel</i>.</p>
@@ -1329,7 +1556,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
 <div class="lstep" data-name="Fix &amp; variabel">
   <span class="eyebrow">① Abschnitt 1 von 4</span>
   <h2>Fixkosten und variable Kosten</h2>
-  <p>Alles beginnt mit der <span class="mark-term" data-tip="C(x): die gesamten Produktionskosten in Abhängigkeit von der Menge x. Sie entsteht in Kapitel 3 aus der Kostenminimierung, hier ist sie unser Startpunkt.">Kostenfunktion</span> C(x). Für jede Klausuraufgabe zerlegst du sie zuerst in ihre zwei Bausteine:</p>
+  <p>Alles beginnt mit der <span class="mark-term" data-tip="C(x): die gesamten Produktionskosten in Abhängigkeit von der Menge x. Sie entsteht in Kapitel 2 aus der Kostenminimierung, hier ist sie unser Startpunkt.">Kostenfunktion</span> C(x). Für jede Klausuraufgabe zerlegst du sie zuerst in ihre zwei Bausteine:</p>
   <div class="formelbox"><div class="f">C(x) = FC + VC(x)</div></div>
   <p>Die <span class="mark-term" data-tip="FC: mengenunabhängige Kosten (Miete, Leasing, Grundgebühren). Ablesbar als C(0) = FC, sie fallen auch bei Menge null an.">Fixkosten</span> FC hängen nicht von der Menge ab, im Food-Truck sind das Standplatz und Leasingrate. Du liest sie direkt als konstanten Summanden ab: C(0) = FC. Die <span class="mark-term" data-tip="VC(x): mengenabhängige Kosten (Material, Energie, Akkordlöhne). Es gilt VC(0) = 0, ohne Produktion fallen sie nicht an.">variablen Kosten</span> VC(x) wachsen dagegen mit jeder Einheit und erfüllen VC(0) = 0. Wichtig für später: <b>Fix ist eine Frage der Frist.</b> Kurzfristig liegen Maschinen und Verträge fest, langfristig ist alles variabel. Darauf kommen wir in Abschnitt ④ zurück.</p>
 </div>
@@ -1415,7 +1642,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
     <span class="ic"><svg class="i" style="width:17px"><use href="#i-diamond"/></svg></span>
     <div>
       <div class="kl">Kern</div>
-      <p>Zerlege jede Kostenfunktion in <b>FC + VC(x)</b> und bilde daraus DK, DVK, DFK und GK, dann sind Betriebsminimum (Min DVK) und Betriebsoptimum (Min DK) nur noch Ableitungsroutine mit eingebauter Kontrolle: <b>Die GK-Kurve schneidet beide Durchschnittskurven exakt im Minimum.</b> Das baut direkt auf <b>Kapitel 3</b> auf (dort entsteht die Kostenfunktion aus Produktionsfunktion und Kostenminimierung) und liefert das Fundament für <b>Kapitel 5</b>: Dort wird die GK-Kurve oberhalb des Betriebsminimums zur individuellen Angebotskurve.</p>
+      <p>Zerlege jede Kostenfunktion in <b>FC + VC(x)</b> und bilde daraus DK, DVK, DFK und GK, dann sind Betriebsminimum (Min DVK) und Betriebsoptimum (Min DK) nur noch Ableitungsroutine mit eingebauter Kontrolle: <b>Die GK-Kurve schneidet beide Durchschnittskurven exakt im Minimum.</b> Das baut direkt auf <b>Kapitel 2</b> auf (dort entsteht die Kostenfunktion aus Produktionsfunktion und Kostenminimierung) und liefert das Fundament für <b>Kapitel 5</b>: Dort wird die GK-Kurve oberhalb des Betriebsminimums zur individuellen Angebotskurve.</p>
     </div>
   </div>
   <h3>Häufige Fragen</h3>
@@ -2438,7 +2665,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
 
 <script id="qbank-1" type="application/json">{"topic": "OMIK · Kapitel 1", "engine": {"startDifficulty": "mittel", "startCount": 5, "passThreshold": 3, "onPass": "schwer", "onFail": "leicht", "followupCount": 2, "moreCount": 3}, "questions": [{"id": "m1", "difficulty": "mittel", "subtopic": "Budgetgerade", "type": "single", "stem": "Was beschreibt die Budgetgerade eines Haushalts?", "options": ["Alle Güterbündel, die der Haushalt unabhängig von seinem verfügbaren Einkommen am liebsten hätte", "Alle Güterbündel, deren Ausgaben das Einkommen genau ausschöpfen", "Alle Güterbündel, die dem Haushalt exakt denselben Gesamtnutzen stiften und ihn indifferent lassen", "Nur das eine Güterbündel, das den Nutzen des Haushalts unter allen Umständen maximiert"], "answer": "Alle Güterbündel, deren Ausgaben das Einkommen genau ausschöpfen", "feedback": "Die <b>Budgetgerade<\/b> zeigt alle Bündel mit I = P<sub>A<\/sub>·x<sub>A<\/sub> + P<sub>B<\/sub>·x<sub>B<\/sub>: Einnahmen = Ausgaben. Gleicher Nutzen kennzeichnet dagegen die Indifferenzkurve."}, {"id": "m2", "difficulty": "mittel", "subtopic": "Steigung der Budgetgerade", "type": "single", "stem": "Wie groß ist die Steigung der Budgetgerade, wenn Gut A auf der x-Achse und Gut B auf der y-Achse abgetragen wird?", "options": ["&minus;P<sub>B<\/sub>/P<sub>A<\/sub>, das negative, aber vertauschte Verhältnis der Güterpreise", "&minus;P<sub>A<\/sub>/P<sub>B<\/sub>, das negative Verhältnis der beiden Güterpreise", "+P<sub>A<\/sub>/P<sub>B<\/sub>, das positive Verhältnis der beiden Güterpreise ohne Vorzeichen", "&minus;I/P<sub>B<\/sub>, das ist jedoch der Achsenabschnitt und nicht die Steigung"], "answer": "&minus;P<sub>A<\/sub>/P<sub>B<\/sub>, das negative Verhältnis der beiden Güterpreise", "feedback": "Stellt man I = P<sub>A<\/sub>·x<sub>A<\/sub> + P<sub>B<\/sub>·x<sub>B<\/sub> um, folgt x<sub>B<\/sub> = I/P<sub>B<\/sub> &minus; (P<sub>A<\/sub>/P<sub>B<\/sub>)·x<sub>A<\/sub>: die Steigung ist <b>&minus;P<sub>A<\/sub>/P<sub>B<\/sub><\/b>."}, {"id": "m3", "difficulty": "mittel", "subtopic": "Nutzenmaximierung (Cobb-Douglas)", "type": "numeric", "stem": "Ein Haushalt mit der Nutzenfunktion U = x&middot;y hat ein Einkommen von 180 &euro;. Gut x kostet 5 &euro;. Welche Menge x* fragt er im Optimum nach?", "answer": 18, "tolerance": 0.01, "feedback": "Bei U = x&middot;y entfällt auf jedes Gut die Hälfte des Einkommens: x* = I/(2&middot;P<sub>x<\/sub>) = 180/(2&middot;5) = <b>18<\/b>."}, {"id": "m4", "difficulty": "mittel", "subtopic": "Optimumbedingung", "type": "single", "stem": "Welche Bedingung kennzeichnet das Haushaltsoptimum im Inneren (kein Randfall)?", "options": ["Die Ausgaben für Gut A sind im Optimum stets genau gleich den Ausgaben für Gut B", "Die Grenzrate der Substitution ist gleich dem Preisverhältnis der beiden Güter", "Der Grenznutzen von Gut A ist ganz unmittelbar gleich dem Grenznutzen von Gut B", "Der Preis von Gut A ist im optimalen Punkt exakt gleich dem Preis von Gut B"], "answer": "Die Grenzrate der Substitution ist gleich dem Preisverhältnis der beiden Güter", "feedback": "Im inneren Optimum tangiert die Indifferenzkurve die Budgetgerade: <b>GRS = P<sub>A<\/sub>/P<sub>B<\/sub><\/b>. Gleiche Grenznutzen oder gleiche Preise sind nicht gefordert."}, {"id": "m5", "difficulty": "mittel", "subtopic": "Indifferenzkurven", "type": "single", "stem": "Warum sind Indifferenzkurven bei üblichen Präferenzen konvex zum Ursprung gekrümmt?", "options": ["Weil einseitige Extrembündel gegenüber ausgewogenen Mischbündeln deutlich bevorzugt werden", "Weil mit steigendem Einkommen grundsätzlich beide nachgefragten Mengen exakt gleich stark wachsen", "Weil der Haushalt beide Güter zwingend im festen Mengenverhältnis von 1:1 konsumieren muss", "Weil ausgewogene Güterbündel gegenüber einseitigen Extrembündeln bevorzugt werden"], "answer": "Weil ausgewogene Güterbündel gegenüber einseitigen Extrembündeln bevorzugt werden", "feedback": "Werden <b>durchschnittliche Bündel<\/b> extremen vorgezogen, verläuft die Indifferenzkurve konvex, die Grenzrate der Substitution nimmt entlang der Kurve ab."}, {"id": "s1", "difficulty": "schwer", "subtopic": "Ausgabenaufteilung (Cobb-Douglas)", "type": "numeric", "stem": "Ein Haushalt mit der Nutzenfunktion U = x&middot;y hat ein Einkommen von 170 &euro;. Wie viel &euro; gibt er im Optimum für Gut x aus?", "answer": 85, "tolerance": 0.01, "feedback": "Bei U = x&middot;y entfällt auf jedes Gut die <b>Hälfte<\/b> des Einkommens: Ausgaben für x = 170/2 = <b>85 &euro;<\/b> (unabhängig vom konkreten Preis)."}, {"id": "s2", "difficulty": "schwer", "subtopic": "Randlösung (perfekte Substitute)", "type": "single", "stem": "Ein Haushalt betrachtet zwei Güter als vollkommene Substitute (U = x + y). Was folgt für sein Optimum, wenn die beiden Güter unterschiedliche Preise haben?", "options": ["Er gibt sein gesamtes Einkommen für das billigere Gut aus, eine Randlösung", "Er teilt sein gesamtes Einkommen stets exakt hälftig auf die beiden Güter auf", "Er kauft von beiden Gütern immer gleich viele Einheiten, eine innere Lösung", "Er konsumiert beide Güter genau im umgekehrten Verhältnis ihrer jeweiligen Preise"], "answer": "Er gibt sein gesamtes Einkommen für das billigere Gut aus, eine Randlösung", "feedback": "Bei perfekten Substituten ist die GRS <b>konstant<\/b> und stimmt nicht mit dem Preisverhältnis überein &rarr; <b>Randlösung<\/b>: das ganze Budget fließt in das relativ billigere Gut."}, {"id": "s3", "difficulty": "schwer", "subtopic": "Substitutions- und Einkommenseffekt", "type": "numeric", "stem": "Nach einer Preiserhöhung beträgt der Gesamteffekt auf die Nachfrage nach Gut A &minus;47 Einheiten. Der Substitutionseffekt macht &minus;30 Einheiten aus. Wie groß ist der Einkommenseffekt (in Einheiten)?", "answer": -17, "tolerance": 0.01, "feedback": "Gesamteffekt = Substitutionseffekt + Einkommenseffekt &rarr; EE = GE &minus; SE = (&minus;47) &minus; (&minus;30) = <b>&minus;17<\/b> (normales Gut: beide Effekte gleichgerichtet)."}, {"id": "s4", "difficulty": "schwer", "subtopic": "Substitutionseffekt", "type": "single", "stem": "Der Preis von Gut A steigt. In welche Richtung wirkt der reine Substitutionseffekt auf die nachgefragte Menge von Gut A?", "options": ["Er senkt die Nachfrage nach Gut A, weil A relativ zu B teurer geworden ist", "Er senkt zugleich die Nachfrage nach beiden Gütern immer im exakt selben Verhältnis", "Er hebt die Nachfrage nach Gut A, weil A relativ zu Gut B ja teurer geworden ist", "Er lässt die Nachfrage nach Gut A vollkommen unverändert, da allein das Einkommen zählt"], "answer": "Er senkt die Nachfrage nach Gut A, weil A relativ zu B teurer geworden ist", "feedback": "Der <b>Substitutionseffekt<\/b> isoliert die relative Preisänderung: das teurer gewordene Gut A wird durch das billigere Gut B ersetzt &rarr; weniger A, mehr B."}, {"id": "s5", "difficulty": "schwer", "subtopic": "Giffen-Gut", "type": "single", "stem": "Bei welchem Gütertyp kann der Einkommenseffekt dem Substitutionseffekt so stark entgegenwirken, dass die Nachfrage bei einer Preiserhöhung sogar steigt?", "options": ["Bei einem gewöhnlichen normalen Gut, mit klar positivem, mitlaufendem Einkommenseffekt", "Bei einem vollkommenen Substitut, mit konstanter Grenzrate der Substitution im Verlauf", "Bei einem Giffen-Gut, einem extrem inferioren Gut mit übergroßem Einkommenseffekt", "Bei einem typischen Luxusgut, mit besonders hoher und recht stabiler Einkommenselastizität"], "answer": "Bei einem Giffen-Gut, einem extrem inferioren Gut mit übergroßem Einkommenseffekt", "feedback": "Beim <b>Giffen-Gut<\/b> (stark inferior) überkompensiert der Einkommenseffekt den Substitutionseffekt &rarr; die Nachfrage steigt bei Preiserhöhung (Ausnahme vom Gesetz der Nachfrage)."}, {"id": "s6", "difficulty": "schwer", "subtopic": "Punktelastizität", "type": "numeric", "stem": "Eine Nachfragefunktion hat an der Stelle p = 30, x = 90 die Ableitung &part;x/&part;p = &minus;1,5. Wie groß ist die Preiselastizität der Nachfrage an diesem Punkt?", "answer": -0.5, "tolerance": 0.01, "feedback": "&epsilon; = (&part;x/&part;p)&middot;(p/x) = (&minus;1,5)&middot;(30/90) = &minus;1,5&middot;(1/3) = <b>&minus;0,5<\/b> (dem Betrag nach unelastisch)."}, {"id": "l1", "difficulty": "leicht", "subtopic": "Budgetgerade", "type": "single", "stem": "Was gilt entlang der Budgetgerade für einen Haushalt?", "options": ["Die Preise der beiden betrachteten Güter sind entlang der Geraden immer identisch", "Die gesamten Ausgaben für alle Güter entsprechen genau dem Einkommen", "Die gesamten Ausgaben für alle Güter liegen deutlich unterhalb des verfügbaren Einkommens", "Der Nutzen aus jedem einzelnen Güterbündel ist an jeder Stelle exakt gleich hoch"], "answer": "Die gesamten Ausgaben für alle Güter entsprechen genau dem Einkommen", "feedback": "Auf der <b>Budgetgerade<\/b> gilt Einkommen = Ausgaben: I = P<sub>A<\/sub>·x<sub>A<\/sub> + P<sub>B<\/sub>·x<sub>B<\/sub>. Gleicher Nutzen kennzeichnet die Indifferenzkurve."}, {"id": "l2", "difficulty": "leicht", "subtopic": "Präferenzen", "type": "single", "stem": "Was besagen übliche (konvexe) Präferenzen über gemischte Güterbündel?", "options": ["Nur Bündel mit genau gleich vielen Einheiten beider Güter gelten überhaupt als zulässig", "Alle Güterbündel mit exakt gleichem Gesamtpreis stiften dem Haushalt stets denselben Nutzen", "Ausgewogene Mischungen werden tendenziell einseitigen Extrembündeln vorgezogen", "Einseitige Extrembündel werden ausgewogenen Mischungen sehr klar und deutlich vorgezogen"], "answer": "Ausgewogene Mischungen werden tendenziell einseitigen Extrembündeln vorgezogen", "feedback": "Werden <b>durchschnittliche Bündel<\/b> extremen vorgezogen, ergeben sich konvexe Indifferenzkurven, die Grundlage des inneren Optimums."}, {"id": "l3", "difficulty": "leicht", "subtopic": "Inferiores Gut", "type": "single", "stem": "Wie ist ein &bdquo;inferiores Gut&ldquo; definiert?", "options": ["Ein Gut, dessen nachgefragte Menge bei steigendem Einkommen spürbar weiter ansteigt", "Ein Gut, dessen nachgefragte Menge bei steigendem Einkommen sinkt", "Ein Gut, dessen Marktpreis bei steigendem Einkommen der Haushalte immer stark zunimmt", "Ein Gut, das ausschließlich von Haushalten mit sehr hohem Einkommen nachgefragt wird"], "answer": "Ein Gut, dessen nachgefragte Menge bei steigendem Einkommen sinkt", "feedback": "Beim <b>inferioren Gut<\/b> gilt E&uarr; &rarr; x&darr;. Gegenteil ist das normale Gut (E&uarr; &rarr; x&uarr;)."}, {"id": "l4", "difficulty": "leicht", "subtopic": "Preiselastizität", "type": "single", "stem": "Die Preiselastizität der Nachfrage eines gewöhnlichen Gutes beträgt &minus;0,5. Wie ist dieser Wert zu deuten?", "options": ["Steigt der Preis um 1&nbsp;%, steigt die nachgefragte Menge ihrerseits um volle 0,5&nbsp;%", "Steigt der Preis um 1&nbsp;%, sinkt die nachgefragte Menge um 0,5&nbsp;%", "Steigt der Preis um 1&nbsp;%, sinkt die nachgefragte Menge gleich um ganze 2&nbsp;% ab", "Steigt der Preis um 0,5&nbsp;%, sinkt die nachgefragte Menge daraufhin um genau 1&nbsp;%"], "answer": "Steigt der Preis um 1&nbsp;%, sinkt die nachgefragte Menge um 0,5&nbsp;%", "feedback": "&epsilon; = prozentuale Mengenänderung je 1&nbsp;% Preisänderung. &epsilon; = &minus;0,5: 1&nbsp;% Preis&uarr; &rarr; 0,5&nbsp;% Menge&darr; (dem Betrag nach unelastisch)."}, {"id": "l5", "difficulty": "leicht", "subtopic": "Achsenabschnitt der Budgetgerade", "type": "numeric", "stem": "Ein Haushalt hat ein Einkommen von 220 &euro;. Gut x kostet 11 &euro;. Wie viele Einheiten von Gut x kann er maximal kaufen, wenn er sein gesamtes Einkommen für x ausgibt?", "answer": 20, "tolerance": 0.01, "feedback": "Maximale Menge = I/P<sub>x<\/sub> = 220/11 = <b>20<\/b> (das ist der Achsenabschnitt der Budgetgerade auf der x-Achse)."}]}</script>
 <script id="qbank-2" type="application/json">{"topic": "OMIK · Kapitel 2", "engine": {"startDifficulty": "mittel", "startCount": 5, "passThreshold": 3, "onPass": "schwer", "onFail": "leicht", "followupCount": 2, "moreCount": 3}, "questions": [{"id": "m1", "difficulty": "mittel", "subtopic": "Erwartungsnutzen", "type": "single", "stem": "Wie berechnet man den Erwartungsnutzen E(U) einer unsicheren Situation?", "options": ["Die Nutzenwerte der Ergebnisse mit ihren Wahrscheinlichkeiten gewichten und aufsummieren", "Den Nutzen des größten möglichen Ergebnisses als alleinigen Maßstab nehmen", "Zuerst den mittleren Auszahlungsbetrag bilden und daraus den Nutzen ziehen", "Die Auszahlungsbeträge der Ergebnisse mit ihren Wahrscheinlichkeiten gewichten und aufsummieren"], "answer": "Die Nutzenwerte der Ergebnisse mit ihren Wahrscheinlichkeiten gewichten und aufsummieren", "feedback": "E(U) = &#931; p<sub>i<\/sub> &middot; u(x<sub>i<\/sub>): erst den <b>Nutzen jedes Ergebnisses<\/b>, dann mit der Wahrscheinlichkeit gewichten. Das Gewichten der Beträge liefert dagegen E(X)."}, {"id": "m2", "difficulty": "mittel", "subtopic": "Risikoaversion", "type": "single", "stem": "Ein Haushalt hat eine konkave Nutzenfunktion. Wie verhält sich U(E(X)) zum Erwartungsnutzen E(U)?", "options": ["U(E(X)) ist größer als E(U), der Haushalt ist risikoavers", "U(E(X)) ist genau gleich E(U), der Haushalt ist risikoneutral", "U(E(X)) hängt allein vom Startvermögen, keine klare Einordnung", "U(E(X)) ist kleiner als E(U), der Haushalt ist risikofreudig"], "answer": "U(E(X)) ist größer als E(U), der Haushalt ist risikoavers", "feedback": "Bei <b>konkaver<\/b> Nutzenfunktion gilt U(E(X)) &gt; E(U): der sichere Erwartungswert wird höher bewertet als die Lotterie &rarr; <b>Risikoaversion<\/b>."}, {"id": "m3", "difficulty": "mittel", "subtopic": "Erwartungsnutzen berechnen", "type": "numeric", "stem": "Eine Lotterie zahlt mit Wahrscheinlichkeit 0,5 einen Betrag von 900 &euro; und mit 0,5 einen Betrag von 8.100 &euro;. Die Nutzenfunktion lautet u(x) = &radic;x. Berechne den Erwartungsnutzen E(U).", "answer": 60, "tolerance": 0.01, "feedback": "E(U) = 0,5&middot;&radic;900 + 0,5&middot;&radic;8100 = 0,5&middot;30 + 0,5&middot;90 = <b>60<\/b>."}, {"id": "m4", "difficulty": "mittel", "subtopic": "Sicherheitsäquivalent", "type": "single", "stem": "Was kennzeichnet das Sicherheitsäquivalent (SÄ) einer Lotterie?", "options": ["Den Erwartungswert der Auszahlungen, vermindert um sämtliche Wahrscheinlichkeiten", "Den sicheren Betrag, dessen Nutzen genau dem Erwartungsnutzen der Lotterie entspricht", "Den sicheren Betrag, dessen Nutzen dem größtmöglichen Ergebnis der Lotterie entspricht", "Den unsicheren Betrag, den die Lotterie im Mittel tatsächlich einmal auszahlt"], "answer": "Den sicheren Betrag, dessen Nutzen genau dem Erwartungsnutzen der Lotterie entspricht", "feedback": "Definition: u(SÄ) = E(U), also SÄ = u<sup>-1<\/sup>(E(U)). Das <b>SÄ<\/b> ist der sichere Betrag mit <b>demselben Nutzen<\/b> wie die riskante Lotterie."}, {"id": "m5", "difficulty": "mittel", "subtopic": "Risikoprämie", "type": "single", "stem": "Wie ist die Risikoprämie (RP) definiert?", "options": ["RP = Sicherheitsäquivalent SÄ &minus; Erwartungswert E(X)", "RP = Erwartungswert E(X) &minus; Sicherheitsäquivalent SÄ", "RP = faire Prämie E(S) &minus; Sicherheitsäquivalent SÄ", "RP = Erwartungswert E(X) &minus; größtmögliche Auszahlung"], "answer": "RP = Erwartungswert E(X) &minus; Sicherheitsäquivalent SÄ", "feedback": "Die <b>RP = E(X) &minus; SÄ<\/b> misst, wie viel Erwartungswert eine risikoaverse Person für Sicherheit aufzugeben bereit ist (bei Risikoaversion positiv)."}, {"id": "s1", "difficulty": "schwer", "subtopic": "Sicherheitsäquivalent berechnen", "type": "numeric", "stem": "Für die Lotterie (0,5 auf 900 &euro;, 0,5 auf 8.100 &euro;, u(x) = &radic;x) ergibt sich E(U) = 60. Wie hoch ist das Sicherheitsäquivalent SÄ (in &euro;)?", "answer": 3600, "tolerance": 1, "feedback": "u(SÄ) = E(U) &rarr; &radic;SÄ = 60 &rarr; SÄ = 60&sup2; = <b>3.600 &euro;<\/b>."}, {"id": "s2", "difficulty": "schwer", "subtopic": "Risikoprämie berechnen", "type": "numeric", "stem": "Dieselbe Lotterie hat den Erwartungswert E(X) = 4.500 &euro; und das Sicherheitsäquivalent SÄ = 3.600 &euro;. Wie hoch ist die Risikoprämie RP (in &euro;)?", "answer": 900, "tolerance": 1, "feedback": "RP = E(X) &minus; SÄ = 4.500 &minus; 3.600 = <b>900 &euro;<\/b>."}, {"id": "s3", "difficulty": "schwer", "subtopic": "Faire Prämie berechnen", "type": "numeric", "stem": "Ein Fahrrad im Wert von 2.000 &euro; wird mit Wahrscheinlichkeit 0,3 gestohlen (Totalschaden). Wie hoch ist die faire Prämie (der erwartete Schaden) in &euro;?", "answer": 600, "tolerance": 1, "feedback": "Faire Prämie = erwarteter Schaden E(S) = 0,3 &middot; 2.000 &euro; = <b>600 &euro;<\/b> (Prämie ohne Risikoaufschlag)."}, {"id": "s4", "difficulty": "schwer", "subtopic": "Gesamtprämie", "type": "single", "stem": "Eine risikoaverse Person versichert sich vollständig. Woraus setzt sich die maximale Gesamtprämie zusammen, die sie zu zahlen bereit ist?", "options": ["Allein aus der fairen Prämie E(S), also dem reinen erwarteten Schaden", "Allein aus der Risikoprämie RP, ganz unabhängig vom erwarteten Schaden", "Aus der fairen Prämie E(S) zuzüglich der Risikoprämie RP", "Aus der fairen Prämie E(S) abzüglich der Risikoprämie RP"], "answer": "Aus der fairen Prämie E(S) zuzüglich der Risikoprämie RP", "feedback": "Gesamtprämie = <b>faire Prämie E(S) + RP<\/b>. Genau dieser Betrag entspricht der Differenz aus Ausgangsvermögen und Sicherheitsäquivalent."}, {"id": "s5", "difficulty": "schwer", "subtopic": "Affine Transformation", "type": "single", "stem": "Die Nutzenfunktion wird positiv affin transformiert: v(x) = a&middot;u(x) + b mit a &gt; 0. Was passiert mit Sicherheitsäquivalent und Risikoprämie?", "options": ["Beide steigen proportional, die Risikoaversion wird dadurch stärker", "Beide sinken auf genau null, die Person wird damit risikoneutral", "Beide bleiben unverändert, die Risikoeinstellung ändert sich nicht", "Nur das Sicherheitsäquivalent ändert sich, die Risikoprämie bleibt gleich"], "answer": "Beide bleiben unverändert, die Risikoeinstellung ändert sich nicht", "feedback": "Eine <b>positive affine Transformation<\/b> beschreibt dieselben Präferenzen: SÄ und RP bleiben <b>unverändert<\/b>, die Risikoeinstellung ist invariant."}, {"id": "s6", "difficulty": "schwer", "subtopic": "Risikofreude", "type": "single", "stem": "Wie erkennt man an der Nutzenfunktion eine risikofreudige Person?", "options": ["Die Nutzenfunktion ist konvex, die Risikoprämie ist dabei ebenfalls null", "Die Nutzenfunktion ist konvex, die Risikoprämie ist negativ (RP &lt; 0)", "Die Nutzenfunktion ist linear, die Risikoprämie ist damit null (RP = 0)", "Die Nutzenfunktion ist konkav, die Risikoprämie ist positiv (RP &gt; 0)"], "answer": "Die Nutzenfunktion ist konvex, die Risikoprämie ist negativ (RP &lt; 0)", "feedback": "Bei <b>konvexer<\/b> Nutzenfunktion gilt U(E(X)) &lt; E(U); das SÄ liegt über E(X), also ist <b>RP &lt; 0<\/b> (risikofreudig)."}, {"id": "l1", "difficulty": "leicht", "subtopic": "Risikoneutralität", "type": "single", "stem": "Was gilt bei einer linearen Nutzenfunktion (Risikoneutralität)?", "options": ["Die Risikoprämie ist negativ; das SÄ liegt über dem Erwartungswert", "Die Risikoprämie ist null; SÄ und Erwartungswert sind exakt gleich", "Die Risikoprämie ist positiv; das SÄ liegt unter dem Erwartungswert", "Die Risikoprämie schwankt; SÄ und Erwartungswert sind selten gleich"], "answer": "Die Risikoprämie ist null; SÄ und Erwartungswert sind exakt gleich", "feedback": "Bei <b>linearer<\/b> Nutzenfunktion zählt nur der Erwartungswert: <b>RP = 0<\/b> und SÄ = E(X)."}, {"id": "l2", "difficulty": "leicht", "subtopic": "Faire Prämie", "type": "single", "stem": "Was versteht man unter der &bdquo;fairen Prämie&ldquo; einer Versicherung?", "options": ["Den halben Erwartungswert, unabhängig vom tatsächlich erwarteten Schaden", "Den erwarteten Schaden E(S), die Prämie ohne jeden Risikoaufschlag", "Den maximal möglichen Schaden, also den schlimmsten denkbaren Verlust", "Den erwarteten Schaden E(S) zuzüglich eines festen Gewinnaufschlags des Versicherers"], "answer": "Den erwarteten Schaden E(S), die Prämie ohne jeden Risikoaufschlag", "feedback": "Die <b>faire Prämie<\/b> entspricht dem <b>erwarteten Schaden E(S)<\/b>; ein risikoneutraler Versicherer verlangt genau diesen Betrag."}, {"id": "l3", "difficulty": "leicht", "subtopic": "Konkave Nutzenfunktion", "type": "single", "stem": "Was bedeutet eine konkave Nutzenfunktion anschaulich?", "options": ["Jeder Euro stiftet stets exakt denselben konstanten Zusatznutzen", "Jeder zusätzliche Euro stiftet weniger Zusatznutzen als der Euro davor", "Jeder zusätzliche Euro stiftet spürbar mehr Zusatznutzen als der Euro davor", "Der Gesamtnutzen sinkt, sobald das Vermögen überhaupt weiter ansteigt"], "answer": "Jeder zusätzliche Euro stiftet weniger Zusatznutzen als der Euro davor", "feedback": "Konkav = <b>abnehmender Grenznutzen<\/b>: der Nutzenzuwachs wird mit steigendem Vermögen kleiner, die Grundlage der Risikoaversion."}, {"id": "l4", "difficulty": "leicht", "subtopic": "Bedeutung SÄ", "type": "single", "stem": "Eine risikoaverse Person wählt zwischen einer Lotterie und einem sicheren Betrag. Was besagt das Sicherheitsäquivalent?", "options": ["Den sicheren Betrag, der immer über dem Erwartungswert der Lotterie liegt", "Den Betrag, den sie zusätzlich zur Lotterie noch geschenkt haben möchte", "Den sicheren Betrag, bei dem sie gerade indifferent zur Lotterie ist", "Den unsicheren Betrag, den die Lotterie am Ende mit Sicherheit auszahlt"], "answer": "Den sicheren Betrag, bei dem sie gerade indifferent zur Lotterie ist", "feedback": "Am <b>SÄ<\/b> ist die Person <b>indifferent<\/b> zwischen sicherem Betrag und Lotterie (gleicher Nutzen). Bei Risikoaversion liegt es unter E(X)."}, {"id": "l5", "difficulty": "leicht", "subtopic": "Erwartungswert berechnen", "type": "numeric", "stem": "Ein Los zahlt mit Wahrscheinlichkeit 0,5 einen Betrag von 1.000 &euro; und mit 0,5 einen Betrag von 3.000 &euro;. Wie hoch ist der Erwartungswert E(X) der Auszahlung (in &euro;)?", "answer": 2000, "tolerance": 1, "feedback": "E(X) = 0,5 &middot; 1.000 + 0,5 &middot; 3.000 = <b>2.000 &euro;<\/b>."}]}</script>
-<script id="qbank-3" type="application/json">{"topic": "OMIK · Kapitel 3", "engine": {"startDifficulty": "mittel", "startCount": 5, "passThreshold": 3, "onPass": "schwer", "onFail": "leicht", "followupCount": 2, "moreCount": 3}, "questions": [{"id": "m1", "difficulty": "mittel", "subtopic": "Produktionsfunktion", "type": "single", "stem": "Was beschreibt eine Produktionsfunktion Y = F(K, L)?", "options": ["Die Gewinnmarge des Betriebs in Abhängigkeit vom jeweils erzielten Verkaufspreis p", "Den maximalen Output Y, der sich aus gegebenen Mengen der Faktoren Kapital K und Arbeit L erzeugen lässt", "Den minimalen Input K, der zur Herstellung eines beliebigen vorgegebenen Outputs Y jederzeit zwingend erforderlich ist", "Die Gesamtkosten des Betriebs als Funktion der eingesetzten Faktorpreise w und r"], "answer": "Den maximalen Output Y, der sich aus gegebenen Mengen der Faktoren Kapital K und Arbeit L erzeugen lässt", "feedback": "Die Produktionsfunktion Y = F(K, L) ordnet jeder Faktorkombination den <b>maximal<\/b> erzeugbaren Output zu, sie beschreibt die Technologie, nicht die Kosten."}, {"id": "m2", "difficulty": "mittel", "subtopic": "GRTS", "type": "single", "stem": "Was misst die Grenzrate der technischen Substitution (GRTS) entlang einer Isoquante?", "options": ["Das umgekehrte Verhältnis der Grenzprodukte &minus;GP<sub>K<\/sub>/GP<sub>L<\/sub>, der Kehrwert der Steigung", "Das Verhältnis der Grenzprodukte &minus;GP<sub>L<\/sub>/GP<sub>K<\/sub>, also die Steigung der Isoquante", "Das Verhältnis der Faktormengen &minus;K/L, also die reine Kapitalintensität des Betriebs", "Das Verhältnis der Gesamtkosten &minus;C/Y, also die Durchschnittskosten je Outputeinheit"], "answer": "Das Verhältnis der Grenzprodukte &minus;GP<sub>L<\/sub>/GP<sub>K<\/sub>, also die Steigung der Isoquante", "feedback": "GRTS = &minus;GP<sub>L<\/sub>/GP<sub>K<\/sub> ist die <b>Steigung der Isoquante<\/b>: um wie viel K sinken kann, wenn L um eine Einheit steigt, bei konstantem Output."}, {"id": "m3", "difficulty": "mittel", "subtopic": "GRTS berechnen", "type": "numeric", "stem": "Ein Betrieb produziert mit Q = &radic;(K&middot;L). Am Punkt K = 77, L = 11 soll der Betrag der GRTS bestimmt werden. Wie groß ist |GRTS| = K/L?", "answer": 7, "tolerance": 0.01, "feedback": "Für Q = &radic;(K&middot;L) gilt |GRTS| = GP<sub>L<\/sub>/GP<sub>K<\/sub> = K/L = 77/11 = <b>7<\/b>."}, {"id": "m4", "difficulty": "mittel", "subtopic": "Isoquante", "type": "single", "stem": "Was stellt eine Isoquante im Faktordiagramm dar?", "options": ["Alle Preiskombinationen (w, r), bei denen der Betrieb seinen Gewinn maximiert", "Alle Faktorkombinationen (K, L), die genau denselben Output Y erzeugen", "Alle Faktorkombinationen (K, L), die genau dieselben Gesamtkosten C verursachen", "Alle Outputmengen, die sich mit einem fest vorgegebenen Budget gerade erreichen lassen"], "answer": "Alle Faktorkombinationen (K, L), die genau denselben Output Y erzeugen", "feedback": "Eine <b>Isoquante<\/b> verbindet alle (K, L) mit gleichem Output (&bdquo;iso&ldquo; = gleich). Gleiche <b>Kosten<\/b> beschreibt dagegen die Isokostengerade."}, {"id": "m5", "difficulty": "mittel", "subtopic": "Kostenminimum", "type": "single", "stem": "Welche Bedingung kennzeichnet das Kostenminimum bei einer inneren Lösung?", "options": ["Die Isokostengerade schneidet die Isoquante an zwei Stellen: w/r &gt; GRTS überall", "Der Output ist maximal beim gegebenen Faktorpreisverhältnis: Y = w/r im Optimum", "Der Betrieb setzt beide Faktoren in exakt gleicher Menge ein: K = L im Optimum", "Die Isokostengerade ist tangential zur Isoquante: w/r = GRTS"], "answer": "Die Isokostengerade ist tangential zur Isoquante: w/r = GRTS", "feedback": "Im inneren Kostenminimum <b>berührt<\/b> die Isokostengerade die Isoquante, ihre Steigungen sind gleich: w/r = GRTS."}, {"id": "s1", "difficulty": "schwer", "subtopic": "Kostenminimum berechnen", "type": "numeric", "stem": "Ein Betrieb mit Q = &radic;(K&middot;L) minimiert die Kosten bei w = 35 und r = 5. Die Tangentialbedingung liefert K/L = w/r. Für L = 9: Wie groß ist der optimale Kapitaleinsatz K*?", "answer": 63, "tolerance": 0.5, "feedback": "K/L = w/r = 35/5 = 7, also K* = 7&middot;L = 7&middot;9 = <b>63<\/b>."}, {"id": "s2", "difficulty": "schwer", "subtopic": "Kostenfunktion auswerten", "type": "numeric", "stem": "Die Kostenfunktion eines Betriebs lautet C(Q) = 2&middot;&radic;(w&middot;r)&middot;Q. Für w = 49, r = 1 und die Menge Q = 9: Wie hoch sind die Gesamtkosten C?", "answer": 126, "tolerance": 0.5, "feedback": "C(Q) = 2&middot;&radic;(49&middot;1)&middot;9 = 2&middot;7&middot;9 = <b>126<\/b>."}, {"id": "s3", "difficulty": "schwer", "subtopic": "Innere vs. Randlösung", "type": "single", "stem": "Beim Kostenminimieren ergibt sich rechnerisch ein negativer optimaler Faktoreinsatz (z.&nbsp;B. L* &lt; 0). Was folgt daraus?", "options": ["Die innere Lösung ist ungültig, es liegt eine Randlösung vor, ein Faktor wird auf 0 gesetzt", "Die innere Lösung bleibt trotzdem gültig, der negative Wert wird einfach als sein Betrag genommen und dann weiterverwendet", "Der Output muss erhöht werden, danach wird der Faktoreinsatz ganz von selbst positiv", "Die Produktionsfunktion ist falsch gewählt, die Aufgabe hat dann gar keine Lösung mehr"], "answer": "Die innere Lösung ist ungültig, es liegt eine Randlösung vor, ein Faktor wird auf 0 gesetzt", "feedback": "Merke: erscheint ein Faktor <b>&lt; 0<\/b>, ist die innere Lösung ungültig. Man setzt den Faktor auf <b>0<\/b> (Randlösung) und rechnet mit der Produktionsfunktion weiter."}, {"id": "s4", "difficulty": "schwer", "subtopic": "Kuhn-Tucker", "type": "single", "stem": "Bei der Kostenminimierung mit Nichtnegativität (K &ge; 0) gilt die Kuhn-Tucker-Komplementarität &alpha;&middot;K = 0. Was besagt sie für den Multiplikator &alpha;?", "options": ["Ist K &gt; 0 (nicht bindend), so ist &alpha; = 0; nur bei K = 0 kann &alpha; &gt; 0 sein", "Der Multiplikator &alpha; ist stets negativ, damit die Kosten überhaupt minimiert werden", "Ist K &gt; 0 (nicht bindend), so ist &alpha; &gt; 0; erst bei K = 0 wird dann &alpha; = 0", "Der Multiplikator &alpha; ist stets gleich dem Faktorpreis r, ganz unabhängig vom Einsatz"], "answer": "Ist K &gt; 0 (nicht bindend), so ist &alpha; = 0; nur bei K = 0 kann &alpha; &gt; 0 sein", "feedback": "Komplementarität &alpha;&middot;K = 0: in der <b>inneren<\/b> Lösung (K &gt; 0) muss &alpha; = 0 sein; ein positives &alpha; tritt nur in der <b>Randlösung<\/b> (K = 0) auf."}, {"id": "s5", "difficulty": "schwer", "subtopic": "Output berechnen", "type": "numeric", "stem": "Ein Betrieb produziert mit Q = &radic;(K&middot;L). Er setzt K = 44 und L = 11 ein. Wie groß ist die erzeugte Menge Q?", "answer": 22, "tolerance": 0.01, "feedback": "Q = &radic;(44&middot;11) = &radic;484 = <b>22<\/b>."}, {"id": "s6", "difficulty": "schwer", "subtopic": "Skalenerträge", "type": "single", "stem": "Eine Cobb-Douglas-Funktion Y = K<sup>0,7<\/sup>&middot;L<sup>0,6<\/sup> wird auf Skalenerträge getestet (alle Faktoren mit &lambda; multipliziert). Was ergibt sich?", "options": ["Konstante Skalenerträge (Exponentensumme genau 1), der Output wächst dann proportional", "Fallende Skalenerträge (Exponentensumme 1,3 &lt; 1), der Output wächst unterproportional", "Steigende Skalenerträge (Exponentensumme 1,3 &gt; 1), der Output wächst überproportional", "Gar keine Skalenerträge (Exponentensumme ist irrelevant), der Output bleibt konstant"], "answer": "Steigende Skalenerträge (Exponentensumme 1,3 &gt; 1), der Output wächst überproportional", "feedback": "&lambda;-Test: Y(&lambda;K, &lambda;L) = &lambda;<sup>0,7+0,6<\/sup>&middot;Y = &lambda;<sup>1,3<\/sup>&middot;Y. Summe <b>1,3 &gt; 1<\/b> &rArr; <b>steigende<\/b> Skalenerträge (überproportional)."}, {"id": "l1", "difficulty": "leicht", "subtopic": "Grenzprodukt", "type": "single", "stem": "Was ist das Grenzprodukt der Arbeit, GP<sub>L<\/sub>?", "options": ["Die zusätzlichen Kosten, die eine zusätzliche Einheit Arbeit verursacht: also &part;C/&part;L", "Der zusätzliche Output, den eine zusätzliche Einheit Arbeit L bringt: &part;Y/&part;L", "Der gesamte Output geteilt durch die eingesetzte Menge Arbeit L: also Y/L insgesamt", "Die zusätzliche Menge Kapital, die eine Einheit Arbeit ersetzen kann: also &part;K/&part;L"], "answer": "Der zusätzliche Output, den eine zusätzliche Einheit Arbeit L bringt: &part;Y/&part;L", "feedback": "GP<sub>L<\/sub> = &part;Y/&part;L ist der <b>Output-Zuwachs<\/b> je zusätzlicher Arbeitseinheit. Y/L wäre dagegen das <i>Durchschnitts<\/i>produkt."}, {"id": "l2", "difficulty": "leicht", "subtopic": "Abnehmender Grenzertrag", "type": "single", "stem": "Bei partieller Faktorvariation gilt GP<sub>L<\/sub> &gt; 0, aber die zweite Ableitung Y&Prime;<sub>L<\/sub> &lt; 0. Was bedeutet das?", "options": ["Der Output bleibt konstant, weil sich die beiden Effekte exakt gegenseitig aufheben hier", "Der Output steigt mit L, und jede weitere Einheit bringt sogar immer mehr dazu als davor", "Der Output steigt mit L, aber jede weitere Einheit bringt immer weniger dazu, abnehmender Grenzertrag", "Der Output sinkt mit L, und jede weitere zusätzliche Einheit zieht ihn dabei sogar noch deutlich stärker herunter"], "answer": "Der Output steigt mit L, aber jede weitere Einheit bringt immer weniger dazu, abnehmender Grenzertrag", "feedback": "GP<sub>L<\/sub> &gt; 0: der Output <b>steigt<\/b>. Y&Prime;<sub>L<\/sub> &lt; 0: der Zuwachs <b>wird kleiner<\/b>, die Produktionsfunktion ist konkav (abnehmender Grenzertrag)."}, {"id": "l3", "difficulty": "leicht", "subtopic": "Konstante Skalenerträge", "type": "single", "stem": "Wann liegen bei einer Cobb-Douglas-Funktion Y = K<sup>a<\/sup>&middot;L<sup>b<\/sup> konstante Skalenerträge vor?", "options": ["Wenn die Exponentensumme a + b &gt; 1 ist, denn dann verdoppelt sich der Output genau so", "Wenn die Exponentensumme a + b = 1 ist, denn dann gilt F(&lambda;K, &lambda;L) = &lambda;&middot;F(K, L)", "Wenn beide Exponenten gleich sind (a = b), ganz unabhängig von ihrer konkreten Höhe", "Wenn die beiden Faktorpreise exakt gleich hoch sind (w = r), denn dann werden die beiden Faktoren völlig gleich behandelt"], "answer": "Wenn die Exponentensumme a + b = 1 ist, denn dann gilt F(&lambda;K, &lambda;L) = &lambda;&middot;F(K, L)", "feedback": "F(&lambda;K, &lambda;L) = &lambda;<sup>a+b<\/sup>&middot;F(K, L). Nur bei <b>a + b = 1<\/b> wächst der Output proportional (&lambda;<sup>1<\/sup>), konstante Skalenerträge."}, {"id": "l4", "difficulty": "leicht", "subtopic": "Isokostengerade", "type": "single", "stem": "Die Isokostengerade lautet C = w&middot;L + r&middot;K. Welche Steigung hat sie im (L, K)-Diagramm?", "options": ["&minus;r/w, das negative Verhältnis der beiden Faktorpreise Kapital zu Arbeit hier", "&minus;w/r, das negative Verhältnis der beiden Faktorpreise Arbeit zu Kapital", "&minus;C/r, das ist in Wahrheit nur der Achsenabschnitt auf der Kapitalachse K", "&minus;K/L, das negative Verhältnis der beiden eingesetzten Faktormengen im Punkt"], "answer": "&minus;w/r, das negative Verhältnis der beiden Faktorpreise Arbeit zu Kapital", "feedback": "Nach K auflösen: K = C/r &minus; (w/r)&middot;L. Die Steigung ist <b>&minus;w/r<\/b>; C/r ist nur der Achsenabschnitt."}, {"id": "l5", "difficulty": "leicht", "subtopic": "Gesamtkosten berechnen", "type": "numeric", "stem": "Ein Betrieb setzt L = 5 Einheiten Arbeit (Lohn w = 7) und K = 11 Einheiten Kapital (Zins r = 9) ein. Wie hoch sind die Gesamtkosten C = w&middot;L + r&middot;K?", "answer": 134, "tolerance": 0.5, "feedback": "C = w&middot;L + r&middot;K = 7&middot;5 + 9&middot;11 = 35 + 99 = <b>134<\/b>."}]}</script>
+<script id="qbank-3" type="application/json">{"topic": "OMIK · Kapitel 2", "engine": {"startDifficulty": "mittel", "startCount": 5, "passThreshold": 3, "onPass": "schwer", "onFail": "leicht", "followupCount": 2, "moreCount": 3}, "questions": [{"id": "m1", "difficulty": "mittel", "subtopic": "Produktionsfunktion", "type": "single", "stem": "Was beschreibt eine Produktionsfunktion Y = F(K, L)?", "options": ["Die Gewinnmarge des Betriebs in Abhängigkeit vom jeweils erzielten Verkaufspreis p", "Den maximalen Output Y, der sich aus gegebenen Mengen der Faktoren Kapital K und Arbeit L erzeugen lässt", "Den minimalen Input K, der zur Herstellung eines beliebigen vorgegebenen Outputs Y jederzeit zwingend erforderlich ist", "Die Gesamtkosten des Betriebs als Funktion der eingesetzten Faktorpreise w und r"], "answer": "Den maximalen Output Y, der sich aus gegebenen Mengen der Faktoren Kapital K und Arbeit L erzeugen lässt", "feedback": "Die Produktionsfunktion Y = F(K, L) ordnet jeder Faktorkombination den <b>maximal<\/b> erzeugbaren Output zu, sie beschreibt die Technologie, nicht die Kosten."}, {"id": "m2", "difficulty": "mittel", "subtopic": "GRTS", "type": "single", "stem": "Was misst die Grenzrate der technischen Substitution (GRTS) entlang einer Isoquante?", "options": ["Das umgekehrte Verhältnis der Grenzprodukte &minus;GP<sub>K<\/sub>/GP<sub>L<\/sub>, der Kehrwert der Steigung", "Das Verhältnis der Grenzprodukte &minus;GP<sub>L<\/sub>/GP<sub>K<\/sub>, also die Steigung der Isoquante", "Das Verhältnis der Faktormengen &minus;K/L, also die reine Kapitalintensität des Betriebs", "Das Verhältnis der Gesamtkosten &minus;C/Y, also die Durchschnittskosten je Outputeinheit"], "answer": "Das Verhältnis der Grenzprodukte &minus;GP<sub>L<\/sub>/GP<sub>K<\/sub>, also die Steigung der Isoquante", "feedback": "GRTS = &minus;GP<sub>L<\/sub>/GP<sub>K<\/sub> ist die <b>Steigung der Isoquante<\/b>: um wie viel K sinken kann, wenn L um eine Einheit steigt, bei konstantem Output."}, {"id": "m3", "difficulty": "mittel", "subtopic": "GRTS berechnen", "type": "numeric", "stem": "Ein Betrieb produziert mit Q = &radic;(K&middot;L). Am Punkt K = 77, L = 11 soll der Betrag der GRTS bestimmt werden. Wie groß ist |GRTS| = K/L?", "answer": 7, "tolerance": 0.01, "feedback": "Für Q = &radic;(K&middot;L) gilt |GRTS| = GP<sub>L<\/sub>/GP<sub>K<\/sub> = K/L = 77/11 = <b>7<\/b>."}, {"id": "m4", "difficulty": "mittel", "subtopic": "Isoquante", "type": "single", "stem": "Was stellt eine Isoquante im Faktordiagramm dar?", "options": ["Alle Preiskombinationen (w, r), bei denen der Betrieb seinen Gewinn maximiert", "Alle Faktorkombinationen (K, L), die genau denselben Output Y erzeugen", "Alle Faktorkombinationen (K, L), die genau dieselben Gesamtkosten C verursachen", "Alle Outputmengen, die sich mit einem fest vorgegebenen Budget gerade erreichen lassen"], "answer": "Alle Faktorkombinationen (K, L), die genau denselben Output Y erzeugen", "feedback": "Eine <b>Isoquante<\/b> verbindet alle (K, L) mit gleichem Output (&bdquo;iso&ldquo; = gleich). Gleiche <b>Kosten<\/b> beschreibt dagegen die Isokostengerade."}, {"id": "m5", "difficulty": "mittel", "subtopic": "Kostenminimum", "type": "single", "stem": "Welche Bedingung kennzeichnet das Kostenminimum bei einer inneren Lösung?", "options": ["Die Isokostengerade schneidet die Isoquante an zwei Stellen: w/r &gt; GRTS überall", "Der Output ist maximal beim gegebenen Faktorpreisverhältnis: Y = w/r im Optimum", "Der Betrieb setzt beide Faktoren in exakt gleicher Menge ein: K = L im Optimum", "Die Isokostengerade ist tangential zur Isoquante: w/r = GRTS"], "answer": "Die Isokostengerade ist tangential zur Isoquante: w/r = GRTS", "feedback": "Im inneren Kostenminimum <b>berührt<\/b> die Isokostengerade die Isoquante, ihre Steigungen sind gleich: w/r = GRTS."}, {"id": "s1", "difficulty": "schwer", "subtopic": "Kostenminimum berechnen", "type": "numeric", "stem": "Ein Betrieb mit Q = &radic;(K&middot;L) minimiert die Kosten bei w = 35 und r = 5. Die Tangentialbedingung liefert K/L = w/r. Für L = 9: Wie groß ist der optimale Kapitaleinsatz K*?", "answer": 63, "tolerance": 0.5, "feedback": "K/L = w/r = 35/5 = 7, also K* = 7&middot;L = 7&middot;9 = <b>63<\/b>."}, {"id": "s2", "difficulty": "schwer", "subtopic": "Kostenfunktion auswerten", "type": "numeric", "stem": "Die Kostenfunktion eines Betriebs lautet C(Q) = 2&middot;&radic;(w&middot;r)&middot;Q. Für w = 49, r = 1 und die Menge Q = 9: Wie hoch sind die Gesamtkosten C?", "answer": 126, "tolerance": 0.5, "feedback": "C(Q) = 2&middot;&radic;(49&middot;1)&middot;9 = 2&middot;7&middot;9 = <b>126<\/b>."}, {"id": "s3", "difficulty": "schwer", "subtopic": "Innere vs. Randlösung", "type": "single", "stem": "Beim Kostenminimieren ergibt sich rechnerisch ein negativer optimaler Faktoreinsatz (z.&nbsp;B. L* &lt; 0). Was folgt daraus?", "options": ["Die innere Lösung ist ungültig, es liegt eine Randlösung vor, ein Faktor wird auf 0 gesetzt", "Die innere Lösung bleibt trotzdem gültig, der negative Wert wird einfach als sein Betrag genommen und dann weiterverwendet", "Der Output muss erhöht werden, danach wird der Faktoreinsatz ganz von selbst positiv", "Die Produktionsfunktion ist falsch gewählt, die Aufgabe hat dann gar keine Lösung mehr"], "answer": "Die innere Lösung ist ungültig, es liegt eine Randlösung vor, ein Faktor wird auf 0 gesetzt", "feedback": "Merke: erscheint ein Faktor <b>&lt; 0<\/b>, ist die innere Lösung ungültig. Man setzt den Faktor auf <b>0<\/b> (Randlösung) und rechnet mit der Produktionsfunktion weiter."}, {"id": "s4", "difficulty": "schwer", "subtopic": "Kuhn-Tucker", "type": "single", "stem": "Bei der Kostenminimierung mit Nichtnegativität (K &ge; 0) gilt die Kuhn-Tucker-Komplementarität &alpha;&middot;K = 0. Was besagt sie für den Multiplikator &alpha;?", "options": ["Ist K &gt; 0 (nicht bindend), so ist &alpha; = 0; nur bei K = 0 kann &alpha; &gt; 0 sein", "Der Multiplikator &alpha; ist stets negativ, damit die Kosten überhaupt minimiert werden", "Ist K &gt; 0 (nicht bindend), so ist &alpha; &gt; 0; erst bei K = 0 wird dann &alpha; = 0", "Der Multiplikator &alpha; ist stets gleich dem Faktorpreis r, ganz unabhängig vom Einsatz"], "answer": "Ist K &gt; 0 (nicht bindend), so ist &alpha; = 0; nur bei K = 0 kann &alpha; &gt; 0 sein", "feedback": "Komplementarität &alpha;&middot;K = 0: in der <b>inneren<\/b> Lösung (K &gt; 0) muss &alpha; = 0 sein; ein positives &alpha; tritt nur in der <b>Randlösung<\/b> (K = 0) auf."}, {"id": "s5", "difficulty": "schwer", "subtopic": "Output berechnen", "type": "numeric", "stem": "Ein Betrieb produziert mit Q = &radic;(K&middot;L). Er setzt K = 44 und L = 11 ein. Wie groß ist die erzeugte Menge Q?", "answer": 22, "tolerance": 0.01, "feedback": "Q = &radic;(44&middot;11) = &radic;484 = <b>22<\/b>."}, {"id": "s6", "difficulty": "schwer", "subtopic": "Skalenerträge", "type": "single", "stem": "Eine Cobb-Douglas-Funktion Y = K<sup>0,7<\/sup>&middot;L<sup>0,6<\/sup> wird auf Skalenerträge getestet (alle Faktoren mit &lambda; multipliziert). Was ergibt sich?", "options": ["Konstante Skalenerträge (Exponentensumme genau 1), der Output wächst dann proportional", "Fallende Skalenerträge (Exponentensumme 1,3 &lt; 1), der Output wächst unterproportional", "Steigende Skalenerträge (Exponentensumme 1,3 &gt; 1), der Output wächst überproportional", "Gar keine Skalenerträge (Exponentensumme ist irrelevant), der Output bleibt konstant"], "answer": "Steigende Skalenerträge (Exponentensumme 1,3 &gt; 1), der Output wächst überproportional", "feedback": "&lambda;-Test: Y(&lambda;K, &lambda;L) = &lambda;<sup>0,7+0,6<\/sup>&middot;Y = &lambda;<sup>1,3<\/sup>&middot;Y. Summe <b>1,3 &gt; 1<\/b> &rArr; <b>steigende<\/b> Skalenerträge (überproportional)."}, {"id": "l1", "difficulty": "leicht", "subtopic": "Grenzprodukt", "type": "single", "stem": "Was ist das Grenzprodukt der Arbeit, GP<sub>L<\/sub>?", "options": ["Die zusätzlichen Kosten, die eine zusätzliche Einheit Arbeit verursacht: also &part;C/&part;L", "Der zusätzliche Output, den eine zusätzliche Einheit Arbeit L bringt: &part;Y/&part;L", "Der gesamte Output geteilt durch die eingesetzte Menge Arbeit L: also Y/L insgesamt", "Die zusätzliche Menge Kapital, die eine Einheit Arbeit ersetzen kann: also &part;K/&part;L"], "answer": "Der zusätzliche Output, den eine zusätzliche Einheit Arbeit L bringt: &part;Y/&part;L", "feedback": "GP<sub>L<\/sub> = &part;Y/&part;L ist der <b>Output-Zuwachs<\/b> je zusätzlicher Arbeitseinheit. Y/L wäre dagegen das <i>Durchschnitts<\/i>produkt."}, {"id": "l2", "difficulty": "leicht", "subtopic": "Abnehmender Grenzertrag", "type": "single", "stem": "Bei partieller Faktorvariation gilt GP<sub>L<\/sub> &gt; 0, aber die zweite Ableitung Y&Prime;<sub>L<\/sub> &lt; 0. Was bedeutet das?", "options": ["Der Output bleibt konstant, weil sich die beiden Effekte exakt gegenseitig aufheben hier", "Der Output steigt mit L, und jede weitere Einheit bringt sogar immer mehr dazu als davor", "Der Output steigt mit L, aber jede weitere Einheit bringt immer weniger dazu, abnehmender Grenzertrag", "Der Output sinkt mit L, und jede weitere zusätzliche Einheit zieht ihn dabei sogar noch deutlich stärker herunter"], "answer": "Der Output steigt mit L, aber jede weitere Einheit bringt immer weniger dazu, abnehmender Grenzertrag", "feedback": "GP<sub>L<\/sub> &gt; 0: der Output <b>steigt<\/b>. Y&Prime;<sub>L<\/sub> &lt; 0: der Zuwachs <b>wird kleiner<\/b>, die Produktionsfunktion ist konkav (abnehmender Grenzertrag)."}, {"id": "l3", "difficulty": "leicht", "subtopic": "Konstante Skalenerträge", "type": "single", "stem": "Wann liegen bei einer Cobb-Douglas-Funktion Y = K<sup>a<\/sup>&middot;L<sup>b<\/sup> konstante Skalenerträge vor?", "options": ["Wenn die Exponentensumme a + b &gt; 1 ist, denn dann verdoppelt sich der Output genau so", "Wenn die Exponentensumme a + b = 1 ist, denn dann gilt F(&lambda;K, &lambda;L) = &lambda;&middot;F(K, L)", "Wenn beide Exponenten gleich sind (a = b), ganz unabhängig von ihrer konkreten Höhe", "Wenn die beiden Faktorpreise exakt gleich hoch sind (w = r), denn dann werden die beiden Faktoren völlig gleich behandelt"], "answer": "Wenn die Exponentensumme a + b = 1 ist, denn dann gilt F(&lambda;K, &lambda;L) = &lambda;&middot;F(K, L)", "feedback": "F(&lambda;K, &lambda;L) = &lambda;<sup>a+b<\/sup>&middot;F(K, L). Nur bei <b>a + b = 1<\/b> wächst der Output proportional (&lambda;<sup>1<\/sup>), konstante Skalenerträge."}, {"id": "l4", "difficulty": "leicht", "subtopic": "Isokostengerade", "type": "single", "stem": "Die Isokostengerade lautet C = w&middot;L + r&middot;K. Welche Steigung hat sie im (L, K)-Diagramm?", "options": ["&minus;r/w, das negative Verhältnis der beiden Faktorpreise Kapital zu Arbeit hier", "&minus;w/r, das negative Verhältnis der beiden Faktorpreise Arbeit zu Kapital", "&minus;C/r, das ist in Wahrheit nur der Achsenabschnitt auf der Kapitalachse K", "&minus;K/L, das negative Verhältnis der beiden eingesetzten Faktormengen im Punkt"], "answer": "&minus;w/r, das negative Verhältnis der beiden Faktorpreise Arbeit zu Kapital", "feedback": "Nach K auflösen: K = C/r &minus; (w/r)&middot;L. Die Steigung ist <b>&minus;w/r<\/b>; C/r ist nur der Achsenabschnitt."}, {"id": "l5", "difficulty": "leicht", "subtopic": "Gesamtkosten berechnen", "type": "numeric", "stem": "Ein Betrieb setzt L = 5 Einheiten Arbeit (Lohn w = 7) und K = 11 Einheiten Kapital (Zins r = 9) ein. Wie hoch sind die Gesamtkosten C = w&middot;L + r&middot;K?", "answer": 134, "tolerance": 0.5, "feedback": "C = w&middot;L + r&middot;K = 7&middot;5 + 9&middot;11 = 35 + 99 = <b>134<\/b>."}]}</script>
 <script id="qbank-4" type="application/json">{"topic": "OMIK · Kapitel 4", "engine": {"startDifficulty": "mittel", "startCount": 5, "passThreshold": 3, "onPass": "schwer", "onFail": "leicht", "followupCount": 2, "moreCount": 3}, "questions": [{"id": "m1", "difficulty": "mittel", "subtopic": "Fixe vs. variable Kosten", "type": "single", "stem": "Eine Werkstatt zahlt monatlich 2400 &euro; Miete und je gefertigtem Stück 35 &euro; Material. Welche Aussage ordnet die Kosten richtig ein?", "options": ["Die Miete ist variabel, die Materialkosten sind fix, sie stehen je Stück dauerhaft fest", "Beide Kostenarten sind fix, weil beide Beträge vertraglich im Voraus vereinbart wurden", "Beide Kostenarten sind variabel, weil beide bei einer Stilllegung sofort entfallen würden", "Die Miete ist fix, die Materialkosten sind variabel, sie wachsen mit der Menge"], "answer": "Die Miete ist fix, die Materialkosten sind variabel, sie wachsen mit der Menge", "feedback": "Die Miete fällt <b>mengenunabhängig<\/b> an (fix), die Materialkosten wachsen mit jeder Einheit (<b>variabel<\/b>). Genau diese Trennung C(x) = FC + VC(x) trägt das ganze Kapitel."}, {"id": "m2", "difficulty": "mittel", "subtopic": "DK vs. DVK", "type": "single", "stem": "Worin unterscheiden sich die Durchschnittskosten DK (ATC) und die durchschnittlichen variablen Kosten DVK (AVC)?", "options": ["DK und DVK unterscheiden sich nur dann, wenn die Grenzkosten konstant verlaufen", "DK messen allein die Kosten der zuletzt produzierten Einheit, DVK alle Einheiten", "DK enthalten zusätzlich den auf die Menge umgelegten Fixkostenanteil FC/x", "DVK enthalten zusätzlich den auf die Menge umgelegten Fixkostenanteil FC/x"], "answer": "DK enthalten zusätzlich den auf die Menge umgelegten Fixkostenanteil FC/x", "feedback": "DK = C/x = (VC + FC)/x = DVK + FC/x. Die <b>Differenz DK &minus; DVK = FC/x<\/b> ist der umgelegte Fixkostenanteil, er wird mit steigender Menge immer kleiner."}, {"id": "m3", "difficulty": "mittel", "subtopic": "Betriebsminimum bestimmen", "type": "numeric", "stem": "Ein Unternehmen hat die durchschnittlichen variablen Kosten DVK(Q) = Q&sup2; &minus; 8Q + 30. Bei welcher Menge Q liegt das Betriebsminimum (Minimum der DVK)?", "answer": 4, "tolerance": 0.01, "feedback": "Minimum: DVK&prime;(Q) = 2Q &minus; 8 = 0 &rarr; Q = <b>4<\/b>. Kontrolle: Dort schneidet die GK-Kurve die DVK-Kurve."}, {"id": "m4", "difficulty": "mittel", "subtopic": "Betriebsminimum", "type": "single", "stem": "Welcher Punkt markiert das Betriebsminimum eines Unternehmens?", "options": ["Der Schnittpunkt von Fixkosten und variablen Kosten, dort gilt gerade FC = VC", "Das Minimum der DK-Kurve, dort schneidet die GK-Kurve die DK-Kurve", "Das Minimum der DVK-Kurve, dort schneidet die GK-Kurve die DVK-Kurve", "Das Minimum der GK-Kurve, dort ist die zuletzt produzierte Einheit am billigsten"], "answer": "Das Minimum der DVK-Kurve, dort schneidet die GK-Kurve die DVK-Kurve", "feedback": "Das <b>Betriebsminimum<\/b> ist das Minimum der <b>DVK<\/b> (kurzfristige Preisuntergrenze). Das Minimum der DK ist dagegen das Betriebs<b>optimum<\/b>."}, {"id": "m5", "difficulty": "mittel", "subtopic": "Betriebsoptimum", "type": "single", "stem": "Was kennzeichnet das Betriebsoptimum?", "options": ["Das Minimum der variablen Stückkosten DVK, die variablen Kosten je Stück sind dort minimal", "Die Menge, bei der die durchschnittlichen Fixkosten auf exakt null gesunken sind", "Das Maximum der Grenzkosten GK, die zuletzt produzierte Einheit ist dort am teuersten", "Das Minimum der Durchschnittskosten DK, die Stückkosten sind dort am niedrigsten"], "answer": "Das Minimum der Durchschnittskosten DK, die Stückkosten sind dort am niedrigsten", "feedback": "Im <b>Betriebsoptimum<\/b> (Min DK) produziert das Unternehmen mit den geringstmöglichen Stückkosten, die langfristige Preisuntergrenze. Dort gilt GK = DK."}, {"id": "s1", "difficulty": "schwer", "subtopic": "Kurzfristige Preisuntergrenze", "type": "numeric", "stem": "Für DVK(Q) = Q&sup2; &minus; 8Q + 30 liegt das Betriebsminimum bei Q = 4. Wie hoch sind die DVK an dieser Stelle (die kurzfristige Preisuntergrenze)?", "answer": 14, "tolerance": 0.01, "feedback": "DVK(4) = 16 &minus; 32 + 30 = <b>14<\/b>. Kontrolle: GK(4) = 48 &minus; 64 + 30 = 14, die GK-Kurve schneidet die DVK genau dort."}, {"id": "s2", "difficulty": "schwer", "subtopic": "Betriebsoptimum berechnen", "type": "numeric", "stem": "Ein Unternehmen hat C(Q) = Q&sup3; &minus; 8Q&sup2; + 30Q + 144; das Betriebsoptimum liegt bei Q = 6. Wie hoch sind dort die Durchschnittskosten DK?", "answer": 42.0, "tolerance": 0.01, "feedback": "DK(6) = 36 &minus; 48 + 30 + 144/6 = 18 + 24 = <b>42<\/b>. Kontrolle: GK(6) = 42 = DK(6)."}, {"id": "s3", "difficulty": "schwer", "subtopic": "GK schneidet die Minima", "type": "single", "stem": "Warum schneidet die Grenzkostenkurve die DVK- und die DK-Kurve genau in deren Minimum?", "options": ["Liegen die GK über dem Durchschnitt, ziehen sie ihn nach unten, darunter nach oben, der Wechsel ist das Maximum", "Liegen die GK unter dem Durchschnitt, ziehen sie ihn nach unten, darüber nach oben, der Wechsel ist das Minimum", "Das gilt nur in konstruierten Beispielen, im Allgemeinen schneidet die GK-Kurve die Durchschnittskurven beliebig", "Weil GK-Kurve und Durchschnittskurven überall dieselbe Steigung haben und sich deshalb nur einmal berühren können"], "answer": "Liegen die GK unter dem Durchschnitt, ziehen sie ihn nach unten, darüber nach oben, der Wechsel ist das Minimum", "feedback": "Die <b>Zugkraft-Logik<\/b>: Kostet die letzte Einheit weniger als der Durchschnitt, sinkt der Durchschnitt, kostet sie mehr, steigt er. Der Übergang liegt exakt im <b>Minimum<\/b> der jeweiligen Durchschnittskurve."}, {"id": "s4", "difficulty": "schwer", "subtopic": "Grenzkosten berechnen", "type": "numeric", "stem": "Die variablen Kosten lauten VC(x) = 2x&sup2; + 8x. Wie hoch sind die Grenzkosten bei x = 7?", "answer": 36, "tolerance": 0.01, "feedback": "GK(x) = VC&prime;(x) = 4x + 8. GK(7) = 28 + 8 = <b>36<\/b>. Fixkosten spielen für die GK keine Rolle, sie fallen beim Ableiten weg."}, {"id": "s5", "difficulty": "schwer", "subtopic": "Lage BM vs. BO", "type": "single", "stem": "Wie liegen Betriebsminimum und Betriebsoptimum zueinander, wenn Fixkosten anfallen?", "options": ["Ihre Lage zueinander hängt allein davon ab, ob die Grenzkosten steigend oder fallend verlaufen", "Das Betriebsminimum liegt bei kleinerer Menge und niedrigeren Stückkosten als das Betriebsoptimum", "Beide fallen immer in einem Punkt zusammen, weil die GK-Kurve beide Kurven im Minimum schneidet", "Das Betriebsminimum liegt bei deutlich größerer Menge und höheren Stückkosten als das Betriebsoptimum"], "answer": "Das Betriebsminimum liegt bei kleinerer Menge und niedrigeren Stückkosten als das Betriebsoptimum", "feedback": "Wegen DK = DVK + FC/x liegt die DK-Kurve <b>über<\/b> der DVK-Kurve. Die steigende GK-Kurve trifft daher zuerst das Min DVK (Betriebsminimum), erst später und höher das Min DK (Betriebsoptimum)."}, {"id": "s6", "difficulty": "schwer", "subtopic": "Kurz- vs. langfristige Kosten", "type": "single", "stem": "Wie verhalten sich kurzfristige Durchschnittskosten (SAC) und langfristige Durchschnittskosten (LAC) zueinander?", "options": ["Die LAC-Kurve ist die Umhüllende der SAC-Kurven, kurzfristige Durchschnittskosten liegen nie unter ihr", "Die SAC-Kurven schneiden die LAC-Kurve regelmäßig, kurzfristig sind die Stückkosten häufig niedriger", "SAC- und LAC-Kurve sind stets identisch, sobald die Fixkosten vollständig abgeschrieben worden sind", "Die LAC-Kurve verläuft immer oberhalb der SAC-Kurven, langfristige Produktion ist grundsätzlich teurer"], "answer": "Die LAC-Kurve ist die Umhüllende der SAC-Kurven, kurzfristige Durchschnittskosten liegen nie unter ihr", "feedback": "Langfristig sind alle Faktoren variabel, das Unternehmen kann jede Menge mindestens so günstig produzieren wie kurzfristig. Die <b>LAC ist die Umhüllende<\/b> der SAC-Kurven; SAC &ge; LAC gilt überall."}, {"id": "l1", "difficulty": "leicht", "subtopic": "Fixkosten", "type": "single", "stem": "Was kennzeichnet Fixkosten (FC) in der kurzen Frist?", "options": ["Sie fallen unabhängig von der Menge an, auch bei einer Produktion von null", "Sie entstehen erst, sobald die Produktion eine gewisse Mindestmenge überschreitet", "Sie wachsen mit der Menge, exakt proportional zu jeder produzierten Einheit", "Sie entsprechen genau den Grenzkosten, also der zuletzt produzierten Einheit"], "answer": "Sie fallen unabhängig von der Menge an, auch bei einer Produktion von null", "feedback": "<b>Fixkosten<\/b> sind mengenunabhängig (z.&nbsp;B. Miete): C(0) = FC. In der Kostenfunktion C(x) = FC + VC(x) sind sie der konstante Sockel."}, {"id": "l2", "difficulty": "leicht", "subtopic": "Variable Kosten", "type": "single", "stem": "Welche Aussage beschreibt die variablen Kosten VC(x)?", "options": ["Sie stimmen immer mit den Fixkosten überein, sobald das Unternehmen produziert", "Sie hängen von der Menge ab und sind bei einer Produktion von null ebenfalls null", "Sie umfassen die Miete sowie alle weiteren vertraglich fest vereinbarten Zahlungen", "Sie hängen nicht von der Menge ab und bleiben deshalb auf jedem Niveau konstant"], "answer": "Sie hängen von der Menge ab und sind bei einer Produktion von null ebenfalls null", "feedback": "<b>Variable Kosten<\/b> wachsen mit der Ausbringungsmenge (Material, Energie, Akkordlöhne) und erfüllen VC(0) = 0. Zusammen mit den Fixkosten ergeben sie C(x) = FC + VC(x)."}, {"id": "l3", "difficulty": "leicht", "subtopic": "Fixkosten ablesen", "type": "numeric", "stem": "Die Kostenfunktion lautet C(x) = 2x&sup2; + 8x + 50. Wie hoch sind die Fixkosten FC?", "answer": 50, "tolerance": 0.01, "feedback": "FC = C(0) = <b>50<\/b>. Der mengenunabhängige Summand der Kostenfunktion ist der Fixkostenblock; 2x&sup2; + 8x sind die variablen Kosten."}, {"id": "l4", "difficulty": "leicht", "subtopic": "Durchschnittliche Fixkosten", "type": "single", "stem": "Wie verlaufen die durchschnittlichen Fixkosten DFK = FC/x mit steigender Menge?", "options": ["Sie verlaufen U-förmig, erst fallen sie, ab dem Betriebsminimum steigen sie dann wieder an", "Sie fallen stetig, der feste Betrag verteilt sich auf mehr Einheiten (Fixkostendegression)", "Sie bleiben völlig konstant, feste Beträge ändern sich je Stück (pro Einheit) nicht", "Sie steigen stetig, der feste Betrag wächst mit jeder weiteren Einheit (Fixkostenprogression)"], "answer": "Sie fallen stetig, der feste Betrag verteilt sich auf mehr Einheiten (Fixkostendegression)", "feedback": "DFK = FC/x ist eine fallende Hyperbel: Derselbe Fixbetrag verteilt sich auf immer mehr Einheiten, die <b>Fixkostendegression<\/b>. Deshalb nähern sich DK und DVK mit steigender Menge an."}, {"id": "l5", "difficulty": "leicht", "subtopic": "DVK berechnen", "type": "numeric", "stem": "Bei einer Menge von x = 10 betragen die variablen Kosten VC = 280. Wie hoch sind die durchschnittlichen variablen Kosten DVK an dieser Stelle?", "answer": 28.0, "tolerance": 0.01, "feedback": "DVK = VC/x = 280/10 = <b>28<\/b>. Die DVK sind die variablen Kosten je Stück, ohne jeden Fixkostenanteil."}]}</script>
 <script id="qbank-5" type="application/json">{"topic": "OMIK · Kapitel 5", "engine": {"startDifficulty": "mittel", "startCount": 5, "passThreshold": 3, "onPass": "schwer", "onFail": "leicht", "followupCount": 2, "moreCount": 3}, "questions": [{"id": "m1", "difficulty": "mittel", "subtopic": "Preis = Grenzkosten", "type": "single", "stem": "Ein Unternehmen im vollkommenen Wettbewerb maximiert seinen Gewinn G(x) = p&middot;x &minus; C(x). Welche Bedingung kennzeichnet die gewinnmaximale Menge?", "options": ["Der Marktpreis entspricht den gesamten Durchschnittskosten (p = DK)", "Die Grenzkosten liegen bei null, denn nur dann lohnt jede weitere Einheit", "Der Umsatz ist maximal, es wird also die gr&ouml;&szlig;tm&ouml;gliche Menge produziert", "Der Marktpreis entspricht den Grenzkosten der letzten Einheit (p = GK)"], "answer": "Der Marktpreis entspricht den Grenzkosten der letzten Einheit (p = GK)", "feedback": "Aus Max! G(x) = p&middot;x &minus; C(x) folgt G&prime;(x) = p &minus; GK(x) = 0, also <b>p = GK<\/b>: Die letzte Einheit bringt genau so viel ein, wie sie zus&auml;tzlich kostet."}, {"id": "m2", "difficulty": "mittel", "subtopic": "Individuelle Angebotskurve", "type": "single", "stem": "Welcher Kurvenabschnitt bildet die kurzfristige individuelle Angebotskurve eines Preisnehmers?", "options": ["Der steigende Ast der Durchschnittskostenkurve oberhalb des Betriebsminimums", "Die komplette Grenzkostenkurve ab der Menge null, ganz ohne Preisuntergrenze", "Der steigende Ast der Grenzkostenkurve oberhalb des Minimums der DVK", "Der fallende Ast der Durchschnittskostenkurve unterhalb des Betriebsoptimums"], "answer": "Der steigende Ast der Grenzkostenkurve oberhalb des Minimums der DVK", "feedback": "Die Angebotskurve ist die <b>GK-Kurve oberhalb des Betriebsminimums<\/b> (Min DVK). Darunter wird stillgelegt: Menge null."}, {"id": "m3", "difficulty": "mittel", "subtopic": "Angebotsmenge bestimmen", "type": "numeric", "stem": "Ein Preisnehmer hat die Grenzkostenfunktion GK(x) = 2x + 4. Am Markt herrscht der Preis p = 16. Welche Menge x maximiert den Gewinn?", "answer": 6.0, "tolerance": 0.01, "feedback": "p = GK: 16 = 2x + 4 &rarr; 2x = 12 &rarr; <b>x = 6<\/b>."}, {"id": "m4", "difficulty": "mittel", "subtopic": "Marktangebot", "type": "single", "stem": "Wie entsteht aus den individuellen Angebotskurven das Marktangebot?", "options": ["Die individuellen Angebotskurven werden gemittelt und mit dem Marktpreis gewichtet", "Zu jeder Menge werden die geforderten Preise aller Anbieter addiert (vertikal)", "Zu jedem Preis werden die angebotenen Mengen aller Anbieter addiert (horizontal)", "Es gilt allein die Angebotskurve des gr&ouml;&szlig;ten Anbieters, die anderen entfallen"], "answer": "Zu jedem Preis werden die angebotenen Mengen aller Anbieter addiert (horizontal)", "feedback": "Marktangebot = <b>horizontale Aggregation<\/b>: X(p) = x<sub>1<\/sub>(p) + x<sub>2<\/sub>(p) + &hellip;, bei jedem Preis werden die Mengen summiert."}, {"id": "m5", "difficulty": "mittel", "subtopic": "Marktgleichgewicht", "type": "single", "stem": "Was kennzeichnet das Marktgleichgewicht in einem Wettbewerbsmarkt?", "options": ["Die Anbieter erzielen den h&ouml;chsten Preis, den die Nachfrager jemals zahlen w&uuml;rden", "Alle Anbieter produzieren exakt im Minimum ihrer Fixkosten, ohne jeden Verlust", "Die nachgefragte Menge liegt dauerhaft &uuml;ber der angebotenen, Knappheit bleibt", "Angebotene und nachgefragte Menge stimmen &uuml;berein, der Markt wird ger&auml;umt"], "answer": "Angebotene und nachgefragte Menge stimmen &uuml;berein, der Markt wird ger&auml;umt", "feedback": "Im Gleichgewicht gilt X<sub>D<\/sub>(p*) = X<sub>S<\/sub>(p*): Es gibt weder &Uuml;berschussangebot noch &Uuml;berschussnachfrage, der <b>Markt wird ger&auml;umt<\/b>."}, {"id": "s1", "difficulty": "schwer", "subtopic": "Produzentenrente Betrieb", "type": "numeric", "stem": "Ein Anbieter hat die Angebotsfunktion x(p) = (p &minus; 4)/2 f&uuml;r p &ge; 4. Beim Marktpreis p = 16 bietet er x = 6 an. Wie hoch ist seine Produzentenrente (in &euro;)?", "answer": 36.0, "tolerance": 0.5, "feedback": "PR = Fl&auml;che zwischen Preis und Angebotskurve: 0,5 &middot; (16 &minus; 4) &middot; 6 = <b>36 &euro;<\/b> (= Umsatz 96 &minus; variable Kosten 60)."}, {"id": "s2", "difficulty": "schwer", "subtopic": "Gleichgewichtspreis", "type": "numeric", "stem": "Auf einem Markt gilt das Marktangebot X<sub>S<\/sub>(p) = 15p &minus; 60 und die Marktnachfrage X<sub>D<\/sub>(p) = 190 &minus; 10p. Wie hoch ist der Gleichgewichtspreis p*?", "answer": 10, "tolerance": 0.01, "feedback": "15p &minus; 60 = 190 &minus; 10p &rarr; 25p = 250 &rarr; <b>p* = 10<\/b> (Menge X* = 90)."}, {"id": "s3", "difficulty": "schwer", "subtopic": "Produzentenrente Markt", "type": "numeric", "stem": "Im selben Markt (X<sub>S<\/sub>(p) = 15p &minus; 60) gilt p* = 10 und X* = 90; die inverse Angebotskurve startet bei p = 4 (X = 0). Wie gro&szlig; ist die Produzentenrente des gesamten Marktes (in &euro;)?", "answer": 270.0, "tolerance": 1, "feedback": "PR = 0,5 &middot; (p* &minus; 4) &middot; X* = 0,5 &middot; 6 &middot; 90 = <b>270 &euro;<\/b>, das Dreieck zwischen Marktpreis und Angebotskurve."}, {"id": "s4", "difficulty": "schwer", "subtopic": "PR und Gewinn", "type": "single", "stem": "Ein Unternehmen hat Fixkosten von 40 &euro; und erzielt kurzfristig eine Produzentenrente von 95 &euro;. Welche Aussage stimmt?", "options": ["Der Gewinn betr&auml;gt 95 &euro;, denn Produzentenrente und Gewinn sind stets identisch", "Der Gewinn betr&auml;gt 55 &euro;, denn kurzfristig gilt PR = Gewinn + Fixkosten", "Der Gewinn betr&auml;gt 40 &euro;, denn die Rente deckt genau die Fixkosten und keinen Cent mehr", "Der Gewinn betr&auml;gt 135 &euro;, denn die Fixkosten erh&ouml;hen die Rente noch zus&auml;tzlich"], "answer": "Der Gewinn betr&auml;gt 55 &euro;, denn kurzfristig gilt PR = Gewinn + Fixkosten", "feedback": "Kurzfristig gilt PR = Umsatz &minus; variable Kosten = <b>Gewinn + Fixkosten<\/b>: G = 95 &minus; 40 = <b>55 &euro;<\/b>. Erst langfristig (ohne Fixkosten) fallen PR und Gewinn zusammen."}, {"id": "s5", "difficulty": "schwer", "subtopic": "Markteintritt", "type": "single", "stem": "In einem Markt mit Gewinnen treten zus&auml;tzliche Anbieter mit gleicher Technologie ein. Was passiert der Tendenz nach?", "options": ["Marktangebot und Preis bleiben unver&auml;ndert, nur die Nachfrager reagieren", "Das Marktangebot verschiebt sich nach rechts, der Gleichgewichtspreis sinkt", "Die Nachfragekurve verschiebt sich nach rechts, der Gleichgewichtspreis steigt", "Das Marktangebot verschiebt sich nach links, der Gleichgewichtspreis steigt"], "answer": "Das Marktangebot verschiebt sich nach rechts, der Gleichgewichtspreis sinkt", "feedback": "Mehr Anbieter &rarr; bei jedem Preis wird mehr angeboten (<b>Rechtsverschiebung<\/b>) &rarr; der Preis sinkt, bis keine Gewinne mehr locken."}, {"id": "s6", "difficulty": "schwer", "subtopic": "Stilllegung", "type": "single", "stem": "Der Marktpreis liegt unter dem Minimum der durchschnittlichen variablen Kosten. Wie lautet die kurzfristig beste Entscheidung?", "options": ["Menge null anbieten, der Verlust beschr&auml;nkt sich auf die Fixkosten", "Die Menge ausweiten, damit sich die Fixkosten auf mehr St&uuml;cke verteilen", "Zum Betriebsoptimum wechseln, dort ist der Verlust definitionsgem&auml;&szlig; null", "Weiter produzieren, jede verkaufte Einheit verringert den Verlust sp&uuml;rbar"], "answer": "Menge null anbieten, der Verlust beschr&auml;nkt sich auf die Fixkosten", "feedback": "Unter Min DVK deckt der Preis nicht einmal die variablen Kosten: <b>Stilllegung<\/b>, Menge null, der Verlust bleibt auf die Fixkosten begrenzt."}, {"id": "l1", "difficulty": "leicht", "subtopic": "Preisnehmer", "type": "single", "stem": "Was bedeutet es, dass ein Unternehmen im vollkommenen Wettbewerb Preisnehmer ist?", "options": ["Es nimmt den Marktpreis als gegeben hin und w&auml;hlt nur seine Menge", "Es nimmt jede beliebige Menge ab, die andere Anbieter produzieren", "Es setzt den Preis selbst fest und passt ihn fortw&auml;hrend der Nachfrage an", "Es handelt mit jedem einzelnen Kunden einen individuellen Preis aus"], "answer": "Es nimmt den Marktpreis als gegeben hin und w&auml;hlt nur seine Menge", "feedback": "F&uuml;r den <b>Preisnehmer<\/b> ist der Preis ein Datum (exogen). Seine einzige Stellschraube ist die <b>Menge<\/b>, gew&auml;hlt nach p = GK."}, {"id": "l2", "difficulty": "leicht", "subtopic": "Produzentenrente", "type": "single", "stem": "Welche Fl&auml;che im Marktdiagramm entspricht der Produzentenrente?", "options": ["Die Fl&auml;che zwischen Angebots- und Nachfragekurve rechts vom Schnittpunkt", "Die Fl&auml;che zwischen Marktpreis und Angebotskurve bis zur Gleichgewichtsmenge", "Die gesamte Fl&auml;che unter der Nachfragekurve von null bis zur S&auml;ttigungsmenge", "Die Fl&auml;che zwischen Nachfragekurve und Marktpreis bis zur Gleichgewichtsmenge"], "answer": "Die Fl&auml;che zwischen Marktpreis und Angebotskurve bis zur Gleichgewichtsmenge", "feedback": "Die <b>PR<\/b> liegt zwischen Preislinie und <b>Angebotskurve<\/b>: Jede Einheit kostet nur ihre Grenzkosten, wird aber zum Marktpreis verkauft."}, {"id": "l3", "difficulty": "leicht", "subtopic": "Preisanpassung", "type": "single", "stem": "Der Preis liegt &uuml;ber dem Gleichgewichtspreis. Was entsteht auf dem Markt, und wie reagiert der Preis der Tendenz nach?", "options": ["Ein &Uuml;berschussangebot, der Preis steigt, bis alle Anbieter zufrieden sind", "Ein &Uuml;berschussangebot, der Preis sinkt in Richtung Gleichgewicht", "Eine &Uuml;berschussnachfrage, der Preis verharrt dauerhaft auf dem hohen Niveau", "Eine &Uuml;berschussnachfrage, der Preis steigt weiter &uuml;ber das Gleichgewicht"], "answer": "Ein &Uuml;berschussangebot, der Preis sinkt in Richtung Gleichgewicht", "feedback": "&Uuml;ber p* wird mehr angeboten als nachgefragt (<b>&Uuml;berschussangebot<\/b>), Anbieter unterbieten sich, der Preis f&auml;llt Richtung p*."}, {"id": "l4", "difficulty": "leicht", "subtopic": "Angebotsfunktion anwenden", "type": "numeric", "stem": "Ein Anbieter folgt der Angebotsfunktion x(p) = (p &minus; 4)/2 f&uuml;r p &ge; 4. Welche Menge bietet er beim Preis p = 8 an?", "answer": 2.0, "tolerance": 0.01, "feedback": "x = (8 &minus; 4)/2 = <b>2<\/b>."}, {"id": "l5", "difficulty": "leicht", "subtopic": "Stilllegungsgrenze", "type": "single", "stem": "Welcher Punkt markiert die kurzfristige Preisuntergrenze (Stilllegungsgrenze) des Angebots?", "options": ["Das Minimum der gesamten Durchschnittskosten (Betriebsoptimum)", "Der Schnittpunkt von Nachfragekurve und Grenzkostenkurve (Marktpunkt)", "Der Schnittpunkt der Fixkosten mit der Grenzkostenkurve (Fixpunkt)", "Das Minimum der durchschnittlichen variablen Kosten (Betriebsminimum)"], "answer": "Das Minimum der durchschnittlichen variablen Kosten (Betriebsminimum)", "feedback": "Kurzfristige Preisuntergrenze = <b>Min DVK<\/b> (Betriebsminimum, Kapitel 4). Darunter: Menge null, Verlust = Fixkosten."}]}</script>
 <script id="qbank-6" type="application/json">{"topic": "OMIK · Kapitel 6", "engine": {"startDifficulty": "mittel", "startCount": 5, "passThreshold": 3, "onPass": "schwer", "onFail": "leicht", "followupCount": 2, "moreCount": 3}, "questions": [{"id": "m1", "difficulty": "mittel", "subtopic": "Konsumentenrente", "type": "single", "stem": "Welche Fl&auml;che im Marktdiagramm entspricht der Konsumentenrente?", "options": ["Die Fl&auml;che zwischen der Angebotskurve und der Preislinie bis zur gehandelten Menge", "Die gesamte Fl&auml;che unter der Nachfragekurve bis hin zur S&auml;ttigungsmenge des Marktes", "Die Fl&auml;che des Umsatzrechtecks, also Marktpreis mal gehandelte Menge im Gleichgewicht", "Die Fl&auml;che zwischen der Nachfragekurve und der Preislinie bis zur gehandelten Menge"], "answer": "Die Fl&auml;che zwischen der Nachfragekurve und der Preislinie bis zur gehandelten Menge", "feedback": "Die <b>Konsumentenrente<\/b> ist die Fl&auml;che zwischen <b>Zahlungsbereitschaft (Nachfragekurve)<\/b> und <b>Preislinie<\/b>: der Nutzen&uuml;berschuss der K&auml;ufer &uuml;ber das tats&auml;chlich Bezahlte."}, {"id": "m2", "difficulty": "mittel", "subtopic": "Effizienz des Gleichgewichts", "type": "single", "stem": "Warum maximiert das Wettbewerbsgleichgewicht die Gesamtwohlfahrt (KR + PR)?", "options": ["Es verteilt die entstehende Wohlfahrt v&ouml;llig gleichm&auml;&szlig;ig auf K&auml;ufer und Verk&auml;ufer", "Es maximiert den Umsatz der Anbieter, und damit automatisch auch die Summe beider Renten", "Es kommen genau die Einheiten zustande, deren Zahlungsbereitschaft &uuml;ber den Grenzkosten liegt", "Es sorgt daf&uuml;r, dass Konsumenten- und Produzentenrente exakt gleich gro&szlig; ausfallen"], "answer": "Es kommen genau die Einheiten zustande, deren Zahlungsbereitschaft &uuml;ber den Grenzkosten liegt", "feedback": "Im Gleichgewicht (p = GK) werden <b>alle<\/b> Einheiten mit Zahlungsbereitschaft &uuml;ber den Grenzkosten gehandelt, und keine dar&uuml;ber hinaus. Jeder Handelsgewinn wird ausgesch&ouml;pft; auf die <b>Verteilung<\/b> der Renten kommt es dabei nicht an."}, {"id": "m3", "difficulty": "mittel", "subtopic": "Gleichgewicht berechnen", "type": "numeric", "stem": "Auf einem Markt gilt die Nachfrage p = 26 &minus; Q und das Angebot p = 2 + Q. Berechne die Gleichgewichtsmenge Q*.", "answer": 12.0, "tolerance": 0.01, "feedback": "26 &minus; Q = 2 + Q &rarr; 24 = 2Q &rarr; <b>Q* = 12<\/b> (Preis p* = 14)."}, {"id": "m4", "difficulty": "mittel", "subtopic": "Höchstpreis", "type": "single", "stem": "Der Staat setzt einen bindenden H&ouml;chstpreis unterhalb des Gleichgewichtspreises. Was passiert auf dem Markt?", "options": ["Preis und Menge bleiben unver&auml;ndert, der Eingriff liegt ja unter dem Marktpreis", "Es entsteht &Uuml;berschussangebot, gehandelt wird nur die kleinere Nachfragemenge", "Es entsteht &Uuml;berschussnachfrage, gehandelt wird nur die kleinere Angebotsmenge", "Die gehandelte Menge steigt an, der niedrigere Preis lockt zus&auml;tzliche Anbieter an"], "answer": "Es entsteht &Uuml;berschussnachfrage, gehandelt wird nur die kleinere Angebotsmenge", "feedback": "Unter p* wird <b>mehr nachgefragt als angeboten<\/b> (&Uuml;berschussnachfrage). Umgesetzt wird die <b>kurze Marktseite<\/b>, hier das Angebot. Die Menge <b>sinkt<\/b>, es entsteht ein Wohlfahrtsverlust."}, {"id": "m5", "difficulty": "mittel", "subtopic": "Mengensteuer", "type": "single", "stem": "Was bewirkt eine Mengensteuer von t &euro; je Einheit im Marktdiagramm?", "options": ["Sie erh&ouml;ht Nachfrager- und Anbieterpreis gemeinsam um den vollen Betrag t; die Menge bleibt konstant", "Sie senkt beide Preise um jeweils t/2 und steigert so die insgesamt gehandelte Menge sp&uuml;rbar", "Sie verschiebt allein die Nachfragekurve nach rechts au&szlig;en; der Anbieterpreis steigt um t an", "Sie treibt einen Keil der H&ouml;he t zwischen Nachfrager- und Anbieterpreis; die Menge sinkt"], "answer": "Sie treibt einen Keil der H&ouml;he t zwischen Nachfrager- und Anbieterpreis; die Menge sinkt", "feedback": "Die Steuer schiebt den <b>Steuerkeil<\/b> zwischen die Preise: p<sub>N<\/sub> &minus; p<sub>A<\/sub> = t. Die gehandelte Menge <b>sinkt<\/b>, deshalb entsteht neben dem Steueraufkommen auch ein Wohlfahrtsverlust."}, {"id": "s1", "difficulty": "schwer", "subtopic": "Konsumentenrente berechnen", "type": "numeric", "stem": "Auf dem Markt mit Nachfrage p = 26 &minus; Q und Angebot p = 2 + Q liegt das Gleichgewicht bei Q* = 12 und p* = 14. Wie hoch ist die Konsumentenrente?", "answer": 72.0, "tolerance": 0.5, "feedback": "KR = &frac12; &middot; (26 &minus; 14) &middot; 12 = &frac12; &middot; 12 &middot; 12 = <b>72<\/b>."}, {"id": "s2", "difficulty": "schwer", "subtopic": "Menge mit Steuer berechnen", "type": "numeric", "stem": "Auf demselben Markt (Nachfrage p = 26 &minus; Q, Angebot p = 2 + Q) wird eine Mengensteuer t = 4 erhoben, die die Anbieter abf&uuml;hren. Berechne die neue gehandelte Menge.", "answer": 10.0, "tolerance": 0.01, "feedback": "Ansatz: p<sub>N<\/sub> = 2 + Q + 4. Gleichsetzen: 26 &minus; Q = 6 + Q &rarr; <b>Q = 10<\/b> (p<sub>N<\/sub> = 16, p<sub>A<\/sub> = 12)."}, {"id": "s3", "difficulty": "schwer", "subtopic": "Wohlfahrtsverlust berechnen", "type": "numeric", "stem": "Die Mengensteuer t = 4 senkt die gehandelte Menge von Q* = 12 auf Q = 10. Wie gro&szlig; ist der Wohlfahrtsverlust (Harberger-Dreieck)?", "answer": 4.0, "tolerance": 0.01, "feedback": "WFV = &frac12; &middot; t &middot; &Delta;Q = &frac12; &middot; 4 &middot; (12 &minus; 10) = <b>4<\/b>. Das Steueraufkommen betr&auml;gt daneben t &middot; Q = 40."}, {"id": "s4", "difficulty": "schwer", "subtopic": "Steuerinzidenz", "type": "single", "stem": "Nachfrage- und Angebotskurve eines Marktes haben betragsm&auml;&szlig;ig dieselbe Steigung. Wie verteilt sich die Traglast einer Mengensteuer?", "options": ["Die Anbieter tragen die gesamte Last, weil sie die Steuer &uuml;berweisen", "Beide Marktseiten tragen jeweils genau die H&auml;lfte der Steuerlast", "Die Verteilung h&auml;ngt allein davon ab, welche Seite die Steuer abf&uuml;hrt", "Die Nachfrager tragen die gesamte Last, weil sie den Bruttopreis zahlen"], "answer": "Beide Marktseiten tragen jeweils genau die H&auml;lfte der Steuerlast", "feedback": "Bei gleichen Steigungsbetr&auml;gen sind beide Seiten <b>gleich elastisch<\/b>, die Last teilt sich <b>h&auml;lftig<\/b>. Allgemein gilt: Die <b>unelastischere<\/b> (steilere) Seite tr&auml;gt den gr&ouml;&szlig;eren Teil."}, {"id": "s5", "difficulty": "schwer", "subtopic": "Traglast vs. Zahllast", "type": "single", "stem": "Der Gesetzgeber verpflichtet die Anbieter, die Mengensteuer an das Finanzamt zu &uuml;berweisen. Tragen sie deshalb auch die wirtschaftliche Last?", "options": ["Nein, die Last liegt stets vollst&auml;ndig bei der jeweils anderen Seite des Marktes", "Nein, die Traglast folgt aus den Elastizit&auml;ten und ist von der Zahllast unabh&auml;ngig", "Ja, allerdings nur so lange, wie der Steuersatz unter dem Gleichgewichtspreis bleibt", "Ja, wer die Steuer &uuml;berweist, tr&auml;gt sie definitionsgem&auml;&szlig; auch wirtschaftlich"], "answer": "Nein, die Traglast folgt aus den Elastizit&auml;ten und ist von der Zahllast unabh&auml;ngig", "feedback": "<b>Zahllast<\/b> (&bdquo;wer &uuml;berweist?&ldquo;) und <b>Traglast<\/b> (&bdquo;wer sp&uuml;rt?&ldquo;) sind zwei verschiedene Dinge. Der Steuerkeil ist derselbe, egal welche Seite abf&uuml;hrt, die Verteilung bestimmen allein die <b>Elastizit&auml;ten<\/b>."}, {"id": "s6", "difficulty": "schwer", "subtopic": "Mindestpreis mit Absatzgarantie", "type": "single", "stem": "Der Staat setzt einen Mindestpreis &uuml;ber dem Gleichgewichtspreis und kauft die &uuml;bersch&uuml;ssige Menge auf. Welche Aussage trifft zu?", "options": ["Die Produzentenrente steigt, doch die Staatsausgaben &uuml;bersteigen diesen Gewinn, die Wohlfahrt sinkt", "Die Wohlfahrt steigt insgesamt, weil der Aufkauf des Staates Nachfrage und Angebot gleichzeitig st&uuml;tzt", "Die Produzentenrente sinkt sp&uuml;rbar, denn die Anbieter m&uuml;ssen die &uuml;bersch&uuml;ssige Menge selbst entsorgen", "Die Konsumentenrente steigt deutlich, weil die K&auml;ufer nun mehr Menge zum h&ouml;heren Preis erhalten k&ouml;nnen"], "answer": "Die Produzentenrente steigt, doch die Staatsausgaben &uuml;bersteigen diesen Gewinn, die Wohlfahrt sinkt", "feedback": "Der Staat kauft die <b>&Uuml;berproduktion<\/b> zum Mindestpreis auf, das st&uuml;tzt die <b>PR<\/b>, kostet aber mehr, als die Anbieter gewinnen: Es werden Einheiten produziert, deren Kosten &uuml;ber der Zahlungsbereitschaft liegen. Die Gesamtwohlfahrt <b>sinkt<\/b>."}, {"id": "l1", "difficulty": "leicht", "subtopic": "Produzentenrente", "type": "single", "stem": "Welche Fl&auml;che im Marktdiagramm entspricht der Produzentenrente?", "options": ["Die Fl&auml;che zwischen der Preislinie und der Angebotskurve bis zur gehandelten Menge", "Die Fl&auml;che zwischen Nachfrage- und Angebotskurve rechts vom Gleichgewichtspunkt", "Die Fl&auml;che zwischen der Nachfragekurve und der Preislinie bis zur gehandelten Menge", "Die gesamte Fl&auml;che unterhalb der Angebotskurve bis zur gehandelten Menge am Markt"], "answer": "Die Fl&auml;che zwischen der Preislinie und der Angebotskurve bis zur gehandelten Menge", "feedback": "Die <b>Produzentenrente<\/b> liegt zwischen <b>Preislinie<\/b> und <b>Angebotskurve<\/b> (= Grenzkosten, Kapitel 5): Jede Einheit kostet nur ihre Grenzkosten, verkauft wird sie zum Marktpreis."}, {"id": "l2", "difficulty": "leicht", "subtopic": "Wohlfahrt", "type": "single", "stem": "Wie ist die Gesamtwohlfahrt auf einem Markt ohne Staatseingriff definiert?", "options": ["Als Summe aller Preise, die am Markt bezahlt worden sind", "Als Summe aus Konsumentenrente und Produzentenrente", "Als Umsatz der Anbieter abz&uuml;glich s&auml;mtlicher Fixkosten", "Als Differenz aus Konsumentenrente und Produzentenrente"], "answer": "Als Summe aus Konsumentenrente und Produzentenrente", "feedback": "Wohlfahrt = <b>KR + PR<\/b>. Kommt eine Steuer ins Spiel, z&auml;hlt zus&auml;tzlich das <b>Steueraufkommen<\/b> zur Wohlfahrt, der Wohlfahrtsverlust ist, was dann trotzdem fehlt."}, {"id": "l3", "difficulty": "leicht", "subtopic": "Bindende Preiseingriffe", "type": "single", "stem": "Wann ist ein H&ouml;chstpreis bindend, wann ein Mindestpreis?", "options": ["Beide binden nur, wenn sie exakt auf dem Gleichgewichtspreis festgesetzt sind", "H&ouml;chstpreis: unter dem Gleichgewichtspreis, Mindestpreis: dar&uuml;ber", "Beide binden immer, unabh&auml;ngig davon, wo der Gleichgewichtspreis liegt", "H&ouml;chstpreis: &uuml;ber dem Gleichgewichtspreis, Mindestpreis: darunter"], "answer": "H&ouml;chstpreis: unter dem Gleichgewichtspreis, Mindestpreis: dar&uuml;ber", "feedback": "Ein <b>H&ouml;chstpreis<\/b> wirkt nur <b>unter<\/b> p* (sonst &auml;ndert er nichts), ein <b>Mindestpreis<\/b> nur <b>&uuml;ber<\/b> p*. Nicht bindende Eingriffe lassen Preis und Menge in der Regel unver&auml;ndert."}, {"id": "l4", "difficulty": "leicht", "subtopic": "Höchstpreis berechnen", "type": "numeric", "stem": "Auf einem Markt gilt die Nachfrage p = 30 &minus; 2Q und das Angebot p = 6 + Q. Der Staat setzt einen H&ouml;chstpreis von 9. Welche Menge wird gehandelt?", "answer": 3.0, "tolerance": 0.01, "feedback": "Angebot: 9 = 6 + Q &rarr; Q<sub>S<\/sub> = 3; Nachfrage: Q<sub>D<\/sub> = 10,5. Gehandelt wird die <b>kurze Marktseite<\/b>: <b>Q = 3<\/b> (ohne Eingriff: Q* = 8)."}, {"id": "l5", "difficulty": "leicht", "subtopic": "Wohlfahrtsverlust", "type": "single", "stem": "Was beschreibt der Wohlfahrtsverlust (Deadweight Loss) eines Markteingriffs?", "options": ["Den Geldbetrag, den der Staat durch den Markteingriff insgesamt an Einnahmen erzielt", "Den Gewinnr&uuml;ckgang der Anbieter, der als zus&auml;tzliche Rente zu den K&auml;ufern wandert", "Den Teil der gesamten Steuerlast, den die Nachfrager &uuml;ber den Bruttopreis mittragen", "Den Wert der Handelsgewinne, die durch die geringere Menge niemandem mehr zuflie&szlig;en"], "answer": "Den Wert der Handelsgewinne, die durch die geringere Menge niemandem mehr zuflie&szlig;en", "feedback": "Der <b>Wohlfahrtsverlust<\/b> sind die <b>entgangenen Handelsgewinne<\/b>: Einheiten mit Zahlungsbereitschaft &uuml;ber den Grenzkosten kommen nicht mehr zustande. Dieser Verlust f&auml;llt <b>niemandem<\/b> zu, anders als das Steueraufkommen."}]}</script>
@@ -2451,7 +2678,8 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
 "use strict";
 (function(){
   /* ================= KONFIG ================= */
-  var ZUGANG = "probe";                    /* "probe" | "komplett" · Komplett-Build: auf "komplett" setzen ({{LIZENZ_TOKEN}}) */
+  var ZUGANG = "probe";
+  var VORMERK_URL = "{{VORMERK_ENDPOINT}}"; /* VPS-Endpoint: nimmt Vormerkung an, verschickt Mail via Brevo */                    /* "probe" | "komplett" · Komplett-Build: auf "komplett" setzen ({{LIZENZ_TOKEN}}) */
   var KLAUSUR = "2026-07-22", FRIST = "2026-07-21";
   var QP = {};
   try { QP = Object.fromEntries(new URLSearchParams(location.search)); } catch(e){}
@@ -2477,10 +2705,15 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
 
   /* ================= SPEICHER (je Geraet) ================= */
   var KEY = "bwlk-omik-v1";
+  var NKAP=10, FREI_KAP=2, FREI_KAP_2=8;
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; } }
   function save(){ try { localStorage.setItem(KEY, JSON.stringify(ST)); } catch(e){} }
   var ST = load();
   ST.done = ST.done || {}; ST.weak = ST.weak || {}; ST.quiz = ST.quiz || {};
+  /* Demo-Kaeufe werden nicht mehr im Geraet gespeichert: bei jedem Start zuruecksetzen.
+     Echte Freischaltung kommt spaeter uebers Backend (Zahlung -> Zugangsdaten). */
+  ST.owned = {}; ST.hoOwned = {}; ST.pkg = null; ST.hoAll = false; ST.qa = null;
+  save();
 
   /* ================= THEME (Hell = Standard) ================= */
   function setTheme(t){
@@ -2513,8 +2746,23 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
     var c4 = $("cd4");  if(c4)   c4.textContent   = df + (df===1?" Tag":" Tage");
   })();
 
+  /* ================= PREISE (Fakten-Kanon / Simons Vorgaben) ================= */
+  var PRICE = {
+    kapitel:6.90, komplett:39.90, komplettAlt:69.00,
+    handout:8.90, handoutPaket:49.90, handoutPaketAlt:89.00,
+    gesamt:79.90, gesamtAlt:185.00, qa:19.90
+  };
+  function euro(v){ return v.toFixed(2).replace(".",",")+" €"; }
+  function ownedChapters(){ var c=0; for(var i=1;i<=NKAP;i++){ if(i!==FREI_KAP && ST.owned[i]) c++; } return c; }
+  function spentEuro(){ return ownedChapters()*PRICE.kapitel; }              /* auf komplett angerechnet */
+  function komplettRest(){ return Math.max(0, PRICE.komplett - spentEuro()); } /* Restpreis fuer OMIK Klausur-App */
+  function hasKomplett(){ return ZUGANG==="komplett" || ST.pkg==="komplett"; }
+  function hasAllHandouts(){ return !!ST.hoAll; }
+  function handoutUnlocked(n){ return hasAllHandouts() || !!ST.hoOwned[n]; }
+
   /* ================= ZUSTAND JE KAPITEL ================= */
-  function unlocked(n){ return ZUGANG==="komplett" || n===2; }
+  function hasFree(){ return false; /* {{KONTO_BACKEND}}: 2. Gratis-Kapitel (FREI_KAP_2) wird serverseitig via /api/me freigeschaltet, kein Link-Hack */ }
+  function unlocked(n){ return hasKomplett() || n===FREI_KAP || (n===FREI_KAP_2 && hasFree()) || !!ST.owned[n]; }
   function activeN(){
     for(var i=0;i<LESSONS.length;i++){ var n=LESSONS[i].n; if(unlocked(n) && !ST.done[n]) return n; }
     return null;
@@ -2524,11 +2772,11 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
     if(!unlocked(n)) return "locked";
     return (n===activeN()) ? "active" : "open";
   }
-  function doneCount(){ var c=0; for(var i=1;i<=10;i++) if(ST.done[i]) c++; return c; }
+  function doneCount(){ var c=0; for(var i=1;i<=NKAP;i++) if(ST.done[i]) c++; return c; }
 
   /* ================= HUB ================= */
   function renderHub(){
-    var dc = doneCount(), pct = dc*10, an = activeN();
+    var dc = doneCount(), pct = Math.round(dc*100/NKAP), an = activeN();
     $("hubRing").setAttribute("stroke-dasharray", pct+" 100");
     $("hubRingVal").textContent = pct+"%";
     $("statDone").textContent = dc;
@@ -2557,15 +2805,15 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
       $("hubNextWrap").hidden = true;
     } else if(an===null){
       $("hubTitle").innerHTML = "Kapitel 2 geschafft.";
-      $("hubSub").textContent = "Stark. Die übrigen 9 Kapitel schaltest du mit OMIK komplett frei.";
+      $("hubSub").textContent = "Stark. Die übrigen 9 Kapitel schaltest du mit OMIK Klausur-App frei.";
       $("hubProgSub").textContent = "Dein Gratis-Kapitel ist erledigt. Wiederholen geht jederzeit.";
-      $("hubCta").innerHTML = "OMIK komplett freischalten <svg class='i arrow'><use href='#i-arrow'/></svg>";
+      $("hubCta").innerHTML = "OMIK Klausur-App freischalten <svg class='i arrow'><use href='#i-arrow'/></svg>";
       $("hubCta").onclick = function(){ show("mehr"); };
       $("hubNextWrap").hidden = true;
     } else {
       var L = lesson(an);
       $("hubTitle").innerHTML = dc===0 ? "Dein Weg zur OMIK&#8209;Klausur." : "Weiter geht&rsquo;s.";
-      $("hubSub").textContent = "Noch "+(10-dc)+" Kapitel bis zur Klausur am 22.07. bei Prof. Blonski.";
+      $("hubSub").textContent = "Noch "+(NKAP-dc)+" Kapitel bis zur Klausur am 22.07. bei Prof. Blonski.";
       $("hubProgSub").textContent = "Kapitel "+an+" ist "+(ST.quiz[an]?"angefangen":"offen")+" und wartet auf dich.";
       $("hubCta").innerHTML = "Kapitel "+an+" "+(ST.quiz[an]?"fortsetzen":"starten")+" <svg class='i arrow'><use href='#i-arrow'/></svg>";
       $("hubCta").onclick = function(){ openLesson(an); };
@@ -2579,7 +2827,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
     var dw = $("hubDoneWrap");
     if(dc>0){
       dw.hidden = false;
-      var names=[]; for(var i=1;i<=10;i++) if(ST.done[i]) names.push("Kapitel "+i);
+      var names=[]; for(var i=1;i<=NKAP;i++) if(ST.done[i]) names.push("Kapitel "+i);
       $("hubDoneT").textContent = dc===1 ? plainT(parseInt(Object.keys(ST.done)[0],10)) : names.join(", ");
       $("hubDoneS").textContent = dc===1 ? "Abgeschlossen, jederzeit wieder anschauen" : dc+" Kapitel abgeschlossen";
     } else dw.hidden = true;
@@ -2626,9 +2874,10 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
     wrap.innerHTML = html;
     drawRail(wrap);
     var dc = doneCount();
+    var full = hasKomplett();
     $("pathSum").innerHTML = "<b>10 Kapitel</b> · 160 Selbsttest-Fragen. " +
-      (ZUGANG==="probe" ? "Kapitel 2 schon gratis spielbar, der Rest als Vorschau." : (dc===0 ? "Alle Kapitel freigeschaltet." : dc+" von 10 erledigt, weiter geht&rsquo;s."));
-    $("pfadCtaWrap").hidden = (ZUGANG!=="probe");
+      (!full ? "Kapitel 2 gratis, weitere schaltest du einzeln oder komplett frei." : (dc===0 ? "Alle Kapitel freigeschaltet." : dc+" von 10 erledigt, weiter geht&rsquo;s."));
+    $("pfadCtaWrap").hidden = full;
   }
   function drawRail(wrap){
     var svg = wrap.querySelector(".railsvg"); if(!svg) return;
@@ -2650,14 +2899,14 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
     svg.setAttribute("viewBox","0 0 "+W+" "+H); svg.setAttribute("preserveAspectRatio","none");
     svg.innerHTML = "<defs><linearGradient id='pgrad' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='var(--accent-2)'/><stop offset='1' stop-color='var(--accent)'/></linearGradient></defs>"+
       "<g>"+
-      "<path d='"+curve(pts)+"' fill='none' stroke='var(--hair)' stroke-width='6' stroke-linecap='round'/>"+
+      "<path d='"+curve(pts)+"' fill='none' stroke='var(--hair)' stroke-width='8' stroke-linecap='round'/>"+
       (function(){
         /* Orange nur durch erledigte Kapitel bis ins aktive; sonst nur der Einstiegs-Bogen */
         var si=ai;
         while(si>0 && stations[si-1].classList.contains("done")) si--;
         var start = (si===ai) ? Math.max(0, ai-1) : si;
         var seg = pts.slice(start, ai+1);
-        return "<path d='"+curve(seg)+"' fill='none' stroke='url(#pgrad)' stroke-width='6' stroke-linecap='round' opacity='.9'/>";
+        return "<path d='"+curve(seg)+"' fill='none' stroke='url(#pgrad)' stroke-width='8' stroke-linecap='round' opacity='.9'/>";
       })()+
       "</g>";
   }
@@ -2726,7 +2975,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
     steps.forEach(function(s){ var on = (+s.dataset.step===STEP); s.classList.toggle("on", on); if(on) cur=s; });
     if(STEP>MAXSTEP) MAXSTEP=STEP;
     renderSegs();
-    $("lPrev").disabled = (STEP<=1);
+    $("lPrev").disabled = (STEP<=1) || (STEP===TOTAL);
     if(STEP===TOTAL){ lNext.style.display="none"; startQuizOnce(); }
     else { lNext.style.display=""; lNext.innerHTML="Weiter <svg class='i arrow'><use href='#i-arrow'/></svg>"; }
     $("swipeHint").hidden = !(STEP<=2 && STEP<TOTAL);
@@ -2737,7 +2986,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
   }
   lNext.addEventListener("click", function(){ if(STEP<TOTAL){ STEP++; renderStep(); } });
   $("lPrev").addEventListener("click", function(){ if(STEP>1){ STEP--; renderStep(); } });
-  $("lSegs").addEventListener("click", function(e){
+  $("lSegs").addEventListener("click", function(e){ if(STEP===TOTAL) return;
     var b=e.target.closest("button[data-go]"); if(!b || b.disabled) return;
     STEP=+b.dataset.go; renderStep();
   });
@@ -2753,7 +3002,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
       var t=e.target;
       if(t.closest && (t.closest("input") || t.closest(".aha") || t.closest("#qarea"))) return;
       if(dx<0 && STEP<TOTAL){ STEP++; renderStep(); }
-      else if(dx>0 && STEP>1){ STEP--; renderStep(); }
+      else if(dx>0 && STEP>1 && STEP!==TOTAL){ STEP--; renderStep(); }
     }, {passive:true});
   })();
 
@@ -2960,7 +3209,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
       ST.weak[n]=Object.keys(wrongSubs);
       save();
       var done=document.createElement("div"); done.className="finish";
-      done.innerHTML="<b>Dein Ergebnis: "+totalCorrect+" von "+totalAnswered+" richtig ("+pct+"&nbsp;%).</b><br>Den Feinschliff und deine persönlichen Fragen machen wir im Live-Q&amp;A und im Live-Klausurtraining."+
+      done.innerHTML="<b>Dein Ergebnis: "+totalCorrect+" von "+totalAnswered+" richtig ("+pct+"&nbsp;%).</b><br>Den Feinschliff und deine persönlichen Fragen machen wir in der Live-Q&amp;A-Session."+
         "<div style='margin-top:12px'><button class='btn btn-primary btn-block' id='finishChapter'>Kapitel abschließen <svg class='i arrow'><use href='#i-arrow'/></svg></button></div>";
       qarea.appendChild(done); scoreTag.textContent="Endergebnis: "+totalCorrect+" / "+totalAnswered;
       $("finishChapter").onclick=function(){ ST.done[n]=1; save(); show("hub"); };
@@ -2971,12 +3220,12 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
   /* ================= WIEDERHOLEN ================= */
   function renderRep(){
     var list=$("repList"), empty=$("repEmpty"), html="", any=false;
-    for(var i=1;i<=10;i++){
+    for(var i=1;i<=NKAP;i++){
       var subs=ST.weak[i];
       if(!ST.quiz[i]) continue;
       any=true;
       var chips=(subs&&subs.length) ? subs.map(function(s){ return "<span class='pill'>"+s+"</span>"; }).join("") : "<span class='pill gratis'><span class='dot'></span> alles saß</span>";
-      html+="<div class='repcard'><div class='rh' style='display:flex;gap:11px;align-items:flex-start'><span style='width:34px;height:34px;flex:none;border-radius:50%;border:2px solid var(--silver);display:grid;place-items:center;color:var(--text-2)'><svg class='i' style='width:17px'><use href='#k-"+i+"'/></svg></span><div><b>Kapitel "+i+" · "+lesson(i).t+"</b><br><small class='num'>Letzter Selbsttest: "+ST.quiz[i].c+" von "+ST.quiz[i].n+" richtig</small></div></div>"+
+      html+="<div class='repcard'><div class='rh' style='display:flex;gap:11px;align-items:center;justify-content:flex-start'><span style='width:34px;height:34px;flex:none;border-radius:50%;border:2px solid var(--silver);display:grid;place-items:center;color:var(--text-2)'><svg class='i' style='width:17px'><use href='#k-"+i+"'/></svg></span><div><b>Kapitel "+i+" · "+lesson(i).t+"</b><br><small class='rep-last'>Letzter Selbsttest: "+ST.quiz[i].c+" von "+ST.quiz[i].n+" richtig</small></div></div>"+
         "<div class='repchips'>"+chips+"</div>"+
         "<button class='btn btn-silver btn-sm' data-rep='"+i+"'>Selbsttest wiederholen</button></div>";
     }
@@ -2998,42 +3247,216 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
   }
   if(chatSend){ chatSend.addEventListener("click", sendChat); chatInput.addEventListener("keydown", function(e){ if(e.key==="Enter"){ e.preventDefault(); sendChat(); } }); }
 
-  /* ================= MEHR / ZUGANG ================= */
-  (function(){
-    if(ZUGANG==="komplett"){
-      $("accTitle").textContent="Komplett-Zugang";
-      $("accSub").textContent="Alle 10 Kapitel frei · Fortschritt auf diesem Gerät";
-      $("accBuyWrap").hidden=true;
-      $("licNote").hidden=false;
-    } else {
-      $("accBuy").addEventListener("click", function(){ openSheet(null); });
-    }
-    $("pfadCta").addEventListener("click", function(){ openSheet(null); });
-  })();
+  /* ================= FREISCHALT-STORE (klickbare Kauf-Demo) ================= */
+  var sheetOv=$("sheetOv"), STORE_CTX=null;
+  var RABATT_MSG="Wir wollen nicht daran verdienen, dass du unentschlossen warst. Deswegen zahlst du am Ende nur den stark rabattierten Gesamtpreis von "+euro(PRICE.komplett)+". Danke für dein Vertrauen, wir freuen uns auf dein Feedback.";
+  var TOPICS={
+    1:["Budgetgerade", "Indifferenzkurven", "Grenzrate der Substitution", "Haushaltsoptimum", "Elastizitäten"],
+    2:["Erwartungswert", "Erwartungsnutzen", "Risikoaversion", "Sicherheitsäquivalent", "Risikoprämie"],
+    3:["Produktionsfunktion", "Grenzprodukt", "Isoquanten", "Skalenerträge"],
+    4:["Fixkosten", "variable Kosten", "Grenzkosten", "Durchschnittskosten"],
+    5:["Angebotsfunktion", "Nachfrage", "Marktgleichgewicht", "Preiselastizität"],
+    6:["Preisnehmer", "Konsumentenrente", "Höchstpreis", "Steuern"],
+    7:["Grenzerlös", "Cournot-Punkt", "Preissetzung", "Wohlfahrtsverlust"],
+    8:["Normalform", "dominante Strategie", "Nash-Gleichgewicht", "Gefangenendilemma"],
+    9:["Cournot-Mengenwettbewerb", "Bertrand-Preiswettbewerb", "Stackelberg-Führerschaft", "Reaktionsfunktion"],
+    10:["Aufgabentypen", "Rechenwege", "Musterlösungen", "Prüfungsstrategie"]
+  };
+  var QASLOTS=["Di 21.07., 16:00", "Di 21.07., 18:00", "Di 21.07., 20:00"];
 
-  /* ================= VORMERK-SHEET ================= */
-  var sheetOv=$("sheetOv");
-  function openSheet(kontext){
-    $("sheetSub").innerHTML = (kontext ? "<b>"+kontext+"</b> ist Teil von &bdquo;OMIK komplett&ldquo;. " : "")+
-      "Alle 10 Kapitel als interaktive Lektionen mit Selbsttests, dazu Live&#8209;Q&amp;A in kleiner Gruppe.";
-    $("sheetForm").style.display=""; $("sheetOk").style.display="none"; $("sheetErr").style.display="none";
-    sheetOv.classList.add("on");
-    document.body.style.overflow="hidden";
+  /* ---- Vormerkung statt Sofort-Kauf ---- */
+  function productLabel(typ,n,slot){
+    if(typ==="kapitel") return "Lektion Kap "+n+" · "+plainT(n)+" · "+euro(PRICE.kapitel);
+    if(typ==="komplett") return "OMIK Klausur-App · "+euro(PRICE.komplett);
+    if(typ==="gesamt") return "OMIK Klausur-App + alle Handouts · "+euro(PRICE.gesamt);
+    if(typ==="handoutpaket") return "Alle 10 Handouts als Paket · "+euro(PRICE.handoutPaket);
+    if(typ==="handout") return "Handout Kap "+n+" · "+plainT(n)+" · "+euro(PRICE.handout);
+    if(typ==="qa") return "Live-Q&A · "+slot+" Uhr · "+euro(PRICE.qa);
+    return "";
   }
+  function renderOrderForm(label){
+    $("storeBody").innerHTML =
+      '<button type="button" class="store-link" data-back>&#8249; Zurück zur Auswahl</button>'+
+      '<div class="store-status" style="margin-top:8px">Deine Auswahl: <b>'+label+'</b></div>'+
+      '<form id="vmForm" novalidate style="margin-top:12px">'+
+        '<div class="field"><label for="vmName">Dein Name *</label><input type="text" id="vmName" autocomplete="given-name" placeholder="z. B. Lena" required>'+
+        '<p style="font-size:12px;color:var(--text-3);line-height:1.45;margin:5px 0 0">Mit diesem Namen sprechen wir dich in E-Mails an. Und so heißt du im Gruppenchat, wenn du etwas schreibst.</p></div>'+
+        '<div class="field"><label for="vmMail">E-Mail-Adresse *</label><input type="email" id="vmMail" autocomplete="email" placeholder="name@beispiel.de" required></div>'+
+        '<div class="field"><label for="vmTel">Handynummer <span style="font-weight:400;color:var(--text-3)">(optional)</span></label><input type="tel" id="vmTel" autocomplete="tel" inputmode="tel" placeholder="z. B. 0151 23456789"></div>'+
+        '<label class="chk"><input type="checkbox" id="vmDs"><span>Ich bin einverstanden, dass meine Angaben zur Vormerkung verarbeitet werden. Details in der Datenschutzerklärung (in den Einstellungen).</span></label>'+
+        '<div class="err" id="vmErr">Bitte Name, E-Mail-Adresse und Einverständnis ausfüllen.</div>'+
+        '<button type="submit" class="btn btn-primary btn-block">Vormerkung absenden</button>'+
+      '</form>'+
+      '<div class="ok" id="vmOk">Danke! Deine Vormerkung ist notiert. Wir melden uns per E-Mail, sobald dein Zugang bereitsteht.</div>'+
+      '<p class="placeholder-note" style="margin-top:12px">Kostenlos und unverbindlich, es entsteht keine Zahlungspflicht. Bezahlung und Zugangsdaten folgen später im separaten Checkout.</p>';
+    $("vmForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      var nm=$("vmName").value.trim().replace(/[<>]/g,""), ml=$("vmMail").value.trim(), tel=$("vmTel").value.trim(), ds=$("vmDs").checked;
+      if(!nm || !ml || ml.indexOf("@")<1 || !ds){ $("vmErr").style.display="block"; return; }
+      $("vmErr").style.display="none";
+      var data={name:nm, produkt:label, email:ml, handynummer:tel, zeit:new Date().toISOString()};
+      ST.vm = ST.vm || []; ST.vm.push(data); save();
+      if(/^https?:/.test(VORMERK_URL)){
+        try { fetch(VORMERK_URL, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(data)}).catch(function(){}); } catch(e2){}
+      }
+      $("vmForm").style.display="none";
+      $("vmOk").innerHTML="<b>Danke, "+nm+"!</b> Deine Vormerkung ist notiert. Wir melden uns per E-Mail, sobald dein Zugang bereitsteht.";
+      $("vmOk").style.display="block";
+    });
+  }
+
+
+  /* ---- BKBC-Konfigurator: Checkout-Hook an den bestehenden Flow ---- */
+  window.bkbcOnCheckout = function(p){
+    var art = p.handouts ? "Klausur-Check + alle Handouts" : "Klausur-Check";
+    renderOrderForm("Fächer-Paket: " + p.faecher.join(" + ") + " · " + art + " · " + euro(p.total));
+  };
+
+  /* ---- Zugangs-Karte in den Einstellungen ---- */
+  function updateAccessCard(){
+    var at=$("accTitle"), as=$("accSub"), bw=$("accBuyWrap"), ln=$("licNote"), ab=$("accBuy");
+    if(ZUGANG==="komplett"){
+      at.textContent="Komplett-Zugang"; as.textContent="Alle 10 Kapitel frei · Fortschritt auf diesem Gerät";
+      bw.hidden=true; if(ln) ln.hidden=false; return;
+    }
+    if(ST.pkg==="komplett" && ST.hoAll){ at.textContent="Gesamtpaket"; as.textContent="Alle 10 Kapitel und alle Handouts frei"; bw.hidden=true; }
+    else if(ST.pkg==="komplett"){ at.textContent="OMIK Klausur-App"; as.textContent="Alle 10 Kapitel frei"+(ST.hoAll?" · Handouts inklusive":""); bw.hidden=true; }
+    else {
+      var oc=ownedChapters();
+      at.textContent="Probe-Zugang";
+      as.textContent=oc>0 ? (oc+" Kapitel einzeln frei · Kapitel 2 gratis") : "Kapitel 2 frei · restliche Kapitel gesperrt";
+      bw.hidden=false;
+      if(ab) ab.innerHTML="OMIK Klausur-App freischalten · "+euro(komplettRest())+(spentEuro()>0?" <small style='font-weight:600'>(angerechnet)</small>":"");
+    }
+  }
+
+  /* ---- Store-Rendering ---- */
+  function pkgRow(title, sub, price, altPrice, buy, feat){
+    return '<div class="store-pkgrow'+(feat?' feat':'')+'">'+
+      '<div class="pkgr-t"><b>'+title+'</b><small>'+sub+'</small></div>'+
+      '<div class="pkgr-p">'+euro(price)+(altPrice?'<s>'+euro(altPrice)+'</s>':'')+'</div>'+
+      '<button class="pkgr-go" data-buy="'+buy+'">Freischalten</button>'+
+    '</div>';
+  }
+  function renderStore(kontext){
+    var komplett=hasKomplett(), allHo=hasAllHandouts(), gesamt=komplett&&allHo;
+    var oc=ownedChapters(), spent=spentEuro(), rest=komplettRest(), nextP=Math.min(PRICE.kapitel, rest);
+    var H=[];
+
+    /* Rabatt-Satz dauerhaft, sobald freigeschaltet (nicht im echten Komplett-Build) */
+    if(ZUGANG!=="komplett"){
+      if(gesamt) H.push('<div class="store-rabatt"><b>Alles freigeschaltet.</b>Du hast das Gesamtpaket, alle 10 Kapitel und alle Handouts sind frei, dazu eine Live-Q&amp;A gratis. Danke für dein Vertrauen, wir freuen uns auf dein Feedback.</div>');
+      else if(komplett) H.push('<div class="store-rabatt"><b>Alles freigeschaltet.</b>'+RABATT_MSG+'</div>');
+    }
+
+    /* Fair-Hinweis / Status (nur solange nicht komplett) */
+    if(!komplett){
+      var st;
+      if(oc>0) st="Du hast <b>"+oc+" Kapitel</b> einzeln ("+euro(spent)+"). Voll auf OMIK Klausur-App angerechnet, es fehlen nur noch <b>"+euro(rest)+"</b>.";
+      else st="Wir wollen nicht daran verdienen, dass du zuerst einzelne Inhalte testen willst! Solltest du am Anfang die höheren Einzelpreise wählen und dich später für das Gesamtpaket entscheiden, bleibt der <b>rabattierte Gesamtpreis</b> für dich reserviert.";
+      if(kontext) st="<b>"+kontext+"</b> ist noch gesperrt. "+st;
+      H.push('<div class="store-status">'+st+'</div>');
+    }
+
+    /* Pakete (kompakt) */
+    if(!gesamt){
+      H.push('<div class="sec-lbl">Pakete</div>');
+      /* Reihenfolge: guenstig -> teuer (39,90 / 49,90 / 69,90) */
+      if(!komplett){
+        H.push(pkgRow("OMIK Klausur-App","alle 10 Lektionen"+(spent>0?" · "+euro(spent)+" angerechnet":""), rest, PRICE.komplettAlt, "komplett", true));
+      }
+      if(!allHo){
+        H.push(pkgRow("Alle 10 Handouts als Paket","Aufgaben + Lösungen zu jedem Kapitel", PRICE.handoutPaket, PRICE.handoutPaketAlt, "handoutpaket", false));
+      }
+      if(!komplett){
+        H.push(pkgRow("OMIK Klausur-App + alle Handouts","Kurs + alle Handout-PDFs · inkl. 1 Live-Q&amp;A-Session gratis", Math.max(0,PRICE.gesamt-spent), PRICE.gesamtAlt, "gesamt", false));
+      }
+    }
+
+    /* Eine Kapitelliste mit zwei Preisen */
+    if(!gesamt){
+      H.push('<div class="sec-lbl">Mehrere Fächer</div>');
+      H.push(window.BKBC.markup());
+    }
+
+    /* Live-Q&A-Session (zusammengefasst, oberhalb der Einzelbuchung) */
+    var qaFree=gesamt;
+    H.push('<div class="sec-lbl">Live-Q&amp;A-Session</div>');
+    H.push('<div class="store-pkgrow"><div class="pkgr-t"><b>Live-Q&amp;A-Session</b><small>Persönliche Fragen oder ganze Klausuraufgaben vorab einsenden, in der Session ausführlich gelöst. Nachfragen ausdrücklich erwünscht.</small></div><div class="pkgr-p">'+euro(PRICE.qa)+'</div></div>');
+    H.push('<div class="store-anrech">'+(qaFree?'In deinem Paket (Klausur-App + alle Handouts) ist <b>1x Live-Q&amp;A-Session gratis</b>.':'Einzeln '+euro(PRICE.qa)+' pro Session, 1x gratis beim Kombi „Klausur-App + alle Handouts".')+'</div>');
+    if(ST.qa){
+      H.push('<div class="store-status">Gebucht: <b>'+ST.qa+' Uhr</b>. <button class="store-link" data-buy="qa" data-slot="'+ST.qa+'">Termin behalten</button></div>');
+    } else {
+      H.push('<div class="store-list">');
+      QASLOTS.forEach(function(s){
+        H.push('<div class="store-row"><span class="store-row-t">'+s+' Uhr</span><span class="store-row-r"><button class="btn btn-silver store-mini" data-buy="qa" data-slot="'+s+'">'+(qaFree?'gratis buchen':euro(PRICE.qa))+'</button></span></div>');
+      });
+      H.push('</div>');
+    }
+
+    if(!gesamt){
+      H.push('<div class="sec-lbl">Einzeln freischalten</div>');
+      H.push('<div class="store-legend"><span><i class="store-dot l"></i> Lektion (in der App)</span><span><i class="store-dot h"></i> Handout (PDF mit Lösungen)</span></div>');
+      if(!komplett && oc>0){
+        var msg;
+        if(rest<=PRICE.kapitel) msg="Deine nächste Lektion kostet nur noch <b>"+euro(rest)+"</b> und schaltet damit <b>alle 10 Kapitel</b> frei.";
+        else msg="Bereits "+euro(spent)+" angerechnet, die nächste Lektion kostet "+euro(PRICE.kapitel)+".";
+        H.push('<div class="store-anrech">'+msg+'</div>');
+      }
+      H.push('<div class="store-clist">');
+      LESSONS.forEach(function(c){
+        var n=c.n, lchip, hchip;
+        if(n===3) lchip='<span class="store-chip lchip free"><small>Lektion</small>gratis</span>';
+        else if(unlocked(n)) lchip='<span class="store-chip lchip owned"><small>Lektion</small>&#10003; frei</span>';
+        else lchip='<button class="store-chip lchip" data-buy="kapitel" data-n="'+n+'"><small>Lektion</small>'+euro(nextP)+'</button>';
+        if(handoutUnlocked(n)) hchip='<span class="store-chip hchip owned"><small>Handout</small>&#10003; frei</span>';
+        else hchip='<button class="store-chip hchip" data-buy="handout" data-n="'+n+'"><small>Handout</small>'+euro(PRICE.handout)+'</button>';
+        var topics=(TOPICS[n]||[]).map(function(k){ return '<li>'+k+'</li>'; }).join("");
+        H.push('<div class="store-crow"><div class="store-crow-top">'+
+          '<details class="store-cdet"><summary><span class="kap">Kap '+n+'</span> '+c.t+'</summary>'+
+            '<div class="store-topics"><b>Handout Kap '+n+' enthält:</b><ul>'+topics+'</ul></div></details>'+
+          '<div class="store-chips">'+lchip+hchip+'</div>'+
+        '</div></div>');
+      });
+      H.push('</div>');
+    }
+
+
+    $("storeBody").innerHTML=H.join("");
+    if(window.BKBC) window.BKBC.bind($("storeBody"));
+  }
+
+  function openSheet(kontext){ STORE_CTX=kontext||null; renderStore(STORE_CTX); sheetOv.classList.add("on"); document.body.style.overflow="hidden"; }
   function closeSheet(){ sheetOv.classList.remove("on"); document.body.style.overflow=""; }
   $("sheetClose").addEventListener("click", closeSheet);
   sheetOv.addEventListener("click", function(e){ if(e.target===sheetOv) closeSheet(); });
+  /* Sheet per Runterwischen schliessen (nur wenn oben, damit Scrollen frei bleibt) */
+  (function(){
+    var sh=sheetOv.querySelector('.sheet'); if(!sh) return;
+    var y0=null, dy=0, drag=false;
+    function start(y){ if(sh.scrollTop>0){ y0=null; drag=false; return; } y0=y; dy=0; drag=true; sh.style.transition='none'; }
+    function move(y){ if(y0===null) return; dy=y-y0; if(dy<0) dy=0; sh.style.transform='translateY('+dy+'px)'; }
+    function end(){ if(y0===null){ drag=false; return; } sh.style.transition='transform .22s ease'; if(dy>90){ closeSheet(); } sh.style.transform=''; y0=null; drag=false; }
+    sh.addEventListener('touchstart',function(e){ start(e.touches[0].clientY); },{passive:true});
+    sh.addEventListener('touchmove',function(e){ move(e.touches[0].clientY); },{passive:true});
+    sh.addEventListener('touchend',end);
+    sh.addEventListener('pointerdown',function(e){ if(e.pointerType==='touch') return; start(e.clientY); });
+    window.addEventListener('pointermove',function(e){ if(drag && e.pointerType!=='touch') move(e.clientY); });
+    window.addEventListener('pointerup',function(e){ if(drag && e.pointerType!=='touch') end(); });
+  })();
   document.addEventListener("keydown", function(e){ if(e.key==="Escape" && sheetOv.classList.contains("on")) closeSheet(); });
-  $("sheetForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    var nm=$("vmName").value.trim(), ml=$("vmMail").value.trim(), ds=$("vmDs").checked;
-    if(!nm || !ml || ml.indexOf("@")<1 || !ds){ $("sheetErr").style.display="block"; return; }
-    $("sheetErr").style.display="none";
-    $("sheetForm").style.display="none";
-    var ok=$("sheetOk");
-    ok.innerHTML="<b>Danke!</b> Deine Vormerkung ist notiert. Wir melden uns per E-Mail, sobald dein Zugang bereitsteht.";
-    ok.style.display="block";
+  $("storeBody").addEventListener("click", function(e){
+    if(e.target.closest("[data-back]")){ renderStore(STORE_CTX); return; }
+    var b=e.target.closest("[data-buy]"); if(!b) return;
+    renderOrderForm(productLabel(b.getAttribute("data-buy"), parseInt(b.getAttribute("data-n"),10), b.getAttribute("data-slot")));
   });
+
+  /* ================= MEHR / ZUGANG ================= */
+  (function(){
+    updateAccessCard();
+    var ab=$("accBuy"); if(ab) ab.addEventListener("click", function(){ openSheet(null); });
+    $("pfadCta").addEventListener("click", function(){ openSheet(null); });
+  })();
 
   /* ================= ONBOARDING (3 Schritte) ================= */
   (function(){
@@ -3055,14 +3478,14 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
       ST.ob=1; save();
       ob.classList.remove("on");
       document.body.style.overflow="";
-      if(startLesson) openLesson(2); else show("hub");
+      if(startLesson) openLesson(3); else show("hub");
     }
     $("obSkip").addEventListener("click", function(){ finishOb(false); });
     $("obStart").addEventListener("click", function(){ finishOb(true); });
     $("obLook").addEventListener("click", function(){ finishOb(false); });
-    /* Mini-Frage: 1:1 die leichte Frage l1 aus der Kapitel-2-Fragenbank */
+    /* Mini-Frage: 1:1 die leichte Frage l1 aus der Kapitel-3-Fragenbank */
     try {
-      var bank=JSON.parse($("qbank-2").textContent);
+      var bank=JSON.parse($("qbank-3").textContent);
       var q=null; bank.questions.forEach(function(x){ if(x.id==="l1") q=x; });
       if(q){
         var wrap=$("obQOpts"), html="";

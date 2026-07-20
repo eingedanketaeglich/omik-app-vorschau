@@ -801,7 +801,7 @@ window.BKBC = (function(){
 <!-- ===================== HUB ===================== -->
 <section id="screen-hub" class="screen active">
   <div class="scr-h">
-    <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> <span id="hubHi">Willkommen</span></span>
+    <span class="eyebrow"><span id="hubHi">Willkommen</span></span>
     <h1 id="hubTitle">Dein Weg zur OMIK&#8209;Klausur.</h1>
     <p id="hubSub">Klausur bei Prof. Blonski am 22.07.2026. Ein Kapitel nach dem anderen.</p>
   </div>
@@ -865,7 +865,7 @@ window.BKBC = (function(){
 <!-- ===================== LERNPFAD ===================== -->
 <section id="screen-pfad" class="screen">
   <div class="scr-h">
-    <span class="eyebrow"><svg class="i"><use href="#i-map"/></svg> Dein Lernpfad</span>
+    <span class="eyebrow">Dein Lernpfad</span>
     <h1>Kapitel für Kapitel</h1>
   </div>
 
@@ -891,7 +891,7 @@ window.BKBC = (function(){
 <!-- ===================== WIEDERHOLEN ===================== -->
 <section id="screen-wiederholen" class="screen">
   <div class="scr-h">
-    <span class="eyebrow"><svg class="i"><use href="#i-repeat"/></svg> Wiederholen</span>
+    <span class="eyebrow">Wiederholen</span>
     <h1>Gezielt festigen</h1>
     <p>Themen aus deinen Selbsttests, die du noch einmal üben solltest.</p>
   </div>
@@ -906,7 +906,7 @@ window.BKBC = (function(){
 <!-- ===================== MEHR / EINSTELLUNGEN ===================== -->
 <section id="screen-mehr" class="screen">
   <div class="scr-h">
-    <span class="eyebrow"><svg class="i"><use href="#i-gear"/></svg> Einstellungen</span>
+    <span class="eyebrow">Einstellungen</span>
     <h1>Deine App</h1>
   </div>
 
@@ -937,7 +937,7 @@ window.BKBC = (function(){
 <!-- ===================== IMPRESSUM (in-App, Platzhalter) ===================== -->
 <section id="screen-impressum" class="screen">
   <div class="scr-h">
-    <span class="eyebrow"><svg class="i"><use href="#i-shield"/></svg> Rechtliches</span>
+    <span class="eyebrow">Rechtliches</span>
     <h1>Impressum</h1>
   </div>
   <div class="legal">
@@ -958,7 +958,7 @@ window.BKBC = (function(){
 <!-- ===================== DATENSCHUTZ (in-App, Platzhalter) ===================== -->
 <section id="screen-datenschutz" class="screen">
   <div class="scr-h">
-    <span class="eyebrow"><svg class="i"><use href="#i-shield"/></svg> Rechtliches</span>
+    <span class="eyebrow">Rechtliches</span>
     <h1>Datenschutz</h1>
   </div>
   <div class="legal">
@@ -981,7 +981,7 @@ window.BKBC = (function(){
 <!-- ===================== NACHRICHTEN (Gruppenchat + News) ===================== -->
     <section id="screen-nachrichten" class="screen">
       <div class="scr-h">
-        <span class="eyebrow"><svg class="i"><use href="#i-chat"/></svg> Gruppenchat</span>
+        <span class="eyebrow">Gruppenchat</span>
         <h1>Nachrichten</h1>
         <p>Frag das Team, tausch dich mit anderen Lernenden aus und verpass keine News.</p>
       </div>
@@ -1076,7 +1076,7 @@ window.BKBC = (function(){
 
 <template id="lesson-1">
 <div class="lstep" data-name="Einstieg">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Kapitel 1 · Einstieg</span>
+  <span class="eyebrow">Kapitel 1 · Einstieg</span>
   <h2>Haushaltstheorie</h2>
   <div class="storybox">
     <p>Stell dir vor, du hast diesen Monat <b>336 €</b> frei zur Verfügung und verteilst sie auf zwei Dinge, die dir wichtig sind: <b>Bahnfahrten</b> (7 € pro Fahrt) und <b>Kinobesuche</b> (12 € pro Ticket). Kaufst du eine Fahrt mehr, bleibt weniger fürs Kino, und umgekehrt. Dein Geld ist begrenzt, deine Wünsche nicht. Wie teilst du auf, damit dir die Kombination am meisten bringt?</p>
@@ -1093,7 +1093,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Fahrplan">
-  <span class="eyebrow"><svg class="i"><use href="#i-map"/></svg> Dein Fahrplan</span>
+  <span class="eyebrow">Dein Fahrplan</span>
   <h2>So gehen wir vor</h2>
   <p class="muted">Wir gehen den Fahrplan Schritt für Schritt an einem einzigen durchgerechneten Beispiel entlang, so siehst du, wie die Bausteine ineinandergreifen.</p>
   <ul class="fahrplan">
@@ -1145,7 +1145,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Lehrbeispiel">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Durchgerechnetes Lehrbeispiel</span>
+  <span class="eyebrow">Durchgerechnetes Lehrbeispiel</span>
   <h2>Budget zwischen Bahn und Kino</h2>
   <p class="muted">Mia hat im Monat <b>336 €</b> zur Verfügung und verteilt sie auf <b>Bahnfahrten</b> (Gut x, Preis P<sub>x</sub> = 7 €) und <b>Kinobesuche</b> (Gut y, Preis P<sub>y</sub> = 12 €). Ihre Präferenzen sind vom <span class="mark-term" data-tip="Nutzenfunktion der Form U = x · y (allgemein x^a · y^b). Führt zu konvexen Indifferenzkurven und einer inneren Lösung, nie zu einer Randlösung.">Cobb-Douglas</span>-Typ: <b>U = x · y</b>.</p>
   <div class="calc">
@@ -1164,7 +1164,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Schaubild">
-  <span class="eyebrow"><svg class="i"><use href="#i-star"/></svg> Das Schaubild</span>
+  <span class="eyebrow">Das Schaubild</span>
   <h2>Budgetgerade, Indifferenzkurve &amp; Optimum</h2>
   <p class="muted">Die Grafik zeigt das Optimum geometrisch: Die Budgetgerade läuft von 48 (nur Bahn) bis 28 (nur Kino); im Tangentialpunkt (24 | 14) berührt sie die höchste erreichbare Indifferenzkurve.</p>
   <div class="chartbox">
@@ -1174,7 +1174,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Kern &amp; Fragen">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Das bleibt hängen</span>
+  <span class="eyebrow">Das bleibt hängen</span>
   <h2>Kern-Erkenntnis</h2>
   <div class="kern">
     <span class="ic"><svg class="i" style="width:17px"><use href="#i-diamond"/></svg></span>
@@ -1191,7 +1191,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Deine Frage">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Deine Frage</span>
+  <span class="eyebrow">Deine Frage</span>
   <h2>Nimm sie mit ins Live-Klausurtraining</h2>
   <p class="muted">Gib deine komplexeste aktuelle Frage ein. Sie wird lokal auf deinem Gerät gespeichert und geht so nicht verloren, keine automatische Antwort auf dieser Seite.</p>
   <div class="liveq">
@@ -1205,7 +1205,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Selbsttest">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Teste dich</span>
+  <span class="eyebrow">Teste dich</span>
   <h2>Adaptive Fragerunde</h2>
   <p class="muted">Starte mit 5 Fragen. 3 oder mehr richtig, es geht schwerer weiter, sonst bekommst du Festigungsfragen. Danach kannst du beliebig oft weitere Fragen anfordern. Dein Gesamtergebnis bleibt sichtbar.</p>
   <div class="quizhead"><span class="rt" id="roundTitle">Runde 1 · 5 Fragen</span><span class="scoretag" id="scoreTag">Gesamt: 0 / 0</span></div>
@@ -1216,7 +1216,7 @@ window.BKBC = (function(){
 </template>
 <template id="lesson-2">
 <div class="lstep" data-name="Einstieg">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Kapitel 2 · Einstieg</span>
+  <span class="eyebrow">Kapitel 2 · Einstieg</span>
   <h2>Unsicherheit &amp; Erwartungsnutzen</h2>
   <div class="storybox">
     <p>Stell dir vor, du hast dir für <b>2.500 €</b> ein E-Bike gekauft. Mit etwas Pech wird es geklaut, dann ist das Geld weg. Eine Versicherung bietet dir an: Zahl eine feste Prämie, und im Schadensfall bekommst du den Wert ersetzt. Die Prämie ist bewusst so kalkuliert, dass die Versicherung im Schnitt <i>mehr</i> einnimmt, als sie auszahlt. Trotzdem schließen Millionen Menschen genau solche Verträge ab, <b>freiwillig</b>.</p>
@@ -1233,7 +1233,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Fahrplan">
-  <span class="eyebrow"><svg class="i"><use href="#i-map"/></svg> Dein Fahrplan</span>
+  <span class="eyebrow">Dein Fahrplan</span>
   <h2>So gehen wir vor</h2>
   <p class="muted">Wir gehen den Fahrplan Schritt für Schritt an einem einzigen durchgerechneten Beispiel entlang, so siehst du, wie die Bausteine ineinandergreifen.</p>
   <ul class="fahrplan">
@@ -1281,7 +1281,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Lehrbeispiel">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Durchgerechnetes Lehrbeispiel</span>
+  <span class="eyebrow">Durchgerechnetes Lehrbeispiel</span>
   <h2>E-Bike-Versicherung</h2>
   <p class="muted">Dein Vermögen beträgt <b>10.000 €</b>. Mit Wahrscheinlichkeit <b>0,5</b> wird dein E-Bike (Wert 7.500 €) gestohlen, dein Vermögen sinkt dann auf <b>2.500 €</b>. Deine Nutzenfunktion ist <b>u(x) = √x</b> (konkav, also risikoavers).</p>
   <div class="tw"><table class="vftab">
@@ -1306,7 +1306,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Schaubild">
-  <span class="eyebrow"><svg class="i"><use href="#i-star"/></svg> Das Schaubild</span>
+  <span class="eyebrow">Das Schaubild</span>
   <h2>Die konkave Nutzenfunktion</h2>
   <p class="muted">Die Grafik zeigt denselben Sachverhalt geometrisch: Die konkave Kurve liegt über ihrer Sehne, deshalb liegt das Sicherheitsäquivalent links vom Erwartungswert, der Abstand ist die Risikoprämie.</p>
   <div class="chartbox">
@@ -1316,7 +1316,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Aha-Moment" data-aha="risiko">
-  <span class="eyebrow"><svg class="i"><use href="#i-spark"/></svg> Aha-Moment zum Anfassen</span>
+  <span class="eyebrow">Aha-Moment zum Anfassen</span>
   <h2>Schieb die Unsicherheit</h2>
   <p class="muted">Start wie im Lehrbeispiel: Vermögen 10.000&nbsp;&euro;, bei Diebstahl bleiben 2.500&nbsp;&euro;, Nutzen u(x)&nbsp;=&nbsp;&radic;x. Schieb die Diebstahlwahrscheinlichkeit p und beobachte, wie weit Erwartungswert und Sicherheitsäquivalent auseinanderlaufen, genau diese Lücke ist die Risikoprämie.</p>
   <div class="aha">
@@ -1338,7 +1338,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Kern &amp; Fragen">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Das bleibt hängen</span>
+  <span class="eyebrow">Das bleibt hängen</span>
   <h2>Kern-Erkenntnis</h2>
   <div class="kern">
     <span class="ic"><svg class="i" style="width:17px"><use href="#i-diamond"/></svg></span>
@@ -1355,7 +1355,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Deine Frage">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Deine Frage</span>
+  <span class="eyebrow">Deine Frage</span>
   <h2>Nimm sie mit ins Live-Klausurtraining</h2>
   <p class="muted">Gib deine komplexeste aktuelle Frage ein. Sie wird lokal auf deinem Gerät gespeichert und geht so nicht verloren, keine automatische Antwort auf dieser Seite.</p>
   <div class="liveq">
@@ -1369,7 +1369,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Selbsttest">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Teste dich</span>
+  <span class="eyebrow">Teste dich</span>
   <h2>Adaptive Fragerunde</h2>
   <p class="muted">Starte mit 5 Fragen. 3 oder mehr richtig, es geht schwerer weiter, sonst bekommst du Festigungsfragen. Danach kannst du beliebig oft weitere Fragen anfordern. Dein Gesamtergebnis bleibt sichtbar.</p>
   <div class="quizhead"><span class="rt" id="roundTitle">Runde 1 · 5 Fragen</span><span class="scoretag" id="scoreTag">Gesamt: 0 / 0</span></div>
@@ -1380,7 +1380,7 @@ window.BKBC = (function(){
 </template>
 <template id="lesson-3">
 <div class="lstep" data-name="Einstieg">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Kapitel 2 · Einstieg</span>
+  <span class="eyebrow">Kapitel 2 · Einstieg</span>
   <h2>Unternehmens- &amp; Produktionstheorie</h2>
   <div class="storybox">
     <p>Stell dir vor, du betreibst eine kleine <b>Backstube</b> und willst jeden Tag eine feste Menge Brot backen. Dafür brauchst du zwei Zutaten der besonderen Art: <b>Arbeit</b> (Bäckerinnen und Bäcker) und <b>Kapital</b> (Öfen, Knetmaschinen). Dieselbe Menge Brot kannst du auf verschiedenen Wegen herstellen, viel Handarbeit und wenige Maschinen, oder wenig Personal und dafür moderne Öfen. Beide Wege führen zum gleichen Output, kosten dich aber <i>unterschiedlich viel</i>.</p>
@@ -1397,7 +1397,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Fahrplan">
-  <span class="eyebrow"><svg class="i"><use href="#i-map"/></svg> Dein Fahrplan</span>
+  <span class="eyebrow">Dein Fahrplan</span>
   <h2>So gehen wir vor</h2>
   <p class="muted">Wir gehen den Fahrplan Schritt für Schritt an einem einzigen durchgerechneten Beispiel entlang, so siehst du, wie die Bausteine ineinandergreifen.</p>
   <ul class="fahrplan">
@@ -1447,7 +1447,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Lehrbeispiel">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Durchgerechnetes Lehrbeispiel</span>
+  <span class="eyebrow">Durchgerechnetes Lehrbeispiel</span>
   <h2>Backstube (Kostenminimum)</h2>
   <p class="muted">Eine Backstube produziert mit der Produktionsfunktion <b>Q = √(K·L)</b> (Cobb-Douglas, Exponenten 0,5 und 0,5). Arbeit ist teuer: Lohn <b>w = 25</b>, Kapital dagegen billig: Zins <b>r = 1</b>. Gesucht ist die kostenminimale Faktorkombination für die Zielmenge <b>Q̄ = 15</b>.</p>
   <div class="calc">
@@ -1473,7 +1473,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Schaubild">
-  <span class="eyebrow"><svg class="i"><use href="#i-star"/></svg> Das Schaubild</span>
+  <span class="eyebrow">Das Schaubild</span>
   <h2>Isoquante &amp; Isokostengerade</h2>
   <p class="muted">Die Grafik zeigt denselben Sachverhalt geometrisch: Die Isokostengerade C = 150 berührt die Isoquante Q̄ = 15 im Punkt L* = 3, K* = 75, dort sind ihre Steigungen gleich (w/r = GRTS = 25).</p>
   <div class="chartbox">
@@ -1483,7 +1483,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Kern &amp; Fragen">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Das bleibt hängen</span>
+  <span class="eyebrow">Das bleibt hängen</span>
   <h2>Kern-Erkenntnis</h2>
   <div class="kern">
     <span class="ic"><svg class="i" style="width:17px"><use href="#i-diamond"/></svg></span>
@@ -1500,7 +1500,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Deine Frage">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Deine Frage</span>
+  <span class="eyebrow">Deine Frage</span>
   <h2>Nimm sie mit ins Live-Klausurtraining</h2>
   <p class="muted">Gib deine komplexeste aktuelle Frage ein. Sie wird lokal auf deinem Gerät gespeichert und geht so nicht verloren, keine automatische Antwort auf dieser Seite.</p>
   <div class="liveq">
@@ -1514,7 +1514,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Selbsttest">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Teste dich</span>
+  <span class="eyebrow">Teste dich</span>
   <h2>Adaptive Fragerunde</h2>
   <p class="muted">Starte mit 5 Fragen. 3 oder mehr richtig, es geht schwerer weiter, sonst bekommst du Festigungsfragen. Danach kannst du beliebig oft weitere Fragen anfordern. Dein Gesamtergebnis bleibt sichtbar.</p>
   <div class="quizhead"><span class="rt" id="roundTitle">Runde 1 · 5 Fragen</span><span class="scoretag" id="scoreTag">Gesamt: 0 / 0</span></div>
@@ -1525,7 +1525,7 @@ window.BKBC = (function(){
 </template>
 <template id="lesson-4">
 <div class="lstep" data-name="Einstieg">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Kapitel 4 · Einstieg</span>
+  <span class="eyebrow">Kapitel 4 · Einstieg</span>
   <h2>Kosten &amp; Kostenfunktionen</h2>
   <div class="storybox">
     <p>Stell dir vor, du betreibst einen kleinen Food-Truck. Standplatz, Leasingrate und Versicherung kosten dich jeden Monat denselben Betrag, ob du null oder vierhundert Wraps verkaufst. Teig, Füllung und Gas bezahlst du dagegen nur für jeden tatsächlich gerollten Wrap. Fragt dich nun jemand: <b>„Was kostet dich eigentlich ein Wrap?“</b>, gibt es überraschend viele ehrliche Antworten: mit oder ohne Standmiete gerechnet? Im Schnitt über alle Wraps, oder nur der eine zusätzliche Wrap für den letzten Kunden des Tages?</p>
@@ -1542,7 +1542,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Fahrplan">
-  <span class="eyebrow"><svg class="i"><use href="#i-map"/></svg> Dein Fahrplan</span>
+  <span class="eyebrow">Dein Fahrplan</span>
   <h2>So gehen wir vor</h2>
   <p class="muted">Wir gehen den Fahrplan Schritt für Schritt an einem einzigen durchgerechneten Beispiel entlang, so siehst du, wie die Bausteine ineinandergreifen.</p>
   <ul class="fahrplan">
@@ -1599,7 +1599,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Lehrbeispiel">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Durchgerechnetes Lehrbeispiel</span>
+  <span class="eyebrow">Durchgerechnetes Lehrbeispiel</span>
   <h2>Kaffee-Rösterei</h2>
   <p class="muted">Eine kleine Rösterei hat die Kostenfunktion <b>C(x) = x³ − 10x² + 45x + 384</b> (x in Röst-Chargen, Kosten in €). Wir zerlegen sie, bilden die Stückkosten-Familie und bestimmen Betriebsminimum und Betriebsoptimum.</p>
   <div class="calc">
@@ -1626,7 +1626,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Schaubild">
-  <span class="eyebrow"><svg class="i"><use href="#i-star"/></svg> Das Schaubild</span>
+  <span class="eyebrow">Das Schaubild</span>
   <h2>Die Stückkosten-Familie im Bild</h2>
   <p class="muted">Die Grafik zeigt das Lehrbeispiel: Die GK-Kurve schneidet die DVK-Kurve in deren Minimum (Betriebsminimum, x = 5) und die DK-Kurve in deren Minimum (Betriebsoptimum, x = 8), dazwischen schrumpft der Abstand der beiden Durchschnittskurven, weil DFK = 384/x fällt.</p>
   <div class="chartbox">
@@ -1636,7 +1636,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Kern &amp; Fragen">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Das bleibt hängen</span>
+  <span class="eyebrow">Das bleibt hängen</span>
   <h2>Kern-Erkenntnis</h2>
   <div class="kern">
     <span class="ic"><svg class="i" style="width:17px"><use href="#i-diamond"/></svg></span>
@@ -1653,7 +1653,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Deine Frage">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Deine Frage</span>
+  <span class="eyebrow">Deine Frage</span>
   <h2>Nimm sie mit ins Live-Klausurtraining</h2>
   <p class="muted">Gib deine komplexeste aktuelle Frage ein. Sie wird lokal auf deinem Gerät gespeichert und geht so nicht verloren, keine automatische Antwort auf dieser Seite.</p>
   <div class="liveq">
@@ -1667,7 +1667,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Selbsttest">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Teste dich</span>
+  <span class="eyebrow">Teste dich</span>
   <h2>Adaptive Fragerunde</h2>
   <p class="muted">Starte mit 5 Fragen. 3 oder mehr richtig, es geht schwerer weiter, sonst bekommst du Festigungsfragen. Danach kannst du beliebig oft weitere Fragen anfordern. Dein Gesamtergebnis bleibt sichtbar.</p>
   <div class="quizhead"><span class="rt" id="roundTitle">Runde 1 · 5 Fragen</span><span class="scoretag" id="scoreTag">Gesamt: 0 / 0</span></div>
@@ -1678,7 +1678,7 @@ window.BKBC = (function(){
 </template>
 <template id="lesson-5">
 <div class="lstep" data-name="Einstieg">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Kapitel 5 · Einstieg</span>
+  <span class="eyebrow">Kapitel 5 · Einstieg</span>
   <h2>Angebot &amp; Marktgleichgewicht</h2>
   <div class="storybox">
     <p>Stell dir die Getränkestände beim Sommerfest auf dem Campus vor. Der Becherpreis pendelt sich für alle sichtbar ein, wer teurer verkauft, bleibt auf seiner Limo sitzen. Kein Stand kann den Preis diktieren; die einzige Frage lautet: <b>Wie viele Becher mixe ich zu diesem Preis?</b> Die Antwort liefert der Blick auf die eigenen Kosten: Der nächste Becher lohnt sich nur, solange er mehr einbringt, als er zusätzlich kostet.</p>
@@ -1695,7 +1695,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Fahrplan">
-  <span class="eyebrow"><svg class="i"><use href="#i-map"/></svg> Dein Fahrplan</span>
+  <span class="eyebrow">Dein Fahrplan</span>
   <h2>So gehen wir vor</h2>
   <p class="muted">Wir gehen den Fahrplan Schritt für Schritt an einem einzigen durchgerechneten Beispiel entlang, so siehst du, wie die Bausteine ineinandergreifen.</p>
   <ul class="fahrplan">
@@ -1746,7 +1746,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Lehrbeispiel">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Durchgerechnetes Lehrbeispiel</span>
+  <span class="eyebrow">Durchgerechnetes Lehrbeispiel</span>
   <h2>Der Campus-Limo-Markt</h2>
   <p class="muted">Auf dem Campus verkaufen <b>40 identische Limo-Stände</b> selbst gemachte Limonade. Jeder Stand hat die Kostenfunktion <b>C(x) = x² + 2x + 16</b> (x in Litern, Kosten in €), die Marktnachfrage lautet <b>X<sub>D</sub>(p) = 320 − 10p</b>.</p>
   <div class="calc">
@@ -1769,7 +1769,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Schaubild">
-  <span class="eyebrow"><svg class="i"><use href="#i-star"/></svg> Das Schaubild</span>
+  <span class="eyebrow">Das Schaubild</span>
   <h2>Marktdiagramm mit Produzentenrente</h2>
   <p class="muted">Die Grafik zeigt das Ergebnis: Im Schnittpunkt von Nachfrage und Marktangebot liegt das Gleichgewicht (X* = 200, p* = 12); das grüne Dreieck zwischen Preislinie und Angebotskurve ist die Produzentenrente von 1.000 €.</p>
   <div class="chartbox">
@@ -1779,7 +1779,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Aha-Moment" data-aha="markt">
-  <span class="eyebrow"><svg class="i"><use href="#i-spark"/></svg> Aha-Moment zum Anfassen</span>
+  <span class="eyebrow">Aha-Moment zum Anfassen</span>
   <h2>Verschieb die Nachfrage</h2>
   <p class="muted">Start wie im Lehrbeispiel: Nachfrage p&nbsp;=&nbsp;32&nbsp;&minus;&nbsp;0,1&middot;X, Marktangebot p&nbsp;=&nbsp;2&nbsp;+&nbsp;0,05&middot;X, Gleichgewicht bei X*&nbsp;=&nbsp;200 und p*&nbsp;=&nbsp;12. Schieb die Zahlungsbereitschaft und schau, wie das Gleichgewicht die Angebotskurve entlangwandert.</p>
   <div class="aha">
@@ -1804,7 +1804,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Kern &amp; Fragen">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Das bleibt hängen</span>
+  <span class="eyebrow">Das bleibt hängen</span>
   <h2>Kern-Erkenntnis</h2>
   <div class="kern">
     <span class="ic"><svg class="i" style="width:17px"><use href="#i-diamond"/></svg></span>
@@ -1821,7 +1821,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Deine Frage">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Deine Frage</span>
+  <span class="eyebrow">Deine Frage</span>
   <h2>Nimm sie mit ins Live-Klausurtraining</h2>
   <p class="muted">Gib deine komplexeste aktuelle Frage ein. Sie wird lokal auf deinem Gerät gespeichert und geht so nicht verloren, keine automatische Antwort auf dieser Seite.</p>
   <div class="liveq">
@@ -1835,7 +1835,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Selbsttest">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Teste dich</span>
+  <span class="eyebrow">Teste dich</span>
   <h2>Adaptive Fragerunde</h2>
   <p class="muted">Starte mit 5 Fragen. 3 oder mehr richtig, es geht schwerer weiter, sonst bekommst du Festigungsfragen. Danach kannst du beliebig oft weitere Fragen anfordern. Dein Gesamtergebnis bleibt sichtbar.</p>
   <div class="quizhead"><span class="rt" id="roundTitle">Runde 1 · 5 Fragen</span><span class="scoretag" id="scoreTag">Gesamt: 0 / 0</span></div>
@@ -1846,7 +1846,7 @@ window.BKBC = (function(){
 </template>
 <template id="lesson-6">
 <div class="lstep" data-name="Einstieg">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Kapitel 6 · Einstieg</span>
+  <span class="eyebrow">Kapitel 6 · Einstieg</span>
   <h2>Vollkommener Wettbewerb &amp; Markteingriffe</h2>
   <div class="storybox">
     <p>Frankfurt, Semesterstart: Die Schlange vor der Wohnheim-Vergabe ist länger als die vor der Mensa. Die Stadt beschließt, die Mieten für WG-Zimmer zu <b>deckeln</b>, klingt nach einer guten Nachricht für Studierende. Ein Jahr später gibt es <i>weniger</i> Zimmer als vorher: Manche Vermieter vermieten lieber möbliert an Messegäste, andere sanieren gar nicht erst. Wer ein Zimmer ergattert, zahlt weniger, alle anderen suchen länger.</p>
@@ -1863,7 +1863,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Fahrplan">
-  <span class="eyebrow"><svg class="i"><use href="#i-map"/></svg> Dein Fahrplan</span>
+  <span class="eyebrow">Dein Fahrplan</span>
   <h2>So gehen wir vor</h2>
   <p class="muted">Wir gehen den Fahrplan Schritt für Schritt an einem einzigen durchgerechneten Beispiel entlang, so siehst du, wie die Bausteine ineinandergreifen.</p>
   <ul class="fahrplan">
@@ -1910,7 +1910,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Lehrbeispiel">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Durchgerechnetes Lehrbeispiel</span>
+  <span class="eyebrow">Durchgerechnetes Lehrbeispiel</span>
   <h2>Der Foodtruck-Markt am Campus</h2>
   <p class="muted">Auf dem Campus-Vorplatz verkaufen Foodtrucks mittags Bowls. Marktnachfrage: <b>p = 16 − Q</b>, Marktangebot: <b>p = 1 + 0,5 · Q</b> (Q in hundert Bowls pro Woche, p in €).</p>
   <div class="calc">
@@ -1944,7 +1944,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Schaubild">
-  <span class="eyebrow"><svg class="i"><use href="#i-star"/></svg> Das Schaubild</span>
+  <span class="eyebrow">Das Schaubild</span>
   <h2>Der Steuerkeil im Marktdiagramm</h2>
   <p class="muted">Die Grafik zeigt Teil C geometrisch: Der Steuerkeil t = 3 schiebt sich bei Q = 8 zwischen Nachfragerpreis 8 und Anbieterpreis 5. Das goldene Rechteck ist das Steueraufkommen (24), das rote Dreieck rechts davon der Wohlfahrtsverlust (3).</p>
   <div class="chartbox">
@@ -1954,7 +1954,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Kern &amp; Fragen">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Das bleibt hängen</span>
+  <span class="eyebrow">Das bleibt hängen</span>
   <h2>Kern-Erkenntnis</h2>
   <div class="kern">
     <span class="ic"><svg class="i" style="width:17px"><use href="#i-diamond"/></svg></span>
@@ -1971,7 +1971,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Deine Frage">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Deine Frage</span>
+  <span class="eyebrow">Deine Frage</span>
   <h2>Nimm sie mit ins Live-Klausurtraining</h2>
   <p class="muted">Gib deine komplexeste aktuelle Frage ein. Sie wird lokal auf deinem Gerät gespeichert und geht so nicht verloren, keine automatische Antwort auf dieser Seite.</p>
   <div class="liveq">
@@ -1985,7 +1985,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Selbsttest">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Teste dich</span>
+  <span class="eyebrow">Teste dich</span>
   <h2>Adaptive Fragerunde</h2>
   <p class="muted">Starte mit 5 Fragen. 3 oder mehr richtig, es geht schwerer weiter, sonst bekommst du Festigungsfragen. Danach kannst du beliebig oft weitere Fragen anfordern. Dein Gesamtergebnis bleibt sichtbar.</p>
   <div class="quizhead"><span class="rt" id="roundTitle">Runde 1 · 5 Fragen</span><span class="scoretag" id="scoreTag">Gesamt: 0 / 0</span></div>
@@ -1996,7 +1996,7 @@ window.BKBC = (function(){
 </template>
 <template id="lesson-7">
 <div class="lstep" data-name="Einstieg">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Kapitel 7 · Einstieg</span>
+  <span class="eyebrow">Kapitel 7 · Einstieg</span>
   <h2>Monopol</h2>
   <div class="storybox">
     <p>Stell dir vor, du hast beim Sommerfestival den <b>einzigen Stand mit gekühltem Wasser</b>, der nächste Supermarkt ist Kilometer entfernt. Endlich kannst du den Preis selbst bestimmen! Doch schnell merkst du den Haken: Verlangst du 5 € pro Flasche, kaufen nur die Durstigsten. Willst du mehr Flaschen loswerden, musst du <b>für alle</b> mit dem Preis runter, auch für die, die längst gekauft hätten. Deine Macht ist real, aber sie hat eine eingebaute Bremse: die Nachfrage.</p>
@@ -2013,7 +2013,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Fahrplan">
-  <span class="eyebrow"><svg class="i"><use href="#i-map"/></svg> Dein Fahrplan</span>
+  <span class="eyebrow">Dein Fahrplan</span>
   <h2>So gehen wir vor</h2>
   <p class="muted">Wir gehen den Fahrplan Schritt für Schritt an einem einzigen durchgerechneten Beispiel entlang, so siehst du, wie die Bausteine ineinandergreifen.</p>
   <ul class="fahrplan">
@@ -2071,7 +2071,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Lehrbeispiel">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Durchgerechnetes Lehrbeispiel</span>
+  <span class="eyebrow">Durchgerechnetes Lehrbeispiel</span>
   <h2>der Festival-Wasserstand</h2>
   <p class="muted">Dein Wasserstand ist der einzige Anbieter auf dem Festivalgelände. Die Preis-Absatz-Funktion lautet <b>p = 30 − 2q</b> (q in Kisten, p in €), deine Kostenfunktion <b>C(q) = 6q + 18</b>, also konstante Grenzkosten GK = 6 und Fixkosten FC = 18 (Standmiete).</p>
   <div class="calc">
@@ -2106,7 +2106,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Schaubild">
-  <span class="eyebrow"><svg class="i"><use href="#i-star"/></svg> Das Schaubild</span>
+  <span class="eyebrow">Das Schaubild</span>
   <h2>Das Monopoldiagramm</h2>
   <p class="muted">Die Grafik zeigt das Lehrbeispiel als Monopoldiagramm: Die GE-Gerade fällt doppelt so steil wie die Nachfrage (PAF), ihr Schnitt mit der GK-Linie liefert q<sub>M</sub> = 6, senkrecht darüber liegt der Cournot-Punkt (6 | 18). Rechts davon, bis zur Wettbewerbsmenge q<sub>W</sub> = 12, klafft das Wohlfahrtsverlust-Dreieck (36 €).</p>
   <div class="chartbox">
@@ -2116,7 +2116,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Aha-Moment" data-aha="monopol">
-  <span class="eyebrow"><svg class="i"><use href="#i-spark"/></svg> Aha-Moment zum Anfassen</span>
+  <span class="eyebrow">Aha-Moment zum Anfassen</span>
   <h2>Such den Cournot-Punkt</h2>
   <p class="muted">Start wie im Lehrbeispiel: p&nbsp;=&nbsp;30&nbsp;&minus;&nbsp;2q, GK&nbsp;=&nbsp;6, Fixkosten 18&nbsp;&euro;. Schieb die Menge q und beobachte den Gewinn: Er wächst, solange der Grenzerlös über den Grenzkosten liegt, und kippt exakt am Cournot-Punkt q&nbsp;=&nbsp;6.</p>
   <div class="aha">
@@ -2140,7 +2140,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Kern &amp; Fragen">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Das bleibt hängen</span>
+  <span class="eyebrow">Das bleibt hängen</span>
   <h2>Kern-Erkenntnis</h2>
   <div class="kern">
     <span class="ic"><svg class="i" style="width:17px"><use href="#i-diamond"/></svg></span>
@@ -2157,7 +2157,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Deine Frage">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Deine Frage</span>
+  <span class="eyebrow">Deine Frage</span>
   <h2>Nimm sie mit ins Live-Klausurtraining</h2>
   <p class="muted">Gib deine komplexeste aktuelle Frage ein. Sie wird lokal auf deinem Gerät gespeichert und geht so nicht verloren, keine automatische Antwort auf dieser Seite.</p>
   <div class="liveq">
@@ -2171,7 +2171,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Selbsttest">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Teste dich</span>
+  <span class="eyebrow">Teste dich</span>
   <h2>Adaptive Fragerunde</h2>
   <p class="muted">Starte mit 5 Fragen. 3 oder mehr richtig, es geht schwerer weiter, sonst bekommst du Festigungsfragen. Danach kannst du beliebig oft weitere Fragen anfordern. Dein Gesamtergebnis bleibt sichtbar.</p>
   <div class="quizhead"><span class="rt" id="roundTitle">Runde 1 · 5 Fragen</span><span class="scoretag" id="scoreTag">Gesamt: 0 / 0</span></div>
@@ -2182,7 +2182,7 @@ window.BKBC = (function(){
 </template>
 <template id="lesson-8">
 <div class="lstep" data-name="Einstieg">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Kapitel 8 · Einstieg</span>
+  <span class="eyebrow">Kapitel 8 · Einstieg</span>
   <h2>Spieltheorie-Grundlagen</h2>
   <div class="storybox">
     <p>Stell dir zwei Dönerläden direkt gegenüber dem Campus vor. Zur ersten Vorlesungswoche überlegen beide, ob sie den Preis senken. Jeder denkt gleich: <b>„Hält der andere seinen Preis, schnappe ich ihm mit der Aktion die Mittagskundschaft weg. Senkt der andere, muss ich erst recht mitziehen."</b> Also senken beide, und am Ende bedienen beide ungefähr dieselben Gäste wie vorher, nur zu einem schlechteren Preis. Keiner der beiden war unvernünftig: Jeder hat auf jedes denkbare Verhalten des anderen die für sich beste Wahl getroffen.</p>
@@ -2199,7 +2199,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Fahrplan">
-  <span class="eyebrow"><svg class="i"><use href="#i-map"/></svg> Dein Fahrplan</span>
+  <span class="eyebrow">Dein Fahrplan</span>
   <h2>So gehen wir vor</h2>
   <p class="muted">Wir gehen den Fahrplan Schritt für Schritt an einem einzigen durchgerechneten Beispielspiel entlang, so siehst du, wie die Bausteine ineinandergreifen.</p>
   <ul class="fahrplan">
@@ -2270,7 +2270,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Lehrbeispiel">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Durchgerechnetes Lehrbeispiel</span>
+  <span class="eyebrow">Durchgerechnetes Lehrbeispiel</span>
   <h2>Nash-Gleichgewicht per Beste-Antwort-Methode</h2>
   <p class="muted">Wir lösen das Beispielspiel aus Station ① komplett. <b>Schritt 1, beste Antworten von Spieler 1</b> (je Spalte die höchste erste Zahl): Spalte X: max(8; 11; 5) = 11 → B. Spalte Y: max(2; 6; 7) = 7 → C. Spalte Z: max(1; 4; 5) = 5 → C.</p>
   <div class="calc">
@@ -2297,7 +2297,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Schaubild">
-  <span class="eyebrow"><svg class="i"><use href="#i-star"/></svg> Das Schaubild</span>
+  <span class="eyebrow">Das Schaubild</span>
   <h2>Die Bimatrix, klausurfertig markiert</h2>
   <p class="muted">Die Grafik zeigt dieselbe Bimatrix noch einmal so, wie du sie in der Klausur markieren würdest: Kreise für die besten Antworten beider Spieler, Rahmen um die Zelle, in der sich beide treffen.</p>
   <div class="chartbox">
@@ -2307,7 +2307,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Kern &amp; Fragen">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Das bleibt hängen</span>
+  <span class="eyebrow">Das bleibt hängen</span>
   <h2>Kern-Erkenntnis</h2>
   <div class="kern">
     <span class="ic"><svg class="i" style="width:17px"><use href="#i-diamond"/></svg></span>
@@ -2324,7 +2324,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Deine Frage">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Deine Frage</span>
+  <span class="eyebrow">Deine Frage</span>
   <h2>Nimm sie mit ins Live-Klausurtraining</h2>
   <p class="muted">Gib deine komplexeste aktuelle Frage ein. Sie wird lokal auf deinem Gerät gespeichert und geht so nicht verloren, keine automatische Antwort auf dieser Seite.</p>
   <div class="liveq">
@@ -2338,7 +2338,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Selbsttest">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Teste dich</span>
+  <span class="eyebrow">Teste dich</span>
   <h2>Adaptive Fragerunde</h2>
   <p class="muted">Starte mit 5 Fragen. 3 oder mehr richtig, es geht schwerer weiter, sonst bekommst du Festigungsfragen. Danach kannst du beliebig oft weitere Fragen anfordern. Dein Gesamtergebnis bleibt sichtbar.</p>
   <div class="quizhead"><span class="rt" id="roundTitle">Runde 1 · 5 Fragen</span><span class="scoretag" id="scoreTag">Gesamt: 0 / 0</span></div>
@@ -2349,7 +2349,7 @@ window.BKBC = (function(){
 </template>
 <template id="lesson-9">
 <div class="lstep" data-name="Einstieg">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Kapitel 9 · Einstieg</span>
+  <span class="eyebrow">Kapitel 9 · Einstieg</span>
   <h2>Cournot, Bertrand &amp; Stackelberg</h2>
   <div class="storybox">
     <p>Stell dir zwei Foodtrucks vor dem Hörsaalzentrum vor, die dieselbe Lunch-Bowl anbieten. Jeden Morgen entscheidet jeder für sich, <b>wie viele Portionen</b> er vorkocht, zusammen bestimmen die Mengen, zu welchem Preis am Mittag alles weggeht. Postet einer aber schon am Vorabend <i>„Morgen 80 Portionen!“</i>, muss der andere seine Planung daran ausrichten, wer sich zuerst festlegt, diktiert das Spiel. Und sobald beide anfangen, sich gegenseitig <b>im Preis</b> zu unterbieten, rutscht der Bowl-Preis Runde um Runde nach unten, bis keiner mehr etwas daran verdient.</p>
@@ -2366,7 +2366,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Fahrplan">
-  <span class="eyebrow"><svg class="i"><use href="#i-map"/></svg> Dein Fahrplan</span>
+  <span class="eyebrow">Dein Fahrplan</span>
   <h2>So gehen wir vor</h2>
   <p class="muted">Wir gehen den Fahrplan Schritt für Schritt an einem einzigen durchgerechneten Beispiel entlang, so siehst du, wie die Bausteine ineinandergreifen.</p>
   <ul class="fahrplan">
@@ -2433,7 +2433,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Lehrbeispiel">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Durchgerechnetes Lehrbeispiel</span>
+  <span class="eyebrow">Durchgerechnetes Lehrbeispiel</span>
   <h2>das Campus-Limonaden-Duopol</h2>
   <p class="muted">Zwei Manufakturen beliefern den Campus mit derselben Bio-Limonade (homogenes Gut). Die inverse Nachfrage lautet <b>p = 120 − Q</b> mit Q = q<sub>1</sub> + q<sub>2</sub> (q in Kisten, p in €); beide produzieren mit konstanten Grenzkosten <b>GK = 24</b> und ohne Fixkosten. Wir rechnen dieselbe Marktsituation zweimal, simultan (Cournot) und sequenziell (Stackelberg).</p>
   <div class="calc">
@@ -2461,7 +2461,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Schaubild">
-  <span class="eyebrow"><svg class="i"><use href="#i-star"/></svg> Das Schaubild</span>
+  <span class="eyebrow">Das Schaubild</span>
   <h2>Reaktionsfunktionen im Duopol</h2>
   <p class="muted">Die Grafik zeigt Teil A und B geometrisch: Beide fallenden Reaktionsfunktionen schneiden sich im Cournot-Nash-Gleichgewicht (32 | 32), dort ist jede Menge beste Antwort auf die andere. Der Stackelberg-Punkt (48 | 24) liegt dagegen <b>auf der Reaktionsfunktion des Folgers</b>: Der Führer sucht sich auf dieser Linie den für ihn besten Punkt aus.</p>
   <div class="chartbox">
@@ -2471,7 +2471,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Kern &amp; Fragen">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Das bleibt hängen</span>
+  <span class="eyebrow">Das bleibt hängen</span>
   <h2>Kern-Erkenntnis</h2>
   <div class="kern">
     <span class="ic"><svg class="i" style="width:17px"><use href="#i-diamond"/></svg></span>
@@ -2488,7 +2488,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Deine Frage">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Deine Frage</span>
+  <span class="eyebrow">Deine Frage</span>
   <h2>Nimm sie mit ins Live-Klausurtraining</h2>
   <p class="muted">Gib deine komplexeste aktuelle Frage ein. Sie wird lokal auf deinem Gerät gespeichert und geht so nicht verloren, keine automatische Antwort auf dieser Seite.</p>
   <div class="liveq">
@@ -2502,7 +2502,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Selbsttest">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Teste dich</span>
+  <span class="eyebrow">Teste dich</span>
   <h2>Adaptive Fragerunde</h2>
   <p class="muted">Starte mit 5 Fragen. 3 oder mehr richtig, es geht schwerer weiter, sonst bekommst du Festigungsfragen. Danach kannst du beliebig oft weitere Fragen anfordern. Dein Gesamtergebnis bleibt sichtbar.</p>
   <div class="quizhead"><span class="rt" id="roundTitle">Runde 1 · 5 Fragen</span><span class="scoretag" id="scoreTag">Gesamt: 0 / 0</span></div>
@@ -2513,7 +2513,7 @@ window.BKBC = (function(){
 </template>
 <template id="lesson-10">
 <div class="lstep" data-name="Einstieg">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Kapitel 10 · Einstieg</span>
+  <span class="eyebrow">Kapitel 10 · Einstieg</span>
   <h2>Klausurtraining</h2>
   <div class="storybox">
     <p>Stell dir eine Klausur wie einen <b>Zehnkampf</b> vor. Zehn ganz verschiedene Disziplinen, ein festes Zeitbudget, und niemand ist in allen zugleich Weltspitze. Wer beim Weitsprung stur bis zum perfekten Sprung übt und dafür den 100-Meter-Lauf verpasst, verliert am Ende trotz Talent. Die Medaille holt, wer jede Disziplin schnell einordnet, die sicheren Punkte zuerst mitnimmt und sein Tempo klug verteilt.</p>
@@ -2530,7 +2530,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Fahrplan">
-  <span class="eyebrow"><svg class="i"><use href="#i-map"/></svg> Dein Fahrplan</span>
+  <span class="eyebrow">Dein Fahrplan</span>
   <h2>So gehen wir vor</h2>
   <p class="muted">Wir gehen den Fahrplan Schritt für Schritt durch, mit einem Überblick über die Aufgabentypen, einem voll durchgerechneten Rechenbeispiel und einer Sammlung der häufigsten Fehler.</p>
   <ul class="fahrplan">
@@ -2590,7 +2590,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Lehrbeispiel">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Durchgerechnetes Lehrbeispiel</span>
+  <span class="eyebrow">Durchgerechnetes Lehrbeispiel</span>
   <h2>Markt für Mehrweg-Coffee-Cups</h2>
   <p class="muted">Auf einem Wettbewerbsmarkt gelten die inverse Nachfrage <b>p = 12 − Q</b> und das inverse Angebot <b>p = 3 + ½Q</b> (Preis in €, Menge in Tausend Stück). Der Staat erhebt später eine Mengensteuer von <b>t = 3 €</b> je Stück, die die Anbieter abführen.</p>
   <div class="calc">
@@ -2612,7 +2612,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Schaubild">
-  <span class="eyebrow"><svg class="i"><use href="#i-star"/></svg> Das Schaubild</span>
+  <span class="eyebrow">Das Schaubild</span>
   <h2>Markt mit Mengensteuer, das Prüfstück</h2>
   <p class="muted">Die Grafik zeigt denselben Markt: Der Steuerkeil treibt einen Keil zwischen Konsumenten- und Produzentenpreis, die gehandelte Menge sinkt von 6 auf 4, und das getönte Dreieck rechts vom Steuerkeil ist der Wohlfahrtsverlust.</p>
   <div class="chartbox">
@@ -2622,7 +2622,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Kern &amp; Fragen">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Das bleibt hängen</span>
+  <span class="eyebrow">Das bleibt hängen</span>
   <h2>Kern-Erkenntnis</h2>
   <div class="kern">
     <span class="ic"><svg class="i" style="width:17px"><use href="#i-diamond"/></svg></span>
@@ -2639,7 +2639,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Deine Frage">
-  <span class="eyebrow"><svg class="i"><use href="#i-diamond"/></svg> Deine Frage</span>
+  <span class="eyebrow">Deine Frage</span>
   <h2>Nimm sie mit ins Live-Klausurtraining</h2>
   <p class="muted">Gib deine komplexeste aktuelle Frage ein. Sie wird lokal auf deinem Gerät gespeichert und geht so nicht verloren, keine automatische Antwort auf dieser Seite.</p>
   <div class="liveq">
@@ -2653,7 +2653,7 @@ window.BKBC = (function(){
 </div>
 
 <div class="lstep" data-name="Selbsttest">
-  <span class="eyebrow"><svg class="i"><use href="#i-play"/></svg> Teste dich</span>
+  <span class="eyebrow">Teste dich</span>
   <h2>Adaptive Fragerunde</h2>
   <p class="muted">Starte mit 5 Fragen. 3 oder mehr richtig, es geht schwerer weiter, sonst bekommst du Festigungsfragen. Danach kannst du beliebig oft weitere Fragen anfordern. Dein Gesamtergebnis bleibt sichtbar.</p>
   <div class="quizhead"><span class="rt" id="roundTitle">Runde 1 · 5 Fragen</span><span class="scoretag" id="scoreTag">Gesamt: 0 / 0</span></div>

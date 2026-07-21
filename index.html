@@ -3425,7 +3425,8 @@ window.BKBC = (function(){
       H.push('<div class="store-clist">');
       LESSONS.forEach(function(c){
         var n=c.n, lchip, hchip;
-        if(n===3) lchip='<span class="store-chip lchip free"><small>Lektion</small>gratis</span>';
+        if(n===FREI_KAP) lchip='<span class="store-chip lchip free"><small>Lektion</small>gratis</span>';
+        else if(n===FREI_KAP_2 && !unlocked(n)) lchip='<span class="store-chip lchip free"><small>mit Konto</small>gratis</span>';
         else if(unlocked(n)) lchip='<span class="store-chip lchip owned"><small>Lektion</small>&#10003; frei</span>';
         else lchip='<button class="store-chip lchip" data-buy="kapitel" data-n="'+n+'"><small>Lektion</small>'+euro(nextP)+'</button>';
         if(handoutUnlocked(n)) hchip='<span class="store-chip hchip owned"><small>Handout</small>&#10003; frei</span>';
@@ -3682,7 +3683,7 @@ html.bklg-lock,body.bklg-lock{overflow:hidden!important;overscroll-behavior:none
   });
 })();
 </script>
-<script id="bkBackendCfg">window.BK_BACKEND={enabled:false,url:"https://adrfijztnbebzghumdxn.supabase.co",anon:"sb_publishable__k4amEGQBKchp_hROiLBEg_1fYKw2On"};</script>
+<script id="bkBackendCfg">window.BK_BACKEND={enabled:true,url:"https://adrfijztnbebzghumdxn.supabase.co",anon:"sb_publishable__k4amEGQBKchp_hROiLBEg_1fYKw2On"};</script>
 <script id="bkBackend">
 /* ============================================================
    BK-BACKEND · Klausurchecker Frontend-Modul (P5) · 2026-07-21

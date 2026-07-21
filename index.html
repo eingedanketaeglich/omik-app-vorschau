@@ -3448,7 +3448,15 @@ window.BKBC = (function(){
   $("storeBody").addEventListener("click", function(e){
     if(e.target.closest("[data-back]")){ renderStore(STORE_CTX); return; }
     var b=e.target.closest("[data-buy]"); if(!b) return;
-    renderOrderForm(productLabel(b.getAttribute("data-buy"), parseInt(b.getAttribute("data-n"),10), b.getAttribute("data-slot")));
+    var _bt=b.getAttribute("data-buy");
+    /* Stripe-Fixpreis-Produkte direkt zum Checkout; komplett/gesamt (Anrechnung) und qa (Terminwahl) weiter ueber das Bestellformular */
+    var STRIPE_FIX = {
+      kapitel: "https://buy.stripe.com/dRmcN5gh9fKU1afcDn8bS0a",
+      handout: "https://buy.stripe.com/cNi14ne91fKUf15bzj8bS0b",
+      handoutpaket: "https://buy.stripe.com/fZu6oH9SL1U46uz9rb8bS08"
+    };
+    if(STRIPE_FIX[_bt]){ window.open(STRIPE_FIX[_bt], "_blank", "noopener"); return; }
+    renderOrderForm(productLabel(_bt, parseInt(b.getAttribute("data-n"),10), b.getAttribute("data-slot")));
   });
 
   /* ================= MEHR / ZUGANG ================= */

@@ -557,7 +557,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
 .store-crow{border-bottom:1px solid var(--line-2);padding:11px 0}
 [data-theme="dark"] .store-crow{border-color:var(--line)}
 .store-crow:last-child{border-bottom:0}
-.store-crow-top{display:flex;align-items:center;gap:10px}
+.store-crow-top{display:flex;align-items:center;gap:10px}.store-crow-top>span{flex:1;min-width:0}
 .store-cdet{flex:1;min-width:0}
 .store-cdet>summary{list-style:none;cursor:pointer;font-size:14px;color:var(--text);display:flex;align-items:center;gap:7px;line-height:1.3;min-height:36px}
 .store-cdet>summary::-webkit-details-marker{display:none}
@@ -569,7 +569,7 @@ body:not([data-screen="hub"]) .tb-in{justify-content:flex-end}
 .store-cdet .store-topics b{color:var(--text);font-weight:600}
 .store-cdet .store-topics ul{margin:5px 0 0 16px;padding:0}
 .store-cdet .store-topics li{margin:2px 0;list-style:disc}
-.store-chips{flex:none;display:flex;gap:7px}
+.store-chips{flex:none;display:flex;gap:7px;margin-left:auto}
 .store-chip{border:0;border-radius:11px;cursor:pointer;font-family:inherit;font-weight:700;font-size:12px;padding:6px 9px;min-width:72px;min-height:44px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.15;box-shadow:var(--sh-1)}
 .store-chip small{font-weight:600;font-size:9px;letter-spacing:.04em;opacity:.85;text-transform:uppercase;margin-bottom:1px}
 .store-chip.lchip{background:linear-gradient(180deg,var(--accent-2),var(--accent));color:#2A1500}
@@ -3453,6 +3453,8 @@ html.bklg-lock,body.bklg-lock{overflow:hidden!important;overscroll-behavior:none
 #bklgOverlay .bklg-f{display:block;font-weight:600;font-size:13.5px;margin:12px 0 6px}
 #bklgOverlay .bklg-inp{width:100%;min-height:46px;padding:11px 14px;font-size:16px;font-family:inherit;color:#1B1D21;background:#F8F7F4;border:0;border-radius:11px;box-shadow:inset 0 1px 0 #fff,0 0 0 1px #D8D6CE;letter-spacing:normal}
 #bklgOverlay .bklg-inp::placeholder{color:#A9ABB0;letter-spacing:normal}
+#bklgOverlay .bklg-pwi[type=password]{font-size:13px;letter-spacing:.09em}
+#bklgOverlay .bklg-pwi[type=password]::placeholder{font-size:16px;letter-spacing:normal}
 #bklgOverlay .bklg-inp:focus{outline:0;box-shadow:inset 0 1px 0 #fff,0 0 0 2px #E8760A}
 #bklgOverlay .bklg-inp.bklg-bad{box-shadow:inset 0 1px 0 #fff,0 0 0 2px #C0392B}
 #bklgOverlay .bklg-pwwrap{position:relative}

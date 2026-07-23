@@ -836,7 +836,7 @@ window.BKBC = (function(){
       </div>
       <div class="tb-title" id="tbTitle"></div>
       <div class="tb-right">
-        <span class="chip"><svg class="i"><use href="#i-clock"/></svg> <span id="cd">10 Tage</span></span>
+        
         <button class="themetoggle" id="tt" aria-label="Hell oder Dunkel umschalten"><svg class="i sun"><use href="#i-moon"/></svg><svg class="i moon"><use href="#i-sun"/></svg></button>
       </div>
     </div>
@@ -2962,7 +2962,7 @@ window.BKBC = (function(){
     } else {
       var L = lesson(an);
       $("hubTitle").innerHTML = dc===0 ? "Dein Weg zur OMIK&#8209;Klausur." : "Weiter geht&rsquo;s.";
-      $("hubSub").textContent = "Noch "+(NKAP-dc)+" Kapitel bis zur Klausur am 22.07. bei Prof. Blonski.";
+      $("hubSub").textContent = "Noch "+(NKAP-dc)+" Kapitel bei Prof. Blonski.";
       $("hubProgSub").textContent = "Kapitel "+an+" ist "+(ST.quiz[an]?"angefangen":"offen")+" und wartet auf dich.";
       $("hubCta").innerHTML = "Kapitel "+an+" "+(ST.quiz[an]?"fortsetzen":"starten")+" <svg class='i arrow'><use href='#i-arrow'/></svg>";
       $("hubCta").onclick = function(){ openLesson(an); };
@@ -3425,7 +3425,7 @@ window.BKBC = (function(){
   function updateAccessCard(){
     var at=$("accTitle"), as=$("accSub"), bw=$("accBuyWrap"), ln=$("licNote"), ab=$("accBuy"), xc=$("omikCross");
     if(bkSitzungAktiv()){
-      at.textContent="Gratis-Vollzugang"; as.textContent="Alle 10 Kapitel offen · Handouts gegen kurzes Feedback";
+      at.textContent="Gratis-Vollzugang"; as.textContent="Alle 10 Kapitel offen";
       bw.hidden=true; if(ln){var _kn=bkKundenName();ln.textContent="Persönlicher Zugang"+(_kn?" für "+_kn:"")+" · nur für den eigenen Gebrauch, bitte nicht weitergeben.";ln.hidden=false;} if(xc) xc.hidden=false; return;
     }
     at.textContent="Gratis-Showroom";

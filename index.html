@@ -303,6 +303,10 @@ input[type=range].sl::-moz-range-thumb{width:26px;height:26px;border-radius:50%;
 .linklist a .i{color:var(--text-3)}
 
 .placeholder-note{font-size:12px;color:var(--text-3);background:var(--surface-2);border:1px dashed var(--silver);border-radius:11px;padding:11px 13px;margin-top:14px;line-height:1.5}
+.legal-foot{margin-top:22px;text-align:center}
+.legal-foot a{font-size:12px;color:var(--text-3);text-decoration:none}
+.legal-foot .legal-sep{color:var(--text-3);font-size:12px;margin:0 5px}
+.legal-note{font-size:11px;color:var(--text-3);margin:9px auto 0;line-height:1.5;max-width:290px}
 
 /* empty states */
 .empty{text-align:center;padding:36px 18px;color:var(--text-3)}
@@ -950,12 +954,10 @@ window.BKBC = (function(){
     <a href="https://eingedanketaeglich.github.io/ofin-app-vorschau/"><span><b>OFIN</b> · Finanzen 1</span><svg class="i"><use href="#i-chev"/></svg></a>
   </div>
 
-  <div class="sec-lbl">Rechtliches</div>
-  <div class="linklist">
-    <a href="#" data-tab="impressum" onclick="return false">Impressum <svg class="i"><use href="#i-chev"/></svg></a>
-    <a href="#" data-tab="datenschutz" onclick="return false">Datenschutz <svg class="i"><use href="#i-chev"/></svg></a>
+  <div class="legal-foot">
+    <a href="#" data-tab="impressum" onclick="return false">Impressum</a><span class="legal-sep">·</span><a href="#" data-tab="datenschutz" onclick="return false">Datenschutz</a>
+    <div class="legal-note">Unabhängiges Vorbereitungsangebot, nicht von der Hochschule herausgegeben.</div>
   </div>
-  <div class="placeholder-note">Unabhängiges Vorbereitungsangebot, nicht von der Hochschule herausgegeben. Impressum und Datenschutz als Platzhalter, Rechtstext mit René prüfen.</div>
   <p class="lic-note" id="licNote" hidden>Persönlicher Zugang für {{KUNDE_NAME}} · nur für den eigenen Gebrauch, bitte nicht weitergeben.</p>
 </section>
 
